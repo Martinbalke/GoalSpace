@@ -1,5 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
+import Button from './Button';
+import Footer from './Footer';
+import GoalContainer from './GoalContainer';
+import Hero from './Hero';
+import Popup from './Popup';
+
 import './App.css';
 
 function App() {
