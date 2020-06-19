@@ -1,5 +1,6 @@
 import React from 'react';
 import Goal from './Goal';
+import { connect } from 'react-redux';
 
 function GoalContainer(props) {
 
@@ -8,5 +9,6 @@ function GoalContainer(props) {
   </div>);
 }
 
+const mSTP = state => ({});
 
-export default GoalContainer;
+export default connect(mSTP)(GoalContainer);
