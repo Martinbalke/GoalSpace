@@ -9,7 +9,8 @@ import Popup from './Popup';
 function App() {
   return (
     <div className="App">
-
+      <Hero/>
+      <Footer/>
     </div>
   );
 }
