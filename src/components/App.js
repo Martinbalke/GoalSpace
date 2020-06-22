@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Hero/>
+      <GoalContainer/>
       <Footer/>
     </div>
   );
