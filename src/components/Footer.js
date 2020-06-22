@@ -9,8 +9,8 @@ function Footer(props) {
       Goalspace is &copy; 2020 Martin Balke 
     </p>
     <div className="footer__socials">
-      <a href="https://www.linkedin.com/in/martinbalke/" className="footer_social" target="_blank" rel='noopener noreferrer'><img src={linked} alt='A link to the authors linked in'/></a>
-      <a href="https://github.com/Martinbalke" className="footer_social" target="_blank" rel='noopener noreferrer'><img src={github} alt="A link to the authors github"/></a>
+      <a href="https://www.linkedin.com/in/martinbalke/"  target="_blank" rel='noopener noreferrer'><img src={linked} alt='A link to the authors linked in' className="footer__social"/></a>
+      <a href="https://github.com/Martinbalke"  target="_blank" rel='noopener noreferrer'><img src={github} alt="A link to the authors github" className="footer__social"/></a>
     </div>
   </div>);
 }
