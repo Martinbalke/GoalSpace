@@ -1,5 +1,6 @@
 import React from 'react';
 import Goal from './Goal';
+import Yearly from './Yearly'
 import { connect } from 'react-redux';
 
 function GoalContainer(props) {
@@ -9,16 +10,11 @@ function GoalContainer(props) {
   //   return state.goals.map( (child, index) => <Goal/>);
   // }
 
-  function yearlyGoals(){
-  return props.goals.map( (goal) => <h1>{goal.yearly}</h1>);
-  }
+ 
 
   return (
     <div className="goalContainer">
-        {yearlyGoals()}
-      <div className="yearly">
-     
-      </div>
+      <Yearly/>
       {/* {generateChildren()} */}
     </div>
   );
