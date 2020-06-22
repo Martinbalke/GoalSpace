@@ -1,7 +1,31 @@
 * {
   padding: 0;
-  margin: 0;
-  box-sizing: border-box; }
+  margin: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+.hero {
+  background-image: url("../doodles.png");
+  height: 75vh;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .hero__header {
+    font-size: 10rem;
+    color: #00c9ff; }
+  .hero__subtext {
+    font-size: 2rem; }
+  .hero__svg {
+    height: 30rem;
+    width: 30rem;
+    transform: rotateX(180deg);
+    fill: #00c9ff; }
