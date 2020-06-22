@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; }
+
+.hero {
+  background-image: url("../doodles.png");
+  min-height: 75vh;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .hero__header {
+    font-size: 10rem;
+    color: #00c9ff; }
+  .hero__subtext {
+    font-size: 2rem; }
+  .hero__svg {
+    height: 30rem;
+    width: 30rem;
+    transform: rotateX(180deg);
+    fill: #00c9ff; }
+
+.footer {
+  display: flex;
+  height: 45vh;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: linear-gradient(to right, rgba(0, 201, 255, 0.2), rgba(0, 201, 255, 0.2)), url("../doodlesdark.png"); }
+  .footer__copy {
+    margin: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2rem; }
+  .footer__socials {
+    display: flex;
+    margin: .75rem; }
+  .footer__social {
+    height: 5rem;
+    margin: 0 1rem; }

@@ -1,11 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-function Button (props){
+function Button ({className, dispatch, onClick}){
 
-  return(<div>
-
-  </div>);
+  return(
+    <button className={className} onClick={onClick}></button>
+  );
 }
 
+const mSTP = state => ({
 
-export default Button;
+})
+export default connect(mSTP)(Button);
