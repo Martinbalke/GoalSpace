@@ -16,6 +16,7 @@ let goalReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case 'NEW_GOAL':
+        console.log(action.goal);
       break;
     default:
       return newState;
