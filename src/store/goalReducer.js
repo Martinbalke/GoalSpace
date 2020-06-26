@@ -11,18 +11,20 @@ let initialState = {
 }
 
 
-let goalReducer = (state = initialState, action) => {
+let goalReducer = (state = initialState, {goal, type, index}) => {
   let newState = { ...state };
 
-  switch (action.type) {
+  switch (type) {
     case 'NEW_GOAL':
-        console.log(action.goal);
+        if(newState.goals[index]) {
+          newState.goals.splice(index, 1)
+        }
+        newState.goals = [...newState.goals, goal]
       break;
     default:
       return newState;
   }
-
-
+  console.log(newState);
   return newState;
 }
 

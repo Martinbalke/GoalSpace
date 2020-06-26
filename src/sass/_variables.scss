@@ -1,2 +1,21 @@
-$color-primary: #00c9ff;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700&display=swap');
+
+
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Noto Sans JP', sans-serif;
+
+
+$color-primary: #2f80ed;
+$color-primary-light: #00c9ff;
+$color-primary-dark: #0B1A2F;
 $color-primary-accent: #92fe9d;
+$color-white: white;
+
+
+$radius-small: 2px;
+$radius-large: 4px;
+
+
+
+
+

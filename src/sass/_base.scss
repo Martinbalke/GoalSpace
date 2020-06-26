@@ -14,3 +14,18 @@ html{
   font-size: 62.5%;
   box-sizing: border-box;
 }
+
+
+body{
+}
+h1,h3{
+  font-weight: bold;
+  font-family: $font-primary;
+}
+
+p,span{
+  font-family: $font-secondary;
+  font-weight: 300;
+  line-height: 1.6;
+
+}

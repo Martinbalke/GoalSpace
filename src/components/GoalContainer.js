@@ -1,21 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Goal from './Goal';
 import Yearly from './Yearly'
+import Popup from './Popup';
 import { connect } from 'react-redux';
 
-function GoalContainer(props) {
+function GoalContainer({goals}) {
+  //State variable to keep track of which goal is currently being edited
+  const [editing, setEditing] = useState(-1);
 
-  // function generateChildren(){
-    //{Object.values(props.goals[0]).map((goal, index) => <h1>{goal}</h1>)}
-  //   return state.goals.map( (child, index) => <Goal/>);
-  // }
-
- 
+  //Generate a Goal component for each goal in the global state
+  function generateChildren(){
+      return goals.map( (goal,index) => <Goal index={index} key={index} goal={goal}/> )
+  }
 
   return (
     <div className="goalContainer">
-      <Yearly/>
-      {/* {generateChildren()} */}
+      <Yearly setEditing={setEditing}/>
+      {editing >= 0 ? <Popup close={() => setEditing(-1)} index={editing} /> : <div />}
+      {generateChildren()}
     </div>
   );
 }
