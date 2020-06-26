@@ -14,10 +14,13 @@ function GoalContainer({goals}) {
   }
 
   return (
-    <div className="goalContainer">
+    <div className="contentContainer">
       <Yearly setEditing={setEditing}/>
       {editing >= 0 ? <Popup close={() => setEditing(-1)} index={editing} /> : <div />}
-      {generateChildren()}
+      <div className="goalContainer">
+        <div className="border-dark"></div>
+        {generateChildren()}
+      </div>
     </div>
   );
 }

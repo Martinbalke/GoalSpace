@@ -16,11 +16,7 @@ function Yearly({ goals, setEditing }) {
 
   return (
     <div className="yearly">
-      <div className="border">
-        <svg className="border__svg border__svg-light">
-          <use xlinkHref='../border.svg#alter_w'/>
-        </svg>
-      </div>
+      <div className="border"/>
       <h3 className='yearly__tertiary'>Create a new yearly goal</h3>
       <button className='btn yearly__btn--main' onClick={() => setEditing(goals.length)}>click</button>
       {yearlyGoals()}

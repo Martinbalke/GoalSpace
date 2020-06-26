@@ -21,6 +21,22 @@ p, span {
   font-weight: 300;
   line-height: 1.6; }
 
+.border {
+  z-index: 100;
+  height: 4.5rem;
+  background: url("../border.svg");
+  width: 100%;
+  transform: translateY(-4rem);
+  background-size: cover; }
+
+.border-dark {
+  z-index: 100;
+  height: 4.5rem;
+  background: url("../border-dark.svg");
+  min-width: calc(100vw + 2px);
+  transform: translateY(-4rem) translateX(-2px);
+  background-size: cover; }
+
 .hero {
   background-image: url("../doodles.png");
   background-attachment: fixed;
@@ -80,28 +96,18 @@ p, span {
         background-color: white;
         transform: translateX(-5px); }
 
-.goalContainer {
-  background: white;
-  min-height: 90vh; }
-
 .yearly {
-  min-height: 40vh; }
+  min-height: 20vh; }
   .yearly__goal {
-    min-height: 60vh; }
+    min-height: 30vh; }
 
-.border {
-  z-index: 100;
-  width: 100%;
-  transform: translateY(-4rem);
-  height: 4.5rem; }
-  .border__svg {
-    width: 100%; }
+.goalContainer {
+  background-color: #0B1A2F; }
 
 .goal {
   display: flex;
   flex-direction: column;
   min-height: 25vh;
-  background: #0B1A2F;
   color: #0B1A2F; }
   .goal__header {
     font-family: "Roboto", sans-serif;
