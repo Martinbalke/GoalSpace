@@ -35,46 +35,54 @@ function Popup({ close, dispatch, index, goals }) {
 
 
   return (
-    <div className='popup' ref={popupRef}>
-  
-      <form className="popup__form" onSubmit={(e) => {
-        e.preventDefault();
-        dispatch({ type: 'NEW_GOAL', goal, index })
-        close();
-      }}>
-        <button className='btn btn--close popup__close' onClick={close}/>
+    <div className='popup' >
+      <form className="popup__form"
+        autocomplete="off"
+        ref={popupRef}
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch({ type: 'NEW_GOAL', goal, index })
+          close();
+        }}>
+        <button className='btn btn--close popup__close' onClick={close} />
         <h3 className='popup__tertiary'>Set a new goal</h3>
-        <label htmlFor="yearly" className="popup__yearly">
-          Yearly Goal
+        <div className="popup__input">
           <input type="text" className="popup__yearly-input" id='yearly' required defaultValue={goal.yearly} onChange={(e) => {
             e.preventDefault();
             setGoal({ ...goal, yearly: e.target.value })
           }} />
-        </label>
+          <label htmlFor="yearly" className="popup__yearly">Yearly Goal</label>
+        </div>
         <div className="popup__habits">
-          <label htmlFor="habit1">
-            Habit 1
+          <div className='popup__input'>
             <input type="text" id='habit1' required defaultValue={goal.habit1} onChange={(e) => {
               e.preventDefault();
               setGoal({ ...goal, habit1: e.target.value })
             }} />
-          </label>
-          <label htmlFor="habit2">
-            Habit 2
+            <label htmlFor="habit1">First Daily Habit</label>
+          </div>
+
+          <div className="popup__input">
             <input type="text" id='habit2' required defaultValue={goal.habit2} onChange={(e) => {
               e.preventDefault();
               setGoal({ ...goal, habit2: e.target.value })
             }} />
-          </label>
-          <label htmlFor="habit3">
-            Habit 3
+            <label htmlFor="habit2">Second Daily Habit </label>
+          </div>
+          <div className="popup__input">
             <input type="text" id='habit3' required defaultValue={goal.habit3} onChange={(e) => {
               e.preventDefault();
               setGoal({ ...goal, habit3: e.target.value })
             }} />
-          </label>
+            <label htmlFor="habit3">Third Daily Habit </label>
+          </div>
+
+
+
         </div>
         <button type='submit' className='btn popup__submit' />
+
+
       </form>
 
     </div>);

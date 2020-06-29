@@ -41,7 +41,7 @@ p, span {
   border: none;
   background-color: #2f80ed;
   border-radius: 50%;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   display: inline-block;
   text-align: center;
   color: #FFF;
@@ -120,17 +120,65 @@ p, span {
         transform: translateX(-5px); }
 
 .yearly {
-  min-height: 20vh; }
+  min-height: 80vh;
+  display: flex;
+  position: relative;
+  flex-direction: column; }
+  .yearly__header {
+    align-self: center;
+    color: white;
+    background-color: #2f80ed;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
+  .yearly__btn-main {
+    align-self: center;
+    margin-left: 37rem;
+    margin-top: -8.5rem; }
   .yearly__goal {
+    margin-top: 8.5rem;
     min-height: 30vh; }
+  .yearly__blob {
+    z-index: 200;
+    align-self: flex-end;
+    position: absolute;
+    margin-top: 25rem;
+    margin-left: 5rem; }
+    .yearly__blob h3 {
+      position: absolute;
+      background: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(4deg);
+      left: 15rem;
+      z-index: 400;
+      top: 21.5rem;
+      font-size: 3rem; }
+    .yearly__blob p {
+      position: absolute;
+      left: 12rem;
+      top: 28rem;
+      color: rgba(11, 26, 47, 0.8);
+      font-size: 1.2rem;
+      z-index: 400;
+      width: 30rem; }
+    .yearly__blob svg {
+      width: 55rem;
+      fill: #EEE;
+      filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
 
 .popup {
   background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 200;
   display: flex;
   align-items: center;
@@ -147,6 +195,7 @@ p, span {
     box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.25); }
   .popup__tertiary {
     color: white;
+    margin-bottom: 2rem;
     background-color: #2f80ed;
     transform: translateX(-4rem);
     align-self: flex-start;
@@ -155,9 +204,10 @@ p, span {
     font-size: 1.5rem;
     padding: 1rem 10rem;
     border-radius: 2px;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25); }
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
   .popup__close {
     align-self: flex-end;
+    flex-shrink: 0;
     margin: 1rem;
     height: 2.5rem;
     width: 2.5rem;
@@ -165,26 +215,40 @@ p, span {
     .popup__close:after {
       content: "\00D7";
       display: block; }
-  .popup label {
-    font-family: "Noto Sans JP", sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: rgba(11, 26, 47, 0.7);
+  .popup__input {
     display: flex;
-    flex-direction: column; }
-  .popup input {
-    align-self: flex-start;
-    background: none;
-    outline: none;
-    border-bottom: 2px solid rgba(11, 26, 47, 0.7);
-    width: 30rem;
-    height: 4rem;
-    border-radius: 4px;
-    border: 1px solid rgba(11, 26, 47, 0.3); }
+    flex-direction: column-reverse;
+    margin-left: 4rem; }
+    .popup__input label {
+      align-self: flex-start;
+      font-family: "Noto Sans JP", sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: .5rem 1rem;
+      transition: all .5s;
+      color: rgba(11, 26, 47, 0.7); }
+    .popup__input input {
+      font-family: "Roboto", sans-serif;
+      align-self: flex-start;
+      color: rgba(11, 26, 47, 0.7);
+      font-size: 2rem;
+      border: none;
+      margin-bottom: 2rem;
+      outline: none;
+      text-align: center;
+      border-bottom: 2px solid #0B1A2F;
+      width: 30rem;
+      height: 4rem; }
+      .popup__input input:focus + label, .popup__input input:valid + label {
+        color: white;
+        background-color: #2f80ed;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        transform: translateX(25rem); }
   .popup__habits {
     display: flex;
     flex-direction: column; }
   .popup__submit {
+    flex-shrink: 0;
     height: 6rem;
     width: 6rem;
     margin-top: auto;

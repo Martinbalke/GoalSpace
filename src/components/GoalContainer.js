@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 function GoalContainer({goals}) {
   //State variable to keep track of which goal is currently being edited
-  const [editing, setEditing] = useState(1);
+  const [editing, setEditing] = useState(-1);
 
   //Generate a Goal component for each goal in the global state
   function generateChildren(){
