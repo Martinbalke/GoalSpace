@@ -8,6 +8,9 @@
 *::after {
   box-sizing: inherit; }
 
+body {
+  overflow: hidden; }
+
 html {
   font-size: 62.5%;
   box-sizing: border-box; }
@@ -140,7 +143,7 @@ p, span {
     margin-top: -8.5rem; }
   .yearly__goal {
     margin-top: 8.5rem;
-    min-height: 30vh; }
+    height: 10rem; }
   .yearly__blob {
     z-index: 200;
     align-self: flex-end;
@@ -154,7 +157,7 @@ p, span {
       padding: 1rem 2rem;
       box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
       border-radius: 4px;
-      transform: skew(4deg);
+      transform: skew(-4deg);
       left: 15rem;
       z-index: 400;
       top: 21.5rem;

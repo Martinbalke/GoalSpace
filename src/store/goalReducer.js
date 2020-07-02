@@ -1,12 +1,12 @@
+import goalModel from '../model/goalModel';
+
 
 
 let initialState = {
   goals: [{
-    yearly: 'Thing',
-    milestone: 'Do the thing',
-    habit1: 'make a thing',
-    habit2: 'do a thing',
-    habit3: 'be a thing',
+    goal: 'Build this website',
+    milestone: 'Finish the website',
+    habits: ['Do some styling each day', 'Write tests', 'Work on functionality']
   }]
 }
 
@@ -24,7 +24,6 @@ let goalReducer = (state = initialState, {goal, type, index}) => {
     default:
       return newState;
   }
-  console.log(newState);
   return newState;
 }
 

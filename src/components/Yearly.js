@@ -7,7 +7,7 @@ function Yearly({ goals, setEditing }) {
   function yearlyGoals() {
     return goals.map((goal, index) => (
       <div className="yearly__goal" key={index}>
-        <h3 className='yearly__tertiary'>{goal.yearly}</h3>
+        <h3 className='yearly__tertiary'>{goal.goal}</h3>
         <button className='btn yearly__btn' onClick={() => { setEditing(index) }}></button>
       </div>
 

@@ -3,11 +3,16 @@ import { connect } from 'react-redux';
 
 function Popup({ close, dispatch, index, goals }) {
   const [goal, setGoal] = useState({
-    yearly: '',
-    habit1: '',
-    habit2: '',
-    habit3: '',
+    goal: '',
+    habits: ['','',''],
   });
+
+  const habitTextChange = ( (e, index) => {
+      e.preventDefault();
+      let newHabitsArray = [...goal.habits]
+      newHabitsArray[index] = e.target.value;
+      setGoal({ ...goal, habits: newHabitsArray });
+  })
 
   //Credit to Ben Bud github.com/benox3 for this code functionality
   const popupRef = useRef(null);
@@ -37,7 +42,7 @@ function Popup({ close, dispatch, index, goals }) {
   return (
     <div className='popup' >
       <form className="popup__form"
-        autocomplete="off"
+        autoComplete="off"
         ref={popupRef}
         onSubmit={(e) => {
           e.preventDefault();
@@ -47,44 +52,27 @@ function Popup({ close, dispatch, index, goals }) {
         <button className='btn btn--close popup__close' onClick={close} />
         <h3 className='popup__tertiary'>Set a new goal</h3>
         <div className="popup__input">
-          <input type="text" className="popup__yearly-input" id='yearly' required defaultValue={goal.yearly} onChange={(e) => {
+          <input type="text" className="popup__goal-input" id='goal' required defaultValue={goal.goal} onChange={(e) => {
             e.preventDefault();
-            setGoal({ ...goal, yearly: e.target.value })
+            setGoal({ ...goal, goal: e.target.value })
           }} />
-          <label htmlFor="yearly" className="popup__yearly">Yearly Goal</label>
+          <label htmlFor="goal" className="popup__goal">Goal</label>
         </div>
         <div className="popup__habits">
-          <div className='popup__input'>
-            <input type="text" id='habit1' required defaultValue={goal.habit1} onChange={(e) => {
-              e.preventDefault();
-              setGoal({ ...goal, habit1: e.target.value })
-            }} />
-            <label htmlFor="habit1">First Daily Habit</label>
-          </div>
-
-          <div className="popup__input">
-            <input type="text" id='habit2' required defaultValue={goal.habit2} onChange={(e) => {
-              e.preventDefault();
-              setGoal({ ...goal, habit2: e.target.value })
-            }} />
-            <label htmlFor="habit2">Second Daily Habit </label>
-          </div>
-          <div className="popup__input">
-            <input type="text" id='habit3' required defaultValue={goal.habit3} onChange={(e) => {
-              e.preventDefault();
-              setGoal({ ...goal, habit3: e.target.value })
-            }} />
-            <label htmlFor="habit3">Third Daily Habit </label>
-          </div>
-
-
-
+          {goal.habits.map( (habit, index) => (
+            <div className='popup__input' key={index}>
+              <input type="text" 
+              id={`habit${index}`} 
+              data={index}
+              required 
+              defaultValue={habit} 
+              onChange={ (e) => habitTextChange(e, index) } />
+              <label htmlFor={`habit${index}`}>First Daily Habit</label>
+            </div>
+          ))}
         </div>
         <button type='submit' className='btn popup__submit' />
-
-
       </form>
-
     </div>);
 }
 const mSTP = state => ({

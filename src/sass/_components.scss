@@ -152,7 +152,7 @@
 
   &__goal {
     margin-top: 8.5rem;
-    min-height: 30vh;
+    height: 10rem
   }
   &__blob{
     z-index: 200;
@@ -167,7 +167,7 @@
       padding: 1rem 2rem;
       box-shadow: $shadow-small;
       border-radius: $radius-large;
-      transform: skew(4deg);
+      transform: skew(-4deg);
       left: 15rem;
       z-index: 400;
       top: 21.5rem;

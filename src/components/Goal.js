@@ -5,20 +5,13 @@ function Goal({ dispatch, goal}) {
 
   return (
     <div className="goal">
-      <h3 className="goal__header">{goal.yearly}</h3>
-      <div className="goal__habit">
-        <p className="goal__habit-text">{goal.habit1}</p>
-        <button className="goal__habit-button"></button>
-      </div>
-      <div className="goal__habit">
-        <p className="goal__habit-text">{goal.habit2}</p>
-        <button className="goal__habit-button"></button>
-      </div>
-      <div className="goal__habit">
-        <p className="goal__habit-text">{goal.habit3}</p>
-        <button className="goal__habit-button"></button>
-      </div>
-
+      <h3 className="goal__header">{goal.goal}</h3>
+      {goal.habits.map( (habit, index) => (
+        <div className="goal__habit" key={index}>
+          <p className="goal__habit-text">{habit}</p>
+          <button className="goal__habit-button btn"></button>
+        </div>
+      ))}
     </div>
   );
 }
