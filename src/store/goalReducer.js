@@ -1,8 +1,19 @@
 
+import superagent from 'superagent';
 
 
+export const loadGoals = () => {
+  return async(dispatch, getState) => {
+    let res =  await superagent.get('http://localhost:3045/goals')
+    console.log(res.body[0].habits);
+    let goals = [];
+    res.body ? res.body.forEach(goal => goals.push(goal)) : goals = getState().goals;
+    dispatch({type: 'LOAD_GOALS', goals})
+  }
+}
 
-export let newGoal = (goal, index ) => {
+
+export const newGoal = (goal, index ) => {
 
   return async(dispatch) => {
     dispatch({type: 'NEW_GOAL', goal, index})
@@ -13,17 +24,20 @@ export let newGoal = (goal, index ) => {
 
 let initialState = {
   goals: [{
-    goal: 'Build this website',
-    milestone: 'Finish the website',
-    habits: ['Do some styling each day', 'Write tests', 'Work on functionality']
-  }]
+    goal: '',
+    habits: ['','','']
+  }
+  ]
 }
 
 
-let goalReducer = (state = initialState, {goal, type, index}) => {
+let goalReducer = (state = initialState, {goals, goal, type, index}) => {
   let newState = { ...state };
 
   switch (type) {
+    case 'LOAD_GOALS':
+      newState.goals = [...goals]
+    break;
     case 'NEW_GOAL':
         if(newState.goals[index]) {
           newState.goals.splice(index, 1)

@@ -1,11 +1,14 @@
 import mongoose from 'mongoose';
 import express from 'express'
 import goalrouter from '../routes/goals-routes';
+import cors from 'cors';
+
 
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.get('/', async (req, res, next) => {
   res.send('Live server')

@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Goal from './Goal';
 import Yearly from './Yearly'
 import Popup from './Popup';
 import { connect } from 'react-redux';
+import { loadGoals } from '../store/goalReducer';
 
-function GoalContainer({goals}) {
+function GoalContainer({goals, dispatch}) {
   //State variable to keep track of which goal is currently being edited
   const [editing, setEditing] = useState(-1);
+  
+  useEffect( () => {
+    dispatch(loadGoals());
+  },[dispatch])
 
   //Generate a Goal component for each goal in the global state
   function generateChildren(){
