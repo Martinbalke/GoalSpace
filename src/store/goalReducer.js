@@ -1,4 +1,13 @@
-import goalModel from '../model/goalModel';
+
+
+
+
+export let newGoal = (goal, index ) => {
+
+  return async(dispatch) => {
+    dispatch({type: 'NEW_GOAL', goal, index})
+  }
+}
 
 
 

@@ -10,8 +10,8 @@ class Model {
     return newRecord.save();
   }
 
-  read(query){
-    if (query) return this.schema.find(query);
+  read(_id){
+    if (_id) return this.schema.find({_id});
     else return this.schema.find({});
   }
 

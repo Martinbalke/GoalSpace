@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
+import {newGoal} from '../store/goalReducer';
 
 function Popup({ close, dispatch, index, goals }) {
   const [goal, setGoal] = useState({
@@ -46,7 +47,7 @@ function Popup({ close, dispatch, index, goals }) {
         ref={popupRef}
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch({ type: 'NEW_GOAL', goal, index })
+          dispatch(newGoal(goal, index))
           close();
         }}>
         <button className='btn btn--close popup__close' onClick={close} />

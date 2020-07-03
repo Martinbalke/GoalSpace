@@ -1,10 +1,12 @@
 import Model from './Model';
-import goalSchema from './goalSchema';
+import schema from './goalSchema';
+
 
 class GoalModel extends Model {
   constructor(){
-    super(goalSchema)
+    super(schema)
   }
 }
+
 
 export default GoalModel;
