@@ -4,10 +4,12 @@ import Yearly from './Yearly'
 import Popup from './Popup';
 import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
+import {AnimatePresence} from 'framer-motion'
+
 
 function GoalContainer({goals, dispatch}) {
   //State variable to keep track of which goal is currently being edited
-  const [editing, setEditing] = useState(-1);
+  const [editing, setEditing] = useState(1);
   
   useEffect( () => {
     dispatch(loadGoals());
@@ -21,7 +23,9 @@ function GoalContainer({goals, dispatch}) {
   return (
     <div className="contentContainer">
       <Yearly setEditing={setEditing}/>
-      {editing >= 0 ? <Popup close={() => setEditing(-1)} index={editing} /> : <div />}
+      <AnimatePresence>
+      {editing >= 0 && (<Popup close={() => setEditing(-1)} index={editing} /> )}
+      </AnimatePresence>
       <div className="goalContainer">
         <div className="border-dark"></div>
         {generateChildren()}

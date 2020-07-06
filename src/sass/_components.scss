@@ -202,6 +202,14 @@
   align-items: center;
   justify-content: center;
   
+  &__sidebar{
+    background-color: orange;
+    flex: 0 0 33%
+  }
+
+  &__content{
+
+  }
 
   &__form{
     display: flex;

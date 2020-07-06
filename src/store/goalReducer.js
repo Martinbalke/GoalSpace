@@ -4,11 +4,16 @@ import superagent from 'superagent';
 
 export const loadGoals = () => {
   return async(dispatch, getState) => {
-    let res =  await superagent.get('http://localhost:3045/goals')
-    console.log(res.body[0].habits);
     let goals = [];
-    res.body ? res.body.forEach(goal => goals.push(goal)) : goals = getState().goals;
-    dispatch({type: 'LOAD_GOALS', goals})
+    try {
+      let res =  await superagent.get('http://localhost:3045/goals').retry()
+      res.body.forEach(goal => goals.push(goal));
+      dispatch({type: 'LOAD_GOALS', goals})
+    } catch (error) {
+      console.error(error);
+      goals = getState().goals;
+    }
+  
   }
 }
 
@@ -16,17 +21,27 @@ export const loadGoals = () => {
 export const newGoal = (goal, index ) => {
 
   return async(dispatch) => {
-    dispatch({type: 'NEW_GOAL', goal, index})
+    let jsonGoal = JSON.stringify(goal);
+    try {
+      await superagent.post('http://localhost:3045/goals')
+      .set('Content-Type', 'application/json')
+      .send(jsonGoal)
+      .retry()
+      dispatch({ type: 'NEW_GOAL', goal, index })
+    } catch (error) {
+      console.error(error);
+    }
   }
+}
+
+export const updateGoal = (goal, index) => {
+  
 }
 
 
 
 let initialState = {
-  goals: [{
-    goal: '',
-    habits: ['','','']
-  }
+  goals: [
   ]
 }
 

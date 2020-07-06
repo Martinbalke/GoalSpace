@@ -9,6 +9,7 @@
     "concurrently": "^5.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "framer-motion": "^1.11.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.20",
     "node-sass": "^4.14.1",
