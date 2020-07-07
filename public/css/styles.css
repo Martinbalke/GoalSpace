@@ -130,21 +130,32 @@ p, span {
   flex-direction: column; }
   .yearly__header {
     align-self: center;
-    color: white;
-    background-color: #2f80ed;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
     font-size: 3rem;
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
   .yearly__btn-main {
     align-self: center;
     margin-left: 37rem;
-    margin-top: -8.5rem; }
+    margin-top: -8.5rem;
+    z-index: 1; }
   .yearly__goal {
     margin-top: 8.5rem;
-    height: 10rem; }
+    height: 10rem;
+    display: flex; }
+  .yearly__tertiary {
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg);
+    align-self: flex-start;
+    font-size: 2rem; }
   .yearly__blob {
     z-index: 200;
     align-self: flex-end;
@@ -270,8 +281,6 @@ p, span {
     .popup__close:after {
       content: "\00D7";
       display: block; }
-  .popup__goal-input {
-    height: 7rem; }
   .popup__input {
     display: flex;
     flex-direction: column-reverse;
@@ -323,24 +332,28 @@ p, span {
 .goal {
   display: flex;
   flex-direction: column;
-  min-height: 25vh;
-  color: #0B1A2F; }
+  min-height: 25vh; }
   .goal__header {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-    letter-spacing: 1px;
     align-self: flex-start;
-    padding: .5rem 1rem;
-    background-color: white;
-    border-radius: 2px; }
+    font-size: 2rem;
+    width: 20rem;
+    text-align: center;
+    margin: 1rem;
+    background: white;
+    color: #2f80ed;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg); }
   .goal__habit {
     align-self: flex-start; }
     .goal__habit-text {
-      padding: .5rem 1rem;
-      align-self: flex-start;
-      border-radius: 2px;
-      background-color: white; }
+      background: white;
+      color: #2f80ed;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(-4deg); }
 
 .footer {
   display: flex;

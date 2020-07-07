@@ -92,7 +92,7 @@ function Popup({ close, dispatch, index, goals }) {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className='popup__sidebar-svg'>
           <path  fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,176C320,192,400,192,480,192C560,192,640,192,720,197.3C800,203,880,213,960,224C1040,235,1120,245,1200,218.7C1280,192,1360,128,1400,96L1440,64L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
         </svg>
-        <h3 className="popup__sidebar-tertiary">Setting a meaningful goal</h3>
+        <h3 className="popup__sidebar-tertiary">Creating a meaningful goal</h3>
         <p className="popup__sidebar-paragraph"><span>1</span>   Laborum atque culpa similique, dolorem magnam veritatis! Accusamus facilis quaerat cum facere maiores.</p>
         <p className="popup__sidebar-paragraph"><span>2</span>   Laborum atque culpa similique, dolorem magnam veritatis! Accusamus facilis quaerat cum facere maiores.</p>
         <p className="popup__sidebar-paragraph"><span>3</span>   Laborum atque culpa similique, dolorem magnam veritatis! Accusamus facilis quaerat cum facere maiores.</p>

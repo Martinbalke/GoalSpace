@@ -134,25 +134,30 @@
 
   &__header{
     align-self: center;
-    color: white;
-    background-color: $color-primary;
-    padding: 1rem 2rem;
-    border-radius: $radius-large;
-    font-family: $font-primary;
-    font-weight: 400;
     font-size: 3rem;
+    @include tertiary-blue-skew;
     box-shadow: $shadow-medium;
   }
   &__btn-main{
     align-self: center;
     margin-left: 37rem;
     margin-top: -8.5rem;
+    z-index: 1;
   }
 
   &__goal {
     margin-top: 8.5rem;
-    height: 10rem
+    height: 10rem;
+    display: flex;
   }
+
+  &__tertiary{
+    @include tertiary-blue-skew;
+    align-self: flex-start;
+    font-size: 2rem;
+  }
+
+
   &__blob{
     z-index: 200;
     align-self: flex-end;
@@ -293,9 +298,6 @@
     }
 
   }
-  &__goal-input{
-    height:7rem;
-  }
   &__input{
     display: flex;
     flex-direction: column-reverse;
@@ -360,27 +362,21 @@
   display: flex;
   flex-direction: column;
   min-height: 25vh;
-  color: $color-primary-dark;
   
 
   &__header {
-    font-family: $font-primary;
-    font-weight: bold;
-    font-size: 2rem;
-    letter-spacing: 1px;
     align-self: flex-start;
-    padding: .5rem 1rem;
-    background-color: $color-white;
-    border-radius: $radius-small;
+    font-size: 2rem;
+    width: 20rem;
+    text-align: center;
+    margin: 1rem;
+   @include tertiary-white-skew;
   }
 
   &__habit {
     align-self: flex-start;
     &-text {
-      padding: .5rem 1rem;
-      align-self: flex-start;
-      border-radius: $radius-small;
-      background-color: $color-white;
+     @include tertiary-white-skew;
     }
 
     &-button {

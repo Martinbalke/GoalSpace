@@ -9,7 +9,7 @@ import {AnimatePresence} from 'framer-motion'
 
 function GoalContainer({goals, dispatch}) {
   //State variable to keep track of which goal is currently being edited
-  const [editing, setEditing] = useState(1);
+  const [editing, setEditing] = useState(-1);
   
   useEffect( () => {
     dispatch(loadGoals());
