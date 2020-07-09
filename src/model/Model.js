@@ -16,7 +16,7 @@ class Model {
   }
 
   update(_id,record){
-    return this.schema.updateOne({ _id }, record, { new: true });
+    return this.schema.findByIdAndUpdate(_id, record, { new: true });
   }
 
   delete(_id){

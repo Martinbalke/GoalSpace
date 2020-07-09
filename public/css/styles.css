@@ -53,7 +53,7 @@ p, span {
   height: 5rem;
   width: 5rem;
   border: 3px solid #2f80ed;
-  transition: all .2s;
+  transition: all 0.2s;
   outline: none; }
   .btn:after {
     content: "+";
@@ -143,10 +143,34 @@ p, span {
     margin-left: 37rem;
     margin-top: -8.5rem;
     z-index: 1; }
+  .yearly__edit {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    top: 10rem;
+    padding: 1.5rem 2rem;
+    transform: skew(-4deg); }
+    .yearly__edit-tertiary {
+      margin: 1rem 1.5rem;
+      align-self: flex-start;
+      font-size: 2.2rem;
+      background: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(-4deg); }
   .yearly__goal {
-    margin-top: 8.5rem;
+    margin-top: 1rem;
     height: 10rem;
     display: flex; }
+  .yearly__btn {
+    position: relative;
+    left: -1.5rem;
+    top: -2.5rem; }
   .yearly__tertiary {
     background: #2f80ed;
     color: white;
@@ -160,8 +184,8 @@ p, span {
     z-index: 200;
     align-self: flex-end;
     position: absolute;
-    margin-top: 25rem;
-    margin-left: 5rem; }
+    top: 40%;
+    left: 45%; }
     .yearly__blob h3 {
       position: absolute;
       left: 15rem;
@@ -188,16 +212,20 @@ p, span {
       filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
 
 .popup {
-  background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center; }
+  .popup-background {
+    background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
   .popup__sidebar {
     max-width: 30rem;
     height: 60rem;
@@ -291,8 +319,8 @@ p, span {
       font-family: "Noto Sans JP", sans-serif;
       font-weight: bold;
       font-size: 1.5rem;
-      padding: .5rem 1rem;
-      transition: all .5s;
+      padding: 0.5rem 1rem;
+      transition: all 0.5s;
       color: rgba(11, 26, 47, 0.7); }
     .popup__input input {
       font-family: "Roboto", sans-serif;

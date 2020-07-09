@@ -35,6 +35,18 @@ export const newGoal = (goal, index ) => {
 }
 
 export const updateGoal = (goal, index) => {
+  return async(dispatch) => {
+    let jsonGoal = JSON.stringify(goal);
+    try {
+      await superagent.put(`http://localhost:3045/goals/${goal._id}`)
+      .set('Content-Type', 'application/json')
+      .send(jsonGoal)
+      .retry()
+      dispatch({type:'NEW_GOAL', goal, index})
+    } catch (error) {
+      console.error(error);
+    }
+  }
   
 }
 
