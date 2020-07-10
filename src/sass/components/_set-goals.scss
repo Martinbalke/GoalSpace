@@ -1,0 +1,77 @@
+.setgoals {
+  min-height: 50rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+
+  &__header-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cursor {
+    position: relative;
+    right: 12%;
+    margin: 1.5rem 0;
+    border-left: .2rem solid $color-white;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  &__header {
+    font-size: 3rem;
+    @include tertiary-blue-skew;
+    box-shadow: $shadow-medium;
+  }
+
+  &__btn{
+    z-index: 1;
+    position: relative;
+    left: -2rem;
+    bottom: 2.25rem;
+  }
+
+
+  &__tertiary {
+    @include tertiary-blue-skew;
+    align-self: flex-start;
+    font-size: 2rem;
+  }
+
+  &__blob {
+    // object-fit: cover;
+    z-index: 200;
+    align-self: flex-end;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    h3 {
+      position: absolute;
+      left: 15rem;
+      z-index: 400;
+      top: 21.5rem;
+      font-size: 3rem;
+      @include tertiary-blue-skew;
+    }
+    p {
+      position: absolute;
+      left: 12rem;
+      top: 28rem;
+      color: rgba($color-primary-dark, 0.8);
+      font-size: 1.2rem;
+      z-index: 400;
+      width: 30rem;
+    }
+
+    & svg {
+      width: 55rem;
+      fill: $color-grey;
+      filter: drop-shadow($shadow-small);
+    }
+  }
+}
