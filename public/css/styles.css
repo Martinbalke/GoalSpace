@@ -181,7 +181,7 @@ p, span {
     align-self: flex-start;
     font-size: 2rem; }
   .yearly__blob {
-    z-index: 200;
+    z-index: -200;
     align-self: flex-end;
     position: absolute;
     top: 40%;
@@ -399,3 +399,148 @@ p, span {
   .footer__social {
     height: 5rem;
     margin: 0 1rem; }
+
+.goalForm {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .goalForm__background {
+    background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .goalForm__sidebar {
+    max-width: 30rem;
+    height: 60rem;
+    margin-left: -1rem;
+    border-radius: 4px;
+    padding: 2rem;
+    background-color: #EEE;
+    position: relative; }
+    .goalForm__sidebar-svg {
+      width: 60rem;
+      height: auto;
+      position: absolute;
+      top: 38.8%;
+      right: 35%;
+      transform: rotateZ(-90deg) translateY(50%);
+      fill: #EEE; }
+    .goalForm__sidebar-tertiary {
+      margin-top: 1rem;
+      font-size: 2rem;
+      background: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(-4deg); }
+    .goalForm__sidebar-paragraph {
+      margin: 2rem 0;
+      position: relative;
+      color: rgba(11, 26, 47, 0.8);
+      font-size: 1.5rem;
+      line-height: 2;
+      width: 27rem; }
+    .goalForm__sidebar-numbers {
+      background-color: #2f80ed;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      display: inline-block;
+      line-height: 3rem;
+      text-align: center;
+      color: white;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%; }
+  .goalForm__content {
+    height: 60rem;
+    max-width: 50rem; }
+  .goalForm__form-element {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50rem;
+    border-radius: 4px;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.25); }
+  .goalForm__tertiary {
+    color: white;
+    margin-bottom: 2rem;
+    background-color: #2f80ed;
+    align-self: flex-start;
+    font-size: 2rem;
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg);
+    padding: 1rem 10rem;
+    position: relative;
+    top: -3rem;
+    left: -5rem; }
+  .goalForm__close {
+    align-self: flex-end;
+    flex-shrink: 0;
+    margin: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1rem;
+    z-index: 300; }
+    .goalForm__close:after {
+      content: "\00D7";
+      display: block; }
+  .goalForm__input {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 4rem;
+    height: 11rem; }
+    .goalForm__input label {
+      align-self: flex-start;
+      font-family: "Noto Sans JP", sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.5s;
+      color: rgba(11, 26, 47, 0.7); }
+    .goalForm__input input {
+      font-family: "Roboto", sans-serif;
+      align-self: flex-start;
+      color: rgba(11, 26, 47, 0.7);
+      font-size: 2rem;
+      border: none;
+      outline: none;
+      text-align: center;
+      border-bottom: 2px solid #0B1A2F;
+      width: 30rem; }
+      .goalForm__input input:focus + label, .goalForm__input input:valid + label {
+        background: #2f80ed;
+        color: white;
+        padding: 1rem 2rem;
+        box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+        border-radius: 4px;
+        transform: skew(-4deg);
+        transform: translateX(25rem) skew(-4deg);
+        margin-bottom: 0; }
+  .goalForm__submit {
+    flex-shrink: 0;
+    height: 6rem;
+    width: 6rem;
+    margin-top: auto;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+    align-self: flex-end;
+    z-index: 300; }
+
+.modal__background {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200; }
+
+.modal__reference {
+  z-index: 250; }

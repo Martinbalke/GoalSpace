@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from "framer-motion"
 import { popupContainerAnimation } from './animations';
-import { PromiseProvider } from 'mongoose';
 
 function Modal({ close, children, className}) {
 
@@ -27,8 +26,10 @@ function Modal({ close, children, className}) {
 
 
   return (
-    <motion.div variants={popupContainerAnimation} initial='hidden' animate='visible' exit='exit' className={className}>
-      {children}
+    <motion.div variants={popupContainerAnimation} initial='hidden' animate='visible' exit='exit' className={`${className} modal__background`}>
+      <div className="modal__reference" ref={popupRef}>
+        {children}
+      </div>
     </motion.div>
   );
 }

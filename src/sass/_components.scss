@@ -173,7 +173,7 @@
 
   &__blob {
     // object-fit: cover;
-    z-index: 200;
+    z-index: -200;
     align-self: flex-end;
     position: absolute;
     top: 40%;
