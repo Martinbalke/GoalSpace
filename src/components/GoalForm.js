@@ -11,12 +11,12 @@ function GoalForm({ close, dispatch, index, goals }) {
   
 
 
-  const inputTextChange = ((e, index) => {
-    console.log(e)
-    // if (!index) return setGoal({ ...goal.habits, goal: text })
-    //   let newHabits = [...goal.habits];
-    //   newHabits[index] = text;
-    //   setGoal({ ...goal, habits: newHabits });
+  const inputTextChange = ((text, index) => {
+    if (index < 0) return setGoal({...goal, goal: text})
+      let newHabits = [...goal.habits];
+      newHabits[index] = text;
+      console.log(newHabits)
+      setGoal({ ...goal, habits: newHabits });
   })
 
 
@@ -37,10 +37,10 @@ function GoalForm({ close, dispatch, index, goals }) {
           <button className='btn btn--close popup__close' onClick={close} />
           <h3 className='goalForm__tertiary'>Set a new goal</h3>
           <div className="goalForm__inputs">
-            <Input className='goalForm__input' id='goal' onChange={inputTextChange} defaultValue={goal.goal} labelText='Goal' />
-            <Input className='goalForm__input' id='habit1' onChange={() => { inputTextChange() }} defaultValue={`${goal.habits[0]}`} labelText='Habit 1' />
-            <Input className='goalForm__input' id='habit2' onChange={() => { inputTextChange() }} defaultValue={`${goal.habits[1]}`} labelText='Habit 2' />
-            <Input className='goalForm__input' id='habit3' onChange={() => { inputTextChange() }} defaultValue={`${goal.habits[2]}`} labelText='Habit 3' />
+            <Input className='goalForm__input' id='goal' callback={(text) => inputTextChange(text, -1)} defaultValue={goal.goal} labelText='Goal' />
+            <Input className='goalForm__input' id='habit1' callback={(text) => { inputTextChange(text, 0) }} defaultValue={goal.habits[0]} labelText='Habit 1' />
+            <Input className='goalForm__input' id='habit2' callback={(text) => { inputTextChange(text, 1) }} defaultValue={goal.habits[1]} labelText='Habit 2' />
+            <Input className='goalForm__input' id='habit3' callback={(text) => { inputTextChange(text, 2) }} defaultValue={goal.habits[2]} labelText='Habit 3' />
           </div>
           <button type='submit' className='btn goalForm__submit' />
         </form>

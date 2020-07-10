@@ -8,7 +8,7 @@ function Input({defaultValue, callback, className, id, labelText}){
   const inputTextChange = ((e) => {
     e.preventDefault();
     setText(e.target.value);
-    callback(text, );
+    callback(text);
   })
   return(
     <div className={className}>
