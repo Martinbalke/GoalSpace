@@ -3,12 +3,11 @@ import React, {useState} from 'react';
 
 function Input({defaultValue, callback, className, id, labelText}){
 
- const [text, setText] = useState(defaultValue || '');
+ const [text] = useState(defaultValue || '');
 
   const inputTextChange = ((e) => {
     e.preventDefault();
-    setText(e.target.value);
-    callback(text);
+    callback(e.target.value);
   })
   return(
     <div className={className}>
