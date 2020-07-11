@@ -1,8 +1,10 @@
 import React from 'react';
 function Hero(props) {
 
-  return (<div className='hero'>
-    <h2 className='hero__header'>GoalSpace</h2>
+  return (
+  <div className='hero'>
+    <h1 className='hero__header'>GoalSpace</h1>
+    <div className="hero__shapes"/>
     <p className='hero__subtext'>Take the work out of working towards your goals</p>
     <nav className="hero__nav">
       <p>JUMP TO</p>

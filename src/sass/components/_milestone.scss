@@ -1,0 +1,12 @@
+.milestone{
+  align-self: flex-start;
+
+  &__tertiary{
+    @include tertiary-white-skew;
+    
+  }
+
+  &__btn{
+
+  }
+}

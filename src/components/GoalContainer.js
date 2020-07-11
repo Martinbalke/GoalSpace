@@ -4,6 +4,7 @@ import Modal from './Modal'
 import GoalForm from './GoalForm';
 import EditGoal from './EditGoals';
 import SetGoal from './SetGoals';
+import Milestone from './Milestone';
 import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
 import {AnimatePresence} from 'framer-motion';
@@ -19,7 +20,11 @@ function GoalContainer({goals, dispatch}) {
 
   //Generate a Goal component for each goal in the global state
   function generateChildren(){
-      return goals.map( (goal,index) => <Goal index={index} key={index} goal={goal}/> )
+      return goals.map( (goal,index) => 
+      <Goal index={index} key={index} goal={goal}>
+        <Milestone goal={goal} index={index}/>
+      </Goal> 
+      )
   }
 
   return (
@@ -33,7 +38,6 @@ function GoalContainer({goals, dispatch}) {
       </Modal>)}
       </AnimatePresence>
       <div className="goalContainer">
-        <div className="border-dark"></div>
         {generateChildren()}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Goal({ goal}) {
+function Goal({ goal, children}) {
   if(!goal.habits) return <div></div>
 
   return ( 
@@ -12,6 +12,7 @@ function Goal({ goal}) {
           <button className="goal__habit-button btn"></button>
         </div>
       ))}
+      {children}
     </div>  
   );
 }

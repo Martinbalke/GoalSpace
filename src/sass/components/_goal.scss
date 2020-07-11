@@ -1,0 +1,77 @@
+.goalContainer {
+  background-color: $color-primary-dark;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  position: relative;
+
+  &::before{
+    z-index: -1;
+    height: 35rem;
+    background: url("../border-dark.svg");
+    @include shape-pseudo-element;
+    width: 100vw;
+    transform: translateY(-80%);
+    filter: drop-shadow($shadow-large);
+  }
+
+  &::after{
+    z-index: -2;
+    height: 40rem;
+    background: url("../border-dark.svg");
+    @include shape-pseudo-element;
+    opacity: .9;
+    width: 100vw;
+    transform: translateY(-318%);
+    filter: drop-shadow(5px 5px 5px rgba($color-grey, .9));
+  }
+}
+
+
+.goal {
+  flex: 0 0;
+  align-self: flex-start;
+  position: relative;
+  flex-direction: column;
+  min-height: 20rem;
+  margin: 10rem 1rem 1rem 1rem;
+  width: 30rem;
+  border-radius: $radius-large;
+  padding: 2rem 3rem;
+  background: linear-gradient(to top, $color-white, transparent) ,url(../doodles.png);
+  filter: drop-shadow(2rem 1rem  .5px rgba($color-white,.1));
+
+  &::after{
+    background: url('../border.svg');
+    @include shape-pseudo-element;
+    height: 8rem;
+    width: 100%;
+    bottom: -15%;
+    left: 0;
+    transform: scale(-1,-1);
+    filter: drop-shadow(0px -1rem rgba($color-white,.2));
+    
+  }
+
+
+  &__header {
+    align-self: flex-start;
+    font-size: 2rem;
+    width: 20rem;
+    text-align: center;
+    margin: 1rem;
+    @include tertiary-blue-skew;
+  }
+
+  &__habit {
+    align-self: flex-start;
+    &-text {
+      @include tertiary-white-skew;
+    }
+
+    &-button {
+    }
+  }
+}
