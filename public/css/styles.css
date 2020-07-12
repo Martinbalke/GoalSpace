@@ -25,35 +25,26 @@ p, span {
   font-weight: 300;
   line-height: 1.6; }
 
-.btn {
-  border: none;
-  background-color: #2f80ed;
-  border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-  display: inline-block;
-  text-align: center;
-  color: white;
-  font-size: 3.5rem;
-  height: 5rem;
-  width: 5rem;
-  border: 3px solid #2f80ed;
-  transition: all 0.2s;
-  outline: none; }
-  .btn:after {
-    content: "+";
-    display: block; }
-  .btn:hover, .btn:focus {
-    transform: scale(1.05) translateY(2px);
-    background-color: white;
-    color: #2f80ed;
-    cursor: pointer; }
-
 .footer {
   display: flex;
+  z-index: 1;
+  position: relative;
   height: 45vh;
   justify-content: flex-end;
   align-items: flex-end;
   background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png"); }
+  .footer::before {
+    background: url("../border-dark.svg");
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 10;
+    top: -20%;
+    left: 0;
+    height: 30rem;
+    width: 100%;
+    transform: scale(-1, -1); }
   .footer__copy {
     margin: 1rem;
     color: rgba(255, 255, 255, 0.9);
@@ -64,6 +55,32 @@ p, span {
   .footer__social {
     height: 5rem;
     margin: 0 1rem; }
+
+.btn {
+  border: none;
+  display: inline-block;
+  text-align: center;
+  outline: none; }
+  .btn-main {
+    background-color: #2f80ed;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 3.5rem;
+    height: 5rem;
+    width: 5rem;
+    border: 3px solid #2f80ed;
+    transition: all 0.2s; }
+    .btn-main:after {
+      content: "+";
+      display: block; }
+    .btn-main:hover, .btn-main:focus {
+      transform: scale(1.05) translateY(2px);
+      background-color: white;
+      color: #2f80ed;
+      cursor: pointer; }
+  .btn:hover {
+    cursor: pointer; }
 
 .goalForm {
   display: flex;
@@ -345,7 +362,7 @@ p, span {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    transform: translateY(-80%);
+    top: -28rem;
     filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.25)); }
   .goalContainer::after {
     z-index: -2;
@@ -357,8 +374,7 @@ p, span {
     background-size: cover;
     opacity: .9;
     width: 100vw;
-    transform: translateY(-318%);
-    filter: drop-shadow(5px 5px 5px rgba(238, 238, 238, 0.9)); }
+    top: -34rem; }
 
 .goal {
   flex: 0 0;
@@ -408,6 +424,7 @@ p, span {
 
 .hero {
   background-image: url("../doodles.png");
+  overflow: hidden;
   background-attachment: fixed;
   min-height: 80vh;
   display: flex;
@@ -431,11 +448,11 @@ p, span {
   .hero__header {
     align-self: flex-start;
     position: relative;
-    left: 4rem;
-    top: 3rem;
+    left: -2.2rem;
+    top: 3.3rem;
     z-index: 1;
-    font-size: 8rem;
-    letter-spacing: 1.5px;
+    font-size: 10rem;
+    letter-spacing: 3px;
     margin: 1rem 2rem;
     background: white;
     color: #2f80ed;
@@ -443,16 +460,17 @@ p, span {
     box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     border-radius: 4px;
     transform: skew(-4deg);
+    box-shadow: none;
+    background: none;
     font-family: "Noto Sans JP", sans-serif;
     text-shadow: 2px 2px 2px rgba(11, 26, 47, 0.2);
     padding: 1rem 5rem; }
   .hero__subtext {
     position: relative;
-    top: 3rem;
-    left: -2px;
+    top: -2.6rem;
+    left: 7rem;
     text-align: center;
     font-size: 1.8rem;
-    width: 59rem;
     margin: 0 1rem;
     background: white;
     color: #2f80ed;
@@ -460,7 +478,8 @@ p, span {
     box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     border-radius: 4px;
     transform: skew(-4deg);
-    box-shadow: none; }
+    box-shadow: none;
+    color: rgba(47, 128, 237, 0.9); }
   .hero__shapes {
     z-index: 0;
     position: absolute;
@@ -475,26 +494,26 @@ p, span {
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;
-      top: -150%;
-      left: 0;
-      height: 60rem;
+      top: -250%;
+      left: -200%;
+      height: 80rem;
       border-radius: 50%;
-      width: 60rem;
+      width: 80rem;
       filter: drop-shadow(5rem 1.5rem rgba(11, 26, 47, 0.9));
-      background-color: #2f80ed; }
+      background-color: white; }
     .hero__shapes::before {
       content: '';
       position: absolute;
       background-repeat: no-repeat;
       background-size: cover;
       z-index: 4;
-      top: -100%;
-      left: 0;
+      top: -160%;
+      left: -120%;
       border-radius: 50%;
-      height: 10rem;
-      width: 10rem;
+      height: 30rem;
+      width: 30rem;
       filter: drop-shadow(55rem 35.5rem rgba(252, 163, 17, 0.9));
-      background-color: #fca311; }
+      background-color: white; }
   .hero__nav {
     align-self: flex-end;
     position: relative;

@@ -1,6 +1,7 @@
 
 .hero {
   background-image: url("../doodles.png");
+  overflow: hidden;
   background-attachment: fixed;
   min-height: 80vh;
   display: flex;
@@ -20,19 +21,20 @@
     transform: scale(-1,1);
     filter: drop-shadow(5rem -2.2rem $color-primary);
     bottom: -5%;
-
   }
 
   &__header {
     align-self: flex-start;
     position: relative;
-    left: 4rem;
-    top: 3rem;
+    left: -2.2rem;
+    top: 3.3rem;
     z-index: 1;
-    font-size: 8rem;
-    letter-spacing: 1.5px;
+    font-size: 10rem;
+    letter-spacing: 3px;
     margin: 1rem 2rem;
     @include tertiary-white-skew;
+    box-shadow: none;
+    background: none;
     font-family: $font-secondary;
     text-shadow: 2px 2px 2px rgba($color-primary-dark, $alpha: .2);
     padding: 1rem 5rem;
@@ -41,14 +43,14 @@
 
   &__subtext {
     position: relative;
-    top: 3rem;
-    left: -2px;
+    top: -2.6rem;
+    left: 7rem;
     text-align: center;
     font-size: 1.8rem;
-    width: 59rem;
     margin: 0 1rem;
     @include tertiary-white-skew;
     box-shadow: none; 
+    color: rgba($color-primary, .9);
   }
 
 
@@ -64,25 +66,25 @@
     &::after{
       @include shape-pseudo-element;
       z-index: -1;
-      top: -150%;
-      left: 0;
-      height: 60rem;
+      top: -250%;
+      left: -200%;
+      height: 80rem;
       border-radius: 50%;
-      width: 60rem;
+      width: 80rem;
       filter: drop-shadow(5rem 1.5rem rgba($color-primary-dark, .9));
-      background-color: $color-primary;
+      background-color: $color-white;
     }
 
     &::before{
       @include shape-pseudo-element;
       z-index: 4;
-      top: -100%;
-      left: 0;
+      top: -160%;
+      left: -120%;
       border-radius: 50%;
-      height: 10rem;
-      width: 10rem;
+      height: 30rem;
+      width: 30rem;
       filter: drop-shadow(55rem 35.5rem rgba($color-orange,.9));
-      background-color: $color-orange;
+      background-color: $color-white;
     }
   }
 

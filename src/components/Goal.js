@@ -9,7 +9,7 @@ function Goal({ goal, children}) {
       {goal.habits.map( (habit, index) => (
         <div className="goal__habit" key={index}>
           <p className="goal__habit-text">{habit}</p>
-          <button className="goal__habit-button btn"></button>
+          <button className="goal__habit-button btn btn-main"></button>
         </div>
       ))}
       {children}

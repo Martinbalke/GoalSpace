@@ -13,7 +13,7 @@
     background: url("../border-dark.svg");
     @include shape-pseudo-element;
     width: 100vw;
-    transform: translateY(-80%);
+    top: -28rem;
     filter: drop-shadow($shadow-large);
   }
 
@@ -24,8 +24,8 @@
     @include shape-pseudo-element;
     opacity: .9;
     width: 100vw;
-    transform: translateY(-318%);
-    filter: drop-shadow(5px 5px 5px rgba($color-grey, .9));
+    top: -34rem;
+
   }
 }
 

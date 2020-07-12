@@ -1,0 +1,49 @@
+
+.btn {
+  border: none;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+
+  &-main{
+    background-color: $color-primary;
+    border-radius: 50%;
+    box-shadow: $shadow-medium;
+    color: $color-white;
+    font-size: 3.5rem;
+    height: 5rem;
+    width: 5rem;
+    border: 3px solid $color-primary;
+    transition: all 0.2s;
+
+    &:after {
+      content: "+";
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05) translateY(2px);
+      background-color: $color-white;
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+
+
+  &-blob{
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05) translateY(2px);
+      background-color: $color-white;
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+ 
+
+  &:hover{
+    cursor: pointer;
+  }
+}
