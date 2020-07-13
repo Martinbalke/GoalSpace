@@ -6,31 +6,39 @@
   justify-content: center;
   height: 13rem;
   min-width: 20rem;
-
+  
+  display: none;
   top: 5rem;
 
 
   &__btn{
     position: relative;
-    top: 4rem;
-    left: 2rem;
+    top: 6rem;
+    right: -60%;
   }
-  &__input {
 
-    & input{
+  &__textarea{
+      position: relative;
+      left: 1rem;
       text-align: center;
+
+      z-index: 300;
       word-wrap: wrap;
-      height: 20rem;
-      letter-spacing: 1px;
-      border-radius: 1rem;
-      padding: .5rem 1rem;
-      color: white;
+      height: 10rem;
       font-size: 2rem;
+      color: $color-primary-dark;
+      font-family: $font-header;
+      text-shadow: $shadow-small;
       outline: none;
       border: none;
-      background: $color-primary ;
+      border-left: 4px solid $color-primary-dark;
+      resize: none;
+      background: none;
+    &::placeholder{
+      color: rgba($color-primary-dark, .8);
+      text-shadow: none;
     }
- }
+  }
 
   &::after{
     background: url('../milestone-blob.svg');
@@ -41,8 +49,5 @@
     filter: drop-shadow($shadow-medium) drop-shadow(1rem 1rem rgba($color-primary, .8));
   }
 
-  & > &__btn:hover{
-    transform: scale(1.1);
-  }
 
 }

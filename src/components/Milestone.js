@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Input from './Input';
 import {updateMilestone} from '../store/goalReducer';
 import { connect } from 'react-redux';
 
@@ -14,11 +13,12 @@ const Milestone = ({ dispatch, goal,index }) => {
         dispatch(updateMilestone(goal, index));
       }
       }>
-        <input 
-        type='text-area'
-        callback={(text) => setMilestone(text)}
-        className='milestone__input' 
-        defaultValue={goal.milestone ? `${goal.milestone}` : `Create a milestone for your goal`}
+        <textarea
+        autoFocus
+        onChange={(e) => setMilestone(e.target.value)}
+        className='milestone__textarea' 
+        defaultValue={goal.milestone ? `${goal.milestone}` : ``}
+        placeholder='Create a milestone for your goal'
         />
         <button type='submit' className="milestone__btn btn btn-blob">{goal.milestone ? 'Finish' : 'Create'}</button>
       </form>

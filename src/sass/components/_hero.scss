@@ -1,4 +1,3 @@
-
 .hero {
   background-image: url("../doodles.png");
   overflow: hidden;
@@ -12,58 +11,95 @@
   border-radius: $radius-small;
   margin-bottom: 1rem;
 
-
-  &::after{
+  &::after {
     height: 31rem;
     width: 110%;
-    background: url('../border.svg');
+    background: url("../border.svg");
     @include shape-pseudo-element;
-    transform: scale(-1,1);
+    transform: scale(-1, 1);
     filter: drop-shadow(5rem -2.2rem $color-primary);
     bottom: -5%;
   }
 
   &__header {
-    align-self: flex-start;
+    font-family: $font-header;
     position: relative;
-    left: -2.2rem;
-    top: 3.3rem;
+    top: 2em;
+    letter-spacing: -1px;
+    padding-left: 1.5rem;
+    margin-left: .2rem;
+    border-left: 1rem solid ;
+    text-shadow: $shadow-small;
+
     z-index: 1;
-    font-size: 10rem;
-    letter-spacing: 3px;
-    margin: 1rem 2rem;
-    @include tertiary-white-skew;
-    box-shadow: none;
-    background: none;
-    font-family: $font-secondary;
-    text-shadow: 2px 2px 2px rgba($color-primary-dark, $alpha: .2);
-    padding: 1rem 5rem;
+    width: 18ch;
+    font-weight: 900;
+    font-size: 5rem;
+    color: $color-primary-dark;
 
+    &-text-1 {
+      z-index: 3;
+      position: relative;
+      font-family: inherit;
+      line-height: 0;
+      padding: .2rem;
+  
+    }
+    &-text-2 {
+      font-family: inherit;
+      line-height: 0;
+      color: rgba($color-primary-dark, 0.8);
+    }
+    &-logo {
+     font-family: inherit;
+     font-size: 9rem;
+     left: 50vw;
+     top: -2em;
+     position: absolute;
+     color: rgba($color-primary, 1);
+     text-shadow: none;
+
+     &::after{
+       @include shape-pseudo-element;
+       content: 'GoalSpace';
+       text-align: center;
+       font-size: 5rem;
+      background: $color-white;
+       z-index: 3;
+       border-radius: 50%;
+       top: 50%;
+       left: 50%;
+       line-height: 18rem;
+       transform: translate(-50%,-50%);
+       height: 18rem;
+       width: 18rem;
+       filter: drop-shadow($shadow-small) ;
+     }
+     &::before{
+       @include shape-pseudo-element;
+       background-color: rgba($color-orange, 0.9);
+       z-index: -1;
+       border-radius: 50%;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       height: 20rem;
+       width: 20rem;
+       filter: drop-shadow($shadow-small) ;
+     }
+    }
   }
 
-  &__subtext {
-    position: relative;
-    top: -2.6rem;
-    left: 7rem;
-    text-align: center;
-    font-size: 1.8rem;
-    margin: 0 1rem;
-    @include tertiary-white-skew;
-    box-shadow: none; 
-    color: rgba($color-primary, .9);
-  }
-
-
-  &__shapes{
+  &__shapes {
     z-index: 0;
     position: absolute;
     top: 40%;
     left: 1rem;
-    content: '';
+    content: "";
     height: 17rem;
     width: 10rem;
 
-    &::after{
+    &::after {
       @include shape-pseudo-element;
       z-index: -1;
       top: -250%;
@@ -71,11 +107,11 @@
       height: 80rem;
       border-radius: 50%;
       width: 80rem;
-      filter: drop-shadow(5rem 1.5rem rgba($color-primary-dark, .9));
+      filter: drop-shadow($shadow-large) drop-shadow(5rem 1.5rem rgba($color-primary-dark, 0.9));
       background-color: $color-white;
     }
 
-    &::before{
+    &::before {
       @include shape-pseudo-element;
       z-index: 4;
       top: -160%;
@@ -83,8 +119,8 @@
       border-radius: 50%;
       height: 30rem;
       width: 30rem;
-      filter: drop-shadow(55rem 35.5rem rgba($color-orange,.9));
-      background-color: $color-white;
+      filter: drop-shadow($shadow-small) drop-shadow(55rem 35.5rem $color-orange);
+      background-color: $color-grey;
     }
   }
 

@@ -31,15 +31,16 @@
 
 
 .goal {
+  position: relative;
   flex: 0 0;
   align-self: flex-start;
-  position: relative;
+  display: flex;
   flex-direction: column;
   min-height: 45rem;
-  margin: 10rem 1rem 1rem 1rem;
   width: 30rem;
-  border-radius: $radius-large;
+  margin: 10rem 1rem 1rem 1rem;
   padding: 2rem 3rem;
+  border-radius: $radius-large;
   background: linear-gradient(to top, $color-white, transparent) ,url(../doodles.png);
   filter: drop-shadow(2rem 1rem  .5px rgba($color-primary,.1));
 
@@ -66,12 +67,45 @@
   }
 
   &__habit {
-    align-self: flex-start;
+    display: flex;
+    position: relative;
+    
     &-text {
       @include tertiary-white-skew;
+      font-size: 1.5rem;
+      font-weight: 700;
+      min-width: 60%;
+      margin: 1.5rem 0rem;
     }
 
     &-button {
+      position: relative;
+      right: 1.25rem;
+      height: 3.5rem;
+      width: 3.5rem;
+      line-height: 3rem;
     }
+
+  }
+
+  &__complete{
+      background-color: $color-primary;
+      align-self: center;
+      margin: auto 0;
+      height: 4.25rem;
+      color: white;
+      line-height: 1rem;
+      font-size: 2rem;
+      padding: 1.25rem 2.25rem;
+      border-radius: 2rem;
+      box-shadow: $shadow-small;
+      transition: all .2s;
+
+      &:hover,
+      &:focus{
+        transform: scale(1.05) translateY(-1px);
+        box-shadow: $shadow-medium;
+      }
+
   }
 }

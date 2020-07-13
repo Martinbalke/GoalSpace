@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
 * {
   padding: 0;
   margin: 0; }
@@ -100,7 +101,8 @@ p, span {
       top: -6.5rem;
       left: -2.5rem;
       width: 15rem;
-      height: 15rem; }
+      height: 15rem;
+      filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)); }
     .btn-blob:hover, .btn-blob:focus {
       filter: saturate(180%); }
   .btn:hover {
@@ -367,23 +369,31 @@ p, span {
   justify-content: center;
   height: 13rem;
   min-width: 20rem;
+  display: none;
   top: 5rem; }
   .milestone__btn {
     position: relative;
-    top: 4rem;
-    left: 2rem; }
-  .milestone__input input {
+    top: 6rem;
+    right: -60%; }
+  .milestone__textarea {
+    position: relative;
+    left: 1rem;
     text-align: center;
+    z-index: 300;
     word-wrap: wrap;
-    height: 20rem;
-    letter-spacing: 1px;
-    border-radius: 1rem;
-    padding: .5rem 1rem;
-    color: white;
+    height: 10rem;
     font-size: 2rem;
+    color: #0B1A2F;
+    font-family: "Poppins", sans-serif;
+    text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     outline: none;
     border: none;
-    background: #2f80ed; }
+    border-left: 4px solid #0B1A2F;
+    resize: none;
+    background: none; }
+    .milestone__textarea::placeholder {
+      color: rgba(11, 26, 47, 0.8);
+      text-shadow: none; }
   .milestone::after {
     background: url("../milestone-blob.svg");
     content: '';
@@ -394,8 +404,6 @@ p, span {
     width: 35rem;
     z-index: -1;
     filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)) drop-shadow(1rem 1rem rgba(47, 128, 237, 0.8)); }
-  .milestone > .milestone__btn:hover {
-    transform: scale(1.1); }
 
 .goalContainer {
   background-color: #0B1A2F;
@@ -429,15 +437,16 @@ p, span {
     top: -34rem; }
 
 .goal {
+  position: relative;
   flex: 0 0;
   align-self: flex-start;
-  position: relative;
+  display: flex;
   flex-direction: column;
   min-height: 45rem;
-  margin: 10rem 1rem 1rem 1rem;
   width: 30rem;
-  border-radius: 4px;
+  margin: 10rem 1rem 1rem 1rem;
   padding: 2rem 3rem;
+  border-radius: 4px;
   background: linear-gradient(to top, white, transparent), url(../doodles.png);
   filter: drop-shadow(2rem 1rem 0.5px rgba(47, 128, 237, 0.1)); }
   .goal::after {
@@ -464,14 +473,40 @@ p, span {
     border-radius: 4px;
     transform: skew(-4deg); }
   .goal__habit {
-    align-self: flex-start; }
+    display: flex;
+    position: relative; }
     .goal__habit-text {
       background: white;
       color: #2f80ed;
       padding: 1rem 2rem;
       box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
       border-radius: 4px;
-      transform: skew(-4deg); }
+      transform: skew(-4deg);
+      font-size: 1.5rem;
+      font-weight: 700;
+      min-width: 60%;
+      margin: 1.5rem 0rem; }
+    .goal__habit-button {
+      position: relative;
+      right: 1.25rem;
+      height: 3.5rem;
+      width: 3.5rem;
+      line-height: 3rem; }
+  .goal__complete {
+    background-color: #2f80ed;
+    align-self: center;
+    margin: auto 0;
+    height: 4.25rem;
+    color: white;
+    line-height: 1rem;
+    font-size: 2rem;
+    padding: 1.25rem 2.25rem;
+    border-radius: 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    transition: all .2s; }
+    .goal__complete:hover, .goal__complete:focus {
+      transform: scale(1.05) translateY(-1px);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
 
 .hero {
   background-image: url("../doodles.png");
@@ -497,46 +532,75 @@ p, span {
     filter: drop-shadow(5rem -2.2rem #2f80ed);
     bottom: -5%; }
   .hero__header {
-    align-self: flex-start;
+    font-family: "Poppins", sans-serif;
     position: relative;
-    left: -2.2rem;
-    top: 3.3rem;
+    top: 2em;
+    letter-spacing: -1px;
+    padding-left: 1.5rem;
+    margin-left: .2rem;
+    border-left: 1rem solid;
+    text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     z-index: 1;
-    font-size: 10rem;
-    letter-spacing: 3px;
-    margin: 1rem 2rem;
-    background: white;
-    color: #2f80ed;
-    padding: 1rem 2rem;
-    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    border-radius: 4px;
-    transform: skew(-4deg);
-    box-shadow: none;
-    background: none;
-    font-family: "Noto Sans JP", sans-serif;
-    text-shadow: 2px 2px 2px rgba(11, 26, 47, 0.2);
-    padding: 1rem 5rem; }
-  .hero__subtext {
-    position: relative;
-    top: -2.6rem;
-    left: 7rem;
-    text-align: center;
-    font-size: 1.8rem;
-    margin: 0 1rem;
-    background: white;
-    color: #2f80ed;
-    padding: 1rem 2rem;
-    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    border-radius: 4px;
-    transform: skew(-4deg);
-    box-shadow: none;
-    color: rgba(47, 128, 237, 0.9); }
+    width: 18ch;
+    font-weight: 900;
+    font-size: 5rem;
+    color: #0B1A2F; }
+    .hero__header-text-1 {
+      z-index: 3;
+      position: relative;
+      font-family: inherit;
+      line-height: 0;
+      padding: .2rem; }
+    .hero__header-text-2 {
+      font-family: inherit;
+      line-height: 0;
+      color: rgba(11, 26, 47, 0.8); }
+    .hero__header-logo {
+      font-family: inherit;
+      font-size: 9rem;
+      left: 50vw;
+      top: -2em;
+      position: absolute;
+      color: #2f80ed;
+      text-shadow: none; }
+      .hero__header-logo::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: 'GoalSpace';
+        text-align: center;
+        font-size: 5rem;
+        background: white;
+        z-index: 3;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        line-height: 18rem;
+        transform: translate(-50%, -50%);
+        height: 18rem;
+        width: 18rem;
+        filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
+      .hero__header-logo::before {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: rgba(252, 163, 17, 0.9);
+        z-index: -1;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 20rem;
+        width: 20rem;
+        filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
   .hero__shapes {
     z-index: 0;
     position: absolute;
     top: 40%;
     left: 1rem;
-    content: '';
+    content: "";
     height: 17rem;
     width: 10rem; }
     .hero__shapes::after {
@@ -550,7 +614,7 @@ p, span {
       height: 80rem;
       border-radius: 50%;
       width: 80rem;
-      filter: drop-shadow(5rem 1.5rem rgba(11, 26, 47, 0.9));
+      filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.25)) drop-shadow(5rem 1.5rem rgba(11, 26, 47, 0.9));
       background-color: white; }
     .hero__shapes::before {
       content: '';
@@ -563,8 +627,8 @@ p, span {
       border-radius: 50%;
       height: 30rem;
       width: 30rem;
-      filter: drop-shadow(55rem 35.5rem rgba(252, 163, 17, 0.9));
-      background-color: white; }
+      filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)) drop-shadow(55rem 35.5rem #fca311);
+      background-color: #EEE; }
   .hero__nav {
     align-self: flex-end;
     position: relative;

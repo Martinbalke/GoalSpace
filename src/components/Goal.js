@@ -13,6 +13,7 @@ function Goal({ goal, children}) {
         </div>
       ))}
       {children}
+        <button className='btn goal__complete '>Complete</button>
     </div>  
   );
 }

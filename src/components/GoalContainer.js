@@ -28,7 +28,7 @@ function GoalContainer({goals, dispatch}) {
   }
 
   return (
-    <div className="contentContainer">
+    <section className="contentContainer">
       <SetGoal setEditing={setEditing}>
         <EditGoal setEditing={setEditing}/>
       </SetGoal>
@@ -40,7 +40,7 @@ function GoalContainer({goals, dispatch}) {
       <div className="goalContainer">
         {generateChildren()}
       </div>
-    </div>
+    </section>
   );
 }
 
