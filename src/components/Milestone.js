@@ -14,12 +14,13 @@ const Milestone = ({ dispatch, goal,index }) => {
         dispatch(updateMilestone(goal, index));
       }
       }>
-        <Input 
+        <input 
+        type='text-area'
         callback={(text) => setMilestone(text)}
         className='milestone__input' 
         defaultValue={goal.milestone ? `${goal.milestone}` : `Create a milestone for your goal`}
         />
-        <button type='submit' className="milestone__btn btn btn-blob">{goal.milestone ? 'Complete' : 'Create'}</button>
+        <button type='submit' className="milestone__btn btn btn-blob">{goal.milestone ? 'Finish' : 'Create'}</button>
       </form>
     </div>
   )

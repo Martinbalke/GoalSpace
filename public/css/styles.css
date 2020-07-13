@@ -79,6 +79,30 @@ p, span {
       background-color: white;
       color: #2f80ed;
       cursor: pointer; }
+  .btn-blob {
+    position: relative;
+    display: inline-block;
+    padding-left: 1.25rem;
+    z-index: 200;
+    color: white;
+    letter-spacing: .5px;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: skew(-4deg) translateZ(0);
+    transition: all .2s; }
+    .btn-blob::after {
+      background: url("../button-blob.svg");
+      z-index: -1;
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: -6.5rem;
+      left: -2.5rem;
+      width: 15rem;
+      height: 15rem; }
+    .btn-blob:hover, .btn-blob:focus {
+      filter: saturate(180%); }
   .btn:hover {
     cursor: pointer; }
 
@@ -336,14 +360,42 @@ p, span {
       filter: drop-shadow(5rem 0.5rem rgba(252, 163, 17, 0.9)); }
 
 .milestone {
-  align-self: flex-start; }
-  .milestone__tertiary {
-    background: white;
-    color: #2f80ed;
-    padding: 1rem 2rem;
-    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    border-radius: 4px;
-    transform: skew(-4deg); }
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 13rem;
+  min-width: 20rem;
+  top: 5rem; }
+  .milestone__btn {
+    position: relative;
+    top: 4rem;
+    left: 2rem; }
+  .milestone__input input {
+    text-align: center;
+    word-wrap: wrap;
+    height: 20rem;
+    letter-spacing: 1px;
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    color: white;
+    font-size: 2rem;
+    outline: none;
+    border: none;
+    background: #2f80ed; }
+  .milestone::after {
+    background: url("../milestone-blob.svg");
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35rem;
+    width: 35rem;
+    z-index: -1;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)) drop-shadow(1rem 1rem rgba(47, 128, 237, 0.8)); }
+  .milestone > .milestone__btn:hover {
+    transform: scale(1.1); }
 
 .goalContainer {
   background-color: #0B1A2F;
@@ -381,13 +433,13 @@ p, span {
   align-self: flex-start;
   position: relative;
   flex-direction: column;
-  min-height: 20rem;
+  min-height: 45rem;
   margin: 10rem 1rem 1rem 1rem;
   width: 30rem;
   border-radius: 4px;
   padding: 2rem 3rem;
   background: linear-gradient(to top, white, transparent), url(../doodles.png);
-  filter: drop-shadow(2rem 1rem 0.5px rgba(255, 255, 255, 0.1)); }
+  filter: drop-shadow(2rem 1rem 0.5px rgba(47, 128, 237, 0.1)); }
   .goal::after {
     background: url("../border.svg");
     content: '';
@@ -398,8 +450,7 @@ p, span {
     width: 100%;
     bottom: -15%;
     left: 0;
-    transform: scale(-1, -1);
-    filter: drop-shadow(0px -1rem rgba(255, 255, 255, 0.2)); }
+    transform: scale(-1, -1); }
   .goal__header {
     align-self: flex-start;
     font-size: 2rem;
