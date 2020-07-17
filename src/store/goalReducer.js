@@ -63,22 +63,6 @@ export const updateGoal = (goal, index) => {
 
 }
 
-export const updateMilestone = (goal, index) => {
-  return async (dispatch, getState) => {
-    let jsonGoal = JSON.stringify(goal);
-    try {
-      await superagent.put(`http://localhost:3045/goals/${goal._id}`)
-        .set('Content-Type', 'application/json')
-        .send(jsonGoal)
-        .retry()
-      dispatch({ type: 'UPDATE_MILESTONE', goal, index })
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-}
-
 
 
 
@@ -100,7 +84,6 @@ let goalReducer = (state = initialState, { goals, goal, type, index }) => {
       newState.goals = [...newState.goals, goal]
       break;
     case 'UPDATE_GOAL':
-      
       newState.goals = [
         ...newState.goals.slice(0, index),
         goal,
@@ -108,14 +91,7 @@ let goalReducer = (state = initialState, { goals, goal, type, index }) => {
       ]
       break;
     case 'COMPLETE_GOAL':
-      return newState.goals.filter((goal, i) => index !== i)
-    case 'UPDATE_MILESTONE':
-      newState.goals = [
-        ...newState.goals.slice(0, index),
-        goal,
-        ...newState.goals.slice(index + 1)
-      ]
-      break;
+      return {...newState, goals: newState.goals.filter((g, i) => index !== i)}
     default:
       return newState;
   }

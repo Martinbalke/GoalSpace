@@ -1,6 +1,6 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import { motion } from 'framer-motion'
-import { updateMilestone } from '../store/goalReducer';
+import { updateGoal } from '../store/goalReducer';
 import { connect } from 'react-redux';
 import { milestoneSlideInLeft, milestoneSlideInRight } from './animations'
 
@@ -13,16 +13,18 @@ const Milestone = ({ dispatch, goal, index }) => {
     <motion.div className='milestone' variants={milestoneSlideInRight}>
       <form className='milestone__form' onSubmit={async (e) => {
         e.preventDefault();
-        console.log(goal.milestone);
-        if(goal.milestone) await setMilestone('')
         let newGoal = {...goal, milestone: milestone}
-        dispatch(updateMilestone(newGoal, index));
+        if(goal.milestone) {
+          newGoal.milestone = '';
+          await setMilestone('')
+      }
+        dispatch(updateGoal(newGoal, index));
       }}>
 
         <textarea
           maxLength='45'
-          onChange={(e) =>{
-            setMilestone(e.target.value)}
+          onChange={async (e) =>{
+            await setMilestone(e.target.value)}
           } 
           value={milestone}
           className='milestone__textarea'
