@@ -6,20 +6,29 @@
 
   &__header-container{
     display: flex;
+    align-self: center;
+    width: 50rem;
     justify-content: center;
   }
 
   &__cursor {
     position: relative;
-    right: 12%;
+    right: 17%;
     margin: 1.5rem 0;
-    border-left: .2rem solid $color-white;
+    border-left: .2rem solid transparent;
     animation: blink 1s steps(1) infinite;
+    animation-delay: .6s;
   }
 
   @keyframes blink {
+    0% {
+      border-color: $color-white;
+    }
     50% {
       border-color: transparent;
+    }
+    100% {
+      border-color: $color-white;
     }
   }
 
