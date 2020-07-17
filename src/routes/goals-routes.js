@@ -16,13 +16,13 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
- let deleted = goalModel.create(req.body)
- res.send(deleted);
+ let created = await goalModel.create(req.body)
+ console.log(created)
+ res.send(created);
 })
 
 router.put('/:id', async (req,res) => {
  let id = req.params.id;
- console.log(id, req.body)
  let updated = await goalModel.update(id, req.body)
  res.send(updated);
 })

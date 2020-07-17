@@ -15,7 +15,6 @@ function GoalForm({ close, dispatch, index, goals }) {
     if (index < 0) return setGoal({...goal, goal: text})
       let newHabits = [...goal.habits];
       newHabits[index] = text;
-      console.log(newHabits)
       setGoal({ ...goal, habits: newHabits });
   })
 
@@ -25,12 +24,12 @@ function GoalForm({ close, dispatch, index, goals }) {
     <div className='goalForm'>
       <motion.div className="goalForm__content" variants={popupFormAnimation}>
         <form className="goalForm__form-element" autoComplete="off"
-          onSubmit={(e) => {
+          onSubmit={ (e) => {
             e.preventDefault();
             goal._id ? dispatch(updateGoal(goal, index)) : dispatch(newGoal(goal, index));
             close();
           }}>
-          <button className='btn btn-main goalForm__close' onClick={close} />
+          <button type='button' className='btn btn-main goalForm__close' onClick={close} />
           <h3 className='goalForm__tertiary'>Set a new goal</h3>
           <div className="goalForm__inputs-container">
             <Input className='goalForm__input' id='goal' callback={(text) => inputTextChange(text, -1)} defaultValue={goal.goal} labelText='Goal' />

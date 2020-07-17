@@ -7,7 +7,7 @@ function SetGoals({ goals, setEditing, children }) {
   const [length, setLength] = useState(0);
   const [typingAnimation, setTypingAnimation] = useState('show');
   const [timer, setTimer] = useState(null)
-  const verbs = ['impressive', 'meaningful', 'impactful', 'motivating'];
+  const verbs = ['impressive', 'impactful', 'motivating'];
   const [index] = useState(Math.floor(Math.random() * verbs.length))
 
   function typingEffect() {

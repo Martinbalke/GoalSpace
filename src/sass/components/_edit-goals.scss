@@ -2,13 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   align-self: center;
-  margin-top: 5%;
+  margin: 5vh 0;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
   z-index: 201;
   padding: 2.5rem 2rem;
   transform: skew(-4deg);
+  min-height: 45vh;
 
   &__tertiary{
     margin: 1rem 1.5rem;

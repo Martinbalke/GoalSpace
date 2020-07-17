@@ -20,6 +20,7 @@ function GoalContainer({goals, dispatch}) {
 
   //Generate a Goal component for each goal in the global state
   function generateChildren(){
+    if(!goals) return <div/>
       return goals.map( (goal,index) => 
       <Goal index={index} key={index} goal={goal}>
         <Milestone goal={goal} index={index}/>

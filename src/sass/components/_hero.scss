@@ -27,25 +27,28 @@
     top: 2em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
-    margin-left: .2rem;
-    border-left: 1rem solid ;
     text-shadow: $shadow-small;
-
     z-index: 1;
     width: 18ch;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 4.5rem;
     color: $color-primary-dark;
 
     &-text-1 {
+      
       z-index: 3;
       position: relative;
       font-family: inherit;
       line-height: 0;
       padding: .2rem;
+      top: 3rem;
+      left: 4rem;
   
     }
     &-text-2 {
+      position: relative;
+      top: 3rem;
+      left: 4rem;
       font-family: inherit;
       line-height: 0;
       color: rgba($color-primary-dark, 0.8);
@@ -53,7 +56,7 @@
     &-logo {
      font-family: inherit;
      font-size: 9rem;
-     left: 50vw;
+     left: 28rem;
      top: -2em;
      position: absolute;
      color: rgba($color-primary, 1);

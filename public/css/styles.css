@@ -2,7 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
+  *::-moz-selection {
+    background: #fca311;
+    color: #1d3557; }
+  *::selection {
+    background: #fca311;
+    color: #1d3557; }
 
 *,
 *::before,
@@ -102,7 +109,7 @@ p, span {
       left: -2.5rem;
       width: 15rem;
       height: 15rem;
-      filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)); }
+      filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
     .btn-blob:hover, .btn-blob:focus {
       filter: saturate(180%); }
   .btn:hover {
@@ -145,7 +152,7 @@ p, span {
     .goalForm__sidebar-paragraph {
       margin: 2rem 0;
       position: relative;
-      color: rgba(11, 26, 47, 0.8);
+      color: rgba(29, 53, 87, 0.8);
       font-size: 1.5rem;
       line-height: 2;
       width: 27rem; }
@@ -214,16 +221,16 @@ p, span {
       font-size: 1.5rem;
       padding: 0.5rem 1rem;
       transition: all 0.5s;
-      color: rgba(11, 26, 47, 0.7); }
+      color: rgba(29, 53, 87, 0.7); }
     .goalForm__input input {
       font-family: "Roboto", sans-serif;
       align-self: flex-start;
-      color: rgba(11, 26, 47, 0.7);
+      color: rgba(29, 53, 87, 0.7);
       font-size: 2rem;
       border: none;
       outline: none;
       text-align: center;
-      border-bottom: 2px solid #0B1A2F;
+      border-bottom: 2px solid #1d3557;
       width: 30rem; }
       .goalForm__input input:focus + label, .goalForm__input input:valid + label {
         background: #2f80ed;
@@ -259,13 +266,14 @@ p, span {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
-  margin-top: 5%;
+  margin: 5vh 0;
   flex-direction: row;
   justify-content: space-around;
   position: relative;
   z-index: 201;
   padding: 2.5rem 2rem;
-  transform: skew(-4deg); }
+  transform: skew(-4deg);
+  min-height: 45vh; }
   .edit__tertiary {
     margin: 1rem 1.5rem;
     align-self: flex-start;
@@ -345,7 +353,7 @@ p, span {
     .setgoals__blob p {
       position: relative;
       z-index: 200;
-      color: rgba(11, 26, 47, 0.8);
+      color: rgba(29, 53, 87, 0.8);
       font-size: 1.4rem;
       width: 30rem; }
     .setgoals__blob::after {
@@ -369,30 +377,29 @@ p, span {
   justify-content: center;
   height: 13rem;
   min-width: 20rem;
-  display: none;
-  top: 5rem; }
+  top: 16rem;
+  left: 28rem; }
   .milestone__btn {
     position: relative;
     top: 6rem;
     right: -60%; }
   .milestone__textarea {
     position: relative;
-    left: 1rem;
+    left: 0rem;
     text-align: center;
-    z-index: 300;
+    top: 4rem;
     word-wrap: wrap;
     height: 10rem;
-    font-size: 2rem;
-    color: #0B1A2F;
+    font-size: 1.8rem;
+    color: #2f80ed;
     font-family: "Poppins", sans-serif;
     text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     outline: none;
     border: none;
-    border-left: 4px solid #0B1A2F;
     resize: none;
     background: none; }
     .milestone__textarea::placeholder {
-      color: rgba(11, 26, 47, 0.8);
+      color: rgba(29, 53, 87, 0.4);
       text-shadow: none; }
   .milestone::after {
     background: url("../milestone-blob.svg");
@@ -400,18 +407,19 @@ p, span {
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 35rem;
-    width: 35rem;
+    height: 30rem;
+    width: 30rem;
     z-index: -1;
-    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)) drop-shadow(1rem 1rem rgba(47, 128, 237, 0.8)); }
+    filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)) drop-shadow(1rem 1rem #eeeeee); }
 
 .goalContainer {
   background-color: #0B1A2F;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
   min-height: 100vh;
+  padding-top: 10rem;
   position: relative; }
   .goalContainer::before {
     z-index: -1;
@@ -438,34 +446,39 @@ p, span {
 
 .goal {
   position: relative;
-  flex: 0 0;
   align-self: flex-start;
+  z-index: 150;
   display: flex;
   flex-direction: column;
   min-height: 45rem;
-  width: 30rem;
-  margin: 10rem 1rem 1rem 1rem;
-  padding: 2rem 3rem;
-  border-radius: 4px;
-  background: linear-gradient(to top, white, transparent), url(../doodles.png);
-  filter: drop-shadow(2rem 1rem 0.5px rgba(47, 128, 237, 0.1)); }
+  flex: 0 0 51%;
+  margin: 1rem 5rem 1rem 30rem;
+  padding: 2rem 1rem 0rem 7rem;
+  filter: drop-shadow(1rem 0.5rem 0.5px rgba(252, 163, 17, 0.9));
+  transform: scale(-1, 1); }
+  .goal h3, .goal p, .goal textarea, .goal button {
+    transform: scale(-1, 1); }
+  .goal:nth-child(even) {
+    margin-left: calc(100% - 60rem);
+    transform: scale(1); }
+    .goal:nth-child(even) h3, .goal:nth-child(even) p, .goal:nth-child(even) textarea, .goal:nth-child(even) button {
+      transform: scale(1); }
   .goal::after {
-    background: url("../border.svg");
     content: '';
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 8rem;
-    width: 100%;
-    bottom: -15%;
-    left: 0;
-    transform: scale(-1, -1); }
+    z-index: -1;
+    left: -5rem;
+    top: -5rem;
+    height: 55rem;
+    width: 55rem; }
   .goal__header {
     align-self: flex-start;
     font-size: 2rem;
     width: 20rem;
     text-align: center;
-    margin: 1rem;
+    margin: 1rem 0rem 2rem 4rem;
     background: #2f80ed;
     color: white;
     padding: 1rem 2rem;
@@ -474,7 +487,16 @@ p, span {
     transform: skew(-4deg); }
   .goal__habit {
     display: flex;
-    position: relative; }
+    max-width: 25rem;
+    position: relative;
+    right: 10rem; }
+    .goal__habit:nth-child(2) {
+      right: 4rem; }
+    .goal__habit:nth-child(3) {
+      left: -7rem; }
+    .goal__habit:nth-child(4) {
+      top: 1rem;
+      left: -5rem; }
     .goal__habit-text {
       background: white;
       color: #2f80ed;
@@ -484,18 +506,19 @@ p, span {
       transform: skew(-4deg);
       font-size: 1.5rem;
       font-weight: 700;
-      min-width: 60%;
+      flex: 1;
       margin: 1.5rem 0rem; }
     .goal__habit-button {
       position: relative;
       right: 1.25rem;
       height: 3.5rem;
       width: 3.5rem;
-      line-height: 3rem; }
+      line-height: 3rem;
+      transform: scale(1) !important; }
   .goal__complete {
     background-color: #2f80ed;
-    align-self: center;
-    margin: auto 0;
+    align-self: flex-start;
+    margin: auto 0rem auto 10rem;
     height: 4.25rem;
     color: white;
     line-height: 1rem;
@@ -503,9 +526,10 @@ p, span {
     padding: 1.25rem 2.25rem;
     border-radius: 2rem;
     box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    transition: all .2s; }
+    transition: all .2s;
+    transform: skew(-4deg); }
     .goal__complete:hover, .goal__complete:focus {
-      transform: scale(1.05) translateY(-1px);
+      background-color: #008CFF;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
 
 .hero {
@@ -537,28 +561,31 @@ p, span {
     top: 2em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
-    margin-left: .2rem;
-    border-left: 1rem solid;
     text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     z-index: 1;
     width: 18ch;
     font-weight: 900;
-    font-size: 5rem;
-    color: #0B1A2F; }
+    font-size: 4.5rem;
+    color: #1d3557; }
     .hero__header-text-1 {
       z-index: 3;
       position: relative;
       font-family: inherit;
       line-height: 0;
-      padding: .2rem; }
+      padding: .2rem;
+      top: 3rem;
+      left: 4rem; }
     .hero__header-text-2 {
+      position: relative;
+      top: 3rem;
+      left: 4rem;
       font-family: inherit;
       line-height: 0;
-      color: rgba(11, 26, 47, 0.8); }
+      color: rgba(29, 53, 87, 0.8); }
     .hero__header-logo {
       font-family: inherit;
       font-size: 9rem;
-      left: 50vw;
+      left: 28rem;
       top: -2em;
       position: absolute;
       color: #2f80ed;
@@ -614,7 +641,7 @@ p, span {
       height: 80rem;
       border-radius: 50%;
       width: 80rem;
-      filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.25)) drop-shadow(5rem 1.5rem rgba(11, 26, 47, 0.9));
+      filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.25)) drop-shadow(5rem 1.5rem rgba(29, 53, 87, 0.9));
       background-color: white; }
     .hero__shapes::before {
       content: '';

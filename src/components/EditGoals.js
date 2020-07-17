@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 function EditGoals({goals, setEditing}) {
-    if (!goals.length) return <div></div>
+    if (!goals || !goals.length ) return <div></div>
     return (
       <div className="edit">
         <h3 className="edit__tertiary">Edit your goals :</h3>
