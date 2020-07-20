@@ -1,7 +1,11 @@
 import mongoose from 'mongoose';
-import progressSchema from './progressSchema';
-const Schema = mongoose.Schema;
 
+
+import progressSchema from './progressSchema';
+
+
+
+const Schema = mongoose.Schema;
 const goalSchema = new Schema({
   goal: {type: String, required: true},
   milestone: {type: String},
@@ -9,10 +13,9 @@ const goalSchema = new Schema({
 })
 
 
-goalSchema.pre('findOneAndDelete', () => {
-  console.log('here')
-  // progressSchema.remove({goal: this._id})
-
+goalSchema.post('findOneAndDelete', async function (goal) {
+ let result = await progressSchema.deleteOne({goal: goal._id})
+ console.log(result);
 })
 
 
