@@ -52,39 +52,4 @@
     font-size: 2rem;
   }
 
-  &__blob {
-    align-self: flex-end;
-    position: relative;
-    right: 8vw;
-    z-index: 200;
-
-
-
-    h3 {
-      position: relative;
-      z-index: 200;
-      margin: 1rem auto;
-      width: 80%;
-      font-size: 3rem;
-      @include tertiary-blue-skew;
-    }
-    p {
-      position: relative;
-      z-index: 200;
-      color: rgba($color-primary-dark,.8);
-      font-size: 1.4rem;
-      width: 30rem;
-    }
-
-    &::after{
-      z-index: 199;
-      height: 40rem;
-      width: 40rem;
-      left: -15%;
-      top: -100%;
-      background: url('../blob.svg');
-      @include shape-pseudo-element;
-      filter: drop-shadow(5rem .5rem rgba($color-orange, .9));
-    }
-  }
 }

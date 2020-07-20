@@ -273,7 +273,7 @@ p, span {
   z-index: 201;
   padding: 2.5rem 2rem;
   transform: skew(-4deg);
-  height: 45rem; }
+  height: 50rem; }
   .edit__tertiary {
     margin: 1rem 1.5rem;
     align-self: flex-start;
@@ -285,12 +285,49 @@ p, span {
     border-radius: 4px;
     transform: skew(-4deg); }
   .edit__goal {
-    height: 10rem;
+    height: 3rem;
     display: flex; }
   .edit__btn {
     position: relative;
-    left: -14%;
-    top: -15%; }
+    left: -3.5rem;
+    top: -1.5rem; }
+  .edit__blob {
+    align-self: flex-end;
+    position: relative;
+    margin-top: 2rem;
+    top: 9rem;
+    left: 20%;
+    z-index: 200; }
+    .edit__blob h3 {
+      position: relative;
+      z-index: 200;
+      margin: 1rem auto;
+      width: 80%;
+      font-size: 3rem;
+      background: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(-4deg); }
+    .edit__blob p {
+      position: relative;
+      z-index: 200;
+      color: rgba(29, 53, 87, 0.8);
+      font-size: 1.4rem;
+      width: 30rem; }
+    .edit__blob::after {
+      z-index: 199;
+      height: 40rem;
+      width: 40rem;
+      left: -15%;
+      top: -100%;
+      background: url("../blob.svg");
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: drop-shadow(5rem 0.5rem rgba(252, 163, 17, 0.9)); }
 
 .setgoals {
   height: 60rem;
@@ -340,41 +377,6 @@ p, span {
     transform: skew(-4deg);
     align-self: flex-start;
     font-size: 2rem; }
-  .setgoals__blob {
-    align-self: flex-end;
-    position: relative;
-    right: 8vw;
-    z-index: 200; }
-    .setgoals__blob h3 {
-      position: relative;
-      z-index: 200;
-      margin: 1rem auto;
-      width: 80%;
-      font-size: 3rem;
-      background: #2f80ed;
-      color: white;
-      padding: 1rem 2rem;
-      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-      border-radius: 4px;
-      transform: skew(-4deg); }
-    .setgoals__blob p {
-      position: relative;
-      z-index: 200;
-      color: rgba(29, 53, 87, 0.8);
-      font-size: 1.4rem;
-      width: 30rem; }
-    .setgoals__blob::after {
-      z-index: 199;
-      height: 40rem;
-      width: 40rem;
-      left: -15%;
-      top: -100%;
-      background: url("../blob.svg");
-      content: '';
-      position: absolute;
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: drop-shadow(5rem 0.5rem rgba(252, 163, 17, 0.9)); }
 
 .milestone {
   position: absolute;

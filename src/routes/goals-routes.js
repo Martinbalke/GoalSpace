@@ -17,7 +17,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
  let created = await goalModel.create(req.body)
- console.log(created)
  res.send(created);
 })
 
