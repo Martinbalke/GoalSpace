@@ -14,8 +14,7 @@ const goalSchema = new Schema({
 
 
 goalSchema.post('findOneAndDelete', async function (goal) {
- let result = await progressSchema.deleteOne({goal: goal._id})
- console.log(result);
+  await progressSchema.deleteOne({associatedGoal: goal._id})
 })
 
 

@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
 
 
 
-router.get('/:id', async (req, res) => {
-  let progress = await progressModel.read(req.params.id);
-  res.send(progress);
+router.get('/:goalID', async (req, res) => {
+  let progress = await progressModel.findByGoal(req.params.goalID);
+  res.send(progress[0]);
 })
 
 router.post('/', async (req, res) => {

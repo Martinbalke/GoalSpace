@@ -2,14 +2,14 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const progressSchema = new Schema({
-  dailyProgress:{type: Array, required: true},
-  monthlyProgress: { type: Array, required: true },
-  goal: {type: Schema.Types.ObjectId, ref: 'goals', required: true}
+  dailyProgress:{type: Object, required: true},
+  monthlyProgress: { type: Object, required: true },
+  associatedGoal: {type: Schema.Types.ObjectId, ref: 'goals', required: true}
 })
 
 
 progressSchema.pre('find', function (next) {
-  this.populate('goal');
+  this.populate('associatedGoal');
   next();
 });
 

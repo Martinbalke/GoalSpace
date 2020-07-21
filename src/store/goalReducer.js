@@ -1,17 +1,18 @@
 
 import superagent from 'superagent';
+import {createProgressData, loadProgressData} from './progressReducer';
 
 
 export const loadGoals = () => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     let goals = [];
     try {
       let res = await superagent.get('http://localhost:3045/goals').retry()
       res.body.forEach(goal => goals.push(goal));
-      dispatch({ type: 'LOAD_GOALS', goals })
+      dispatch({ type: 'LOAD_GOALS', goals });
+      dispatch(loadProgressData());
     } catch (error) {
       console.error(error);
-      goals = getState().goals;
     }
 
   }
@@ -27,7 +28,10 @@ export const newGoal = (goal, index) => {
         .set('Content-Type', 'application/json')
         .send(jsonGoal)
         .retry()
+
+      dispatch(createProgressData(res.body._id));
       dispatch({ type: 'NEW_GOAL', goal: res.body, index })
+      
     } catch (error) {
       console.error(error);
     }
@@ -66,32 +70,29 @@ export const updateGoal = (goal, index) => {
 
 
 
-let initialState = {
-  goals: [
-  ]
-}
+let initialState = []
 
 
 let goalReducer = (state = initialState, { goals, goal, type, index }) => {
-  let newState = { ...state };
+  let newState = [...state]
   
 
   switch (type) {
     case 'LOAD_GOALS':
-      newState.goals = [...goals]
+      newState = [...goals]
       break;
     case 'NEW_GOAL':
-      newState.goals = [...newState.goals, goal]
+      newState = [...newState, goal]
       break;
     case 'UPDATE_GOAL':
-      newState.goals = [
-        ...newState.goals.slice(0, index),
+      newState = [
+        ...newState.slice(0, index),
         goal,
-        ...newState.goals.slice(index + 1)
+        ...newState.slice(index + 1)
       ]
       break;
     case 'COMPLETE_GOAL':
-      return {...newState, goals: newState.goals.filter((g, i) => index !== i)}
+      return newState.filter((g, i) => index !== i);
     default:
       return newState;
   }
