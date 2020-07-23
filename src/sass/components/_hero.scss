@@ -1,5 +1,6 @@
 .hero {
-  background-image: url("../doodles.png");
+  background-image: url("../color.jpg");
+  background-size: cover;
   overflow: hidden;
   background-attachment: fixed;
   height: 60rem;
@@ -134,36 +135,27 @@
     display: inline-flex;
     flex-direction: column;
     margin: 2rem 4rem;
+    transform: skew(-4deg);
 
     p {
       color: $color-white;
-      background-color: $color-primary;
       font-family: $font-primary;
-      box-shadow: none;
       font-weight: bold;
-      text-align: center;
-      font-size: 1.5rem;
-      margin: 1px;
-      padding: 2px 1rem;
+      font-size: 2rem;
     }
     & a,
     a:visited,
     a:active {
-      align-self: flex-end;
-      text-transform: lowercase;
-      font-weight: thin;
-      font-size: 1.5rem;
+      font-family: $font-primary;
+      font-weight: bold;
+      font-size: 2rem;
       margin: 1px;
       padding: 2px 5px;
       text-decoration: none;
       color: $color-white;
-      background-color: $color-primary;
-      border-radius: $radius-small;
       transition: all 0.3s;
 
       &:hover {
-        color: $color-primary;
-        background-color: $color-white;
         transform: translateX(-5px);
       }
     }

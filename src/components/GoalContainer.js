@@ -5,6 +5,7 @@ import GoalForm from './GoalForm';
 import EditGoal from './EditGoals';
 import SetGoal from './SetGoals';
 import Milestone from './Milestone';
+import ChartContainer from './ChartsContainer'
 import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
 import {AnimatePresence} from 'framer-motion';
@@ -42,6 +43,7 @@ function GoalContainer({goals, dispatch}) {
       <div className="goalContainer">
         {generateChildren()}
       </div>
+      <ChartContainer/>
     </section>
   );
 }
