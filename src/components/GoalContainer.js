@@ -4,6 +4,7 @@ import Modal from './Modal'
 import GoalForm from './GoalForm';
 import EditGoal from './EditGoals';
 import SetGoal from './SetGoals';
+import Chart from './Chart';
 import Milestone from './Milestone';
 import ChartContainer from './ChartsContainer'
 import { connect } from 'react-redux';
@@ -11,7 +12,7 @@ import { loadGoals } from '../store/goalReducer';
 import {AnimatePresence} from 'framer-motion';
 
 
-function GoalContainer({goals, dispatch}) {
+function GoalContainer({goals, dispatch, progressData}) {
   //State variable to keep track of which goal is currently being edited
   const [editing, setEditing] = useState(-1);
 
@@ -43,13 +44,16 @@ function GoalContainer({goals, dispatch}) {
       <div className="goalContainer">
         {generateChildren()}
       </div>
-      <ChartContainer/>
+      <ChartContainer>
+        <Chart/>
+      </ChartContainer>
     </section>
   );
 }
 
 const mSTP = state => ({
-  goals: state.goals
+  goals: state.goals,
+  progressData: state.progress
 });
 
 export default connect(mSTP)(GoalContainer);

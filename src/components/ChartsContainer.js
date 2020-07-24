@@ -1,45 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
 
 
 
-const ChartsContainer = ({ progressData, dispatch }) => {
-  const [dailyProgressData, SetDailyProgessData] = useState()
-  const [monthlyProgressData, SetMonthlyProgessData] = useState()
+const ChartsContainer = ({ progressData, dispatch, children }) => {
 
-
-  const combineProgressIntoDataSet = (type) => {
-    let combinedProgressData = {};
-    progressData.forEach(progress => {
-      let { goal } = progress.associatedGoal
-      Object.keys(progress[type]).forEach(key => {
-        let tempObj = { [goal]: progress[type][key] }
-        combinedProgressData[key] = { ...combinedProgressData[key], ...tempObj }
-      })
-    })
-    return combinedProgressData;
-  }
-
-
-  useEffect(() => {
-    console.log(progressData)
-  }, [progressData])
-
-
-  // SetMonthlyProgessData(combineProgressIntoDataSet('monthlyProgress'))
+ 
 
 
 
-  return (<section className="chart-container">
-    {}
+  return (
+  <section className="chart-container">
+    {children}
   </section>
   )
 }
 
-const mSTP = state => ({
-  progressData: state.progress,
 
-});
-
-export default connect(mSTP)(ChartsContainer);
+export default ChartsContainer;
