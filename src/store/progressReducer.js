@@ -78,8 +78,7 @@ export const updateProgressPoints = (goalId, amount) =>{
       .set('Content-Type', 'application/json')
       .send(jsonProgressData)
       .retry()
-
-      dispatch({type: 'UPDATE__POINTS', progress, amount})
+      dispatch({type: 'UPDATE_POINTS', progress, amount})
     } catch (error) {
       console.error(error);
     }
@@ -96,8 +95,6 @@ const initialState = []
 
 const progressReducer = (state = initialState, {type, amount, progress}) => {
   const newState = [...state];
-
-
   switch(type){
     case 'LOAD_PROGRESS': 
         return [...progress];
@@ -112,7 +109,7 @@ const progressReducer = (state = initialState, {type, amount, progress}) => {
         return [...newState, newEntry];
     case 'UPDATE_POINTS':
       return newState.map(current => {
-        if(current.associatedGoal === progress.associatedGoal.goal){
+        if(current._id === progress._id){
           current = progress
         }
         return current;

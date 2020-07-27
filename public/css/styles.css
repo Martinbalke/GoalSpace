@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
+@keyframes bubbles {
+  0% {
+    transform: translateY(20rem) rotate(0deg);
+    opacity: 1;
+    border-radius: 50%; }
+  50% {
+    transform: translateY(-20rem) rotate(500deg);
+    opacity: .7;
+    border-radius: 45%; }
+  100% {
+    transform: translateY(-45rem) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%; } }
+
 * {
   padding: 0;
   margin: 0;
@@ -534,6 +548,12 @@ p, span {
     transform: scale(-1, 1);
     filter: drop-shadow(5rem -2.2rem #2f80ed);
     bottom: -5%; }
+  .hero__bubbles {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    background: red;
+    animation: bubbles 15s linear infinite; }
   .hero__header {
     font-family: "Poppins", sans-serif;
     position: relative;
@@ -565,7 +585,7 @@ p, span {
       font-family: inherit;
       font-size: 9rem;
       left: 28rem;
-      top: -2em;
+      top: -15rem;
       position: absolute;
       color: #2f80ed;
       text-shadow: none; }
@@ -672,18 +692,6 @@ p, span {
   justify-content: flex-end;
   align-items: flex-end;
   background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png"); }
-  .footer::before {
-    background: url("../border-dark.svg");
-    content: '';
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 10;
-    top: -20%;
-    left: 0;
-    height: 30rem;
-    width: 100%;
-    transform: scale(-1, -1); }
   .footer__copy {
     margin: 1rem;
     color: rgba(255, 255, 255, 0.9);
@@ -701,15 +709,19 @@ p, span {
   color: black;
   font-size: 3rem; }
 
-#chartdiv {
-  padding: 10px;
-  width: 800px;
-  height: 800px;
-  background-color: #EEE; }
+.chart {
+  margin: 2rem; }
+  .chart__display {
+    width: 100%;
+    height: 50rem;
+    background-color: white;
+    font-family: "Roboto", sans-serif; }
 
 .loading {
   display: inline-block;
   position: relative;
+  top: 50%;
+  left: 50%;
   width: 6.4rem;
   height: 6.4rem; }
 
