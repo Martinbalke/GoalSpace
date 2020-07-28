@@ -429,19 +429,7 @@ p, span {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
-    top: -28rem;
-    filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.25)); }
-  .goalContainer::after {
-    z-index: -2;
-    height: 40rem;
-    background: url("../images/border-dark.svg");
-    content: '';
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: .9;
-    width: 100vw;
-    top: -34rem; }
+    top: -28rem; }
 
 .goal {
   position: relative;
