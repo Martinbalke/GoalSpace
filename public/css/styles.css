@@ -2,16 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
 @keyframes bubbles {
   0% {
-    transform: translateY(20rem) rotate(0deg);
+    transform: translate(0rem, 10rem) rotate(0deg);
     opacity: 1;
     border-radius: 50%; }
   50% {
-    transform: translateY(-20rem) rotate(500deg);
-    opacity: .7;
+    transform: translateY(-50rem) rotate(500deg);
     border-radius: 45%; }
   100% {
-    transform: translateY(-45rem) rotate(720deg);
-    opacity: 0;
+    transform: translateY(-80rem) rotate(720deg);
     border-radius: 50%; } }
 
 * {
@@ -82,7 +80,7 @@ p, span {
     transform: skew(-4deg) translateZ(0);
     transition: all .2s; }
     .btn-blob::after {
-      background: url("../button-blob.svg");
+      background: url("../images/button-blob.svg");
       z-index: -1;
       content: '';
       position: absolute;
@@ -103,7 +101,7 @@ p, span {
   align-items: center;
   justify-content: center; }
   .goalForm__background {
-    background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
+    background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../images/doodlesdark.png");
     display: flex;
     align-items: center;
     justify-content: center; }
@@ -245,6 +243,10 @@ p, span {
 .modal__reference {
   z-index: 250; }
 
+.contentContainer {
+  position: relative;
+  z-index: 200; }
+
 .edit {
   display: flex;
   flex-wrap: wrap;
@@ -305,7 +307,7 @@ p, span {
       width: 40rem;
       left: -15%;
       top: -100%;
-      background: url("../blob.svg");
+      background: url("../images/blob.svg");
       content: '';
       position: absolute;
       background-repeat: no-repeat;
@@ -394,7 +396,7 @@ p, span {
       color: rgba(29, 53, 87, 0.4);
       text-shadow: none; }
   .milestone::after {
-    background: url("../milestone-blob.svg");
+    background: url("../images/milestone-blob.svg");
     content: '';
     position: absolute;
     background-repeat: no-repeat;
@@ -416,7 +418,7 @@ p, span {
   .goalContainer::before {
     z-index: -1;
     height: 35rem;
-    background: url("../border-dark.svg");
+    background: url("../images/border-dark.svg");
     content: '';
     position: absolute;
     background-repeat: no-repeat;
@@ -427,7 +429,7 @@ p, span {
   .goalContainer::after {
     z-index: -2;
     height: 40rem;
-    background: url("../border-dark.svg");
+    background: url("../images/border-dark.svg");
     content: '';
     position: absolute;
     background-repeat: no-repeat;
@@ -525,13 +527,14 @@ p, span {
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
 
 .hero {
-  background-image: url("../color.jpg");
+  background-image: url("../images/color.jpg");
   background-size: cover;
-  overflow: hidden;
   background-attachment: fixed;
+  overflow: hidden;
   height: 60rem;
   display: flex;
   position: relative;
+  z-index: 2;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -539,21 +542,65 @@ p, span {
   margin-bottom: 1rem; }
   .hero::after {
     height: 31rem;
-    width: 110%;
-    background: url("../border.svg");
+    z-index: 1;
+    width: 100%;
+    background: url("../images/border.svg");
     content: '';
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
     transform: scale(-1, 1);
-    filter: drop-shadow(5rem -2.2rem #2f80ed);
+    filter: drop-shadow(0 -1rem rgba(47, 128, 237, 0.9));
     bottom: -5%; }
   .hero__bubbles {
     position: absolute;
-    width: 10rem;
-    height: 10rem;
-    background: red;
-    animation: bubbles 15s linear infinite; }
+    top: -25rem;
+    left: 0;
+    width: 100vw;
+    height: 68rem;
+    overflow: hidden;
+    z-index: -100; }
+    .hero__bubbles div {
+      position: absolute;
+      bottom: -15%;
+      right: 10%;
+      animation: bubbles 15s linear infinite; }
+      .hero__bubbles div:nth-child(1) {
+        height: 8rem;
+        width: 8rem;
+        right: 50%;
+        animation-delay: 5s;
+        background: white; }
+      .hero__bubbles div:nth-child(2) {
+        height: 3rem;
+        width: 3rem;
+        right: 90%;
+        animation-delay: 23s;
+        background: #EEE; }
+      .hero__bubbles div:nth-child(3) {
+        height: 1rem;
+        width: 1rem;
+        right: 55%;
+        animation-delay: -1s;
+        background: #fca311; }
+      .hero__bubbles div:nth-child(4) {
+        height: 2rem;
+        width: 2rem;
+        right: 80%;
+        animation-delay: 2s;
+        background: #008CFF; }
+      .hero__bubbles div:nth-child(5) {
+        height: 4rem;
+        width: 4rem;
+        right: 71%;
+        animation-delay: 16s;
+        background: #fca311; }
+      .hero__bubbles div:nth-child(6) {
+        height: 3rem;
+        width: 3rem;
+        right: 60%;
+        animation-delay: 10s;
+        background: #2f80ed; }
   .hero__header {
     font-family: "Poppins", sans-serif;
     position: relative;
@@ -584,7 +631,7 @@ p, span {
     .hero__header-logo {
       font-family: inherit;
       font-size: 9rem;
-      left: 28rem;
+      left: 30rem;
       top: -15rem;
       position: absolute;
       color: #2f80ed;

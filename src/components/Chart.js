@@ -113,7 +113,6 @@ useEffect(() => {
             }
         }
     }
-    console.log(progressData[0].dailyProgress)
     chartRef.current = chart;
     return () => {
       chart.dispose();

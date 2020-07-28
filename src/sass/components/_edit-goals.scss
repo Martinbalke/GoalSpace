@@ -1,3 +1,9 @@
+.contentContainer{
+  position: relative;
+  z-index: 200;
+
+}
+
 .edit{
   display: flex;
   flex-wrap: wrap;
@@ -62,7 +68,7 @@
       width: 40rem;
       left: -15%;
       top: -100%;
-      background: url('../blob.svg');
+      background: url('../images/blob.svg');
       @include shape-pseudo-element;
       filter: drop-shadow(5rem .5rem rgba($color-orange, .9));
     }
