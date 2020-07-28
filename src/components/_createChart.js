@@ -4,13 +4,13 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
 
 class ChartClass {
-  constructor(data){
+  constructor(data) {
     this.chart = am4core.create('chart', am4charts.XYChart)
     this.xAxis = this.chart.xAxes.push(new am4charts.CategoryAxis())
     this.chart.data = data;
   }
 
-  chartSetup = () =>{
+  chartSetup = () => {
     this.chart.colors.step = 2;
 
     this.chart.legend = new am4charts.Legend()
@@ -26,10 +26,10 @@ class ChartClass {
 
     let yAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
     yAxis.min = 0;
-    
+
   }
 
-  createSeries = (value, name) =>{
+  createSeries = (value, name) => {
     let series = this.chart.series.push(new am4charts.ColumnSeries())
     series.dataFields.valueY = value
     series.dataFields.categoryX = 'date'
@@ -71,7 +71,7 @@ class ChartClass {
         let visibleCount = newIndex;
         let newMiddle = visibleCount / 2;
 
-        this.chart.series.each( (series) => {
+        this.chart.series.each((series) => {
           let trueIndex = this.chart.series.indexOf(series);
           let newIndex = series.dummyData;
 
