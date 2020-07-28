@@ -2,7 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
 @keyframes bubbles {
   0% {
-    transform: translate(0rem, 10rem) rotate(0deg);
+    transform: translateY(-10rem) rotate(0deg);
+    opacity: 0;
+    border-radius: 50%; }
+  10% {
+    transform: translateY(-20rem) rotate(0deg);
     opacity: 1;
     border-radius: 50%; }
   50% {
@@ -280,8 +284,9 @@ p, span {
     align-self: flex-end;
     position: relative;
     margin-top: 2rem;
+    margin-bottom: 10rem;
     top: 9rem;
-    left: 20%;
+    left: -10%;
     z-index: 200; }
     .edit__blob h3 {
       position: relative;
@@ -542,7 +547,7 @@ p, span {
   margin-bottom: 1rem; }
   .hero::after {
     height: 31rem;
-    z-index: 1;
+    z-index: -1;
     width: 100%;
     background: url("../images/border.svg");
     content: '';
@@ -550,8 +555,7 @@ p, span {
     background-repeat: no-repeat;
     background-size: cover;
     transform: scale(-1, 1);
-    filter: drop-shadow(0 -1rem rgba(47, 128, 237, 0.9));
-    bottom: -5%; }
+    bottom: -3%; }
   .hero__bubbles {
     position: absolute;
     top: -25rem;
@@ -682,25 +686,25 @@ p, span {
       background-repeat: no-repeat;
       background-size: cover;
       z-index: -1;
-      top: -250%;
-      left: -200%;
+      top: -277%;
+      left: -210%;
       height: 80rem;
-      border-radius: 50%;
       width: 80rem;
-      filter: drop-shadow(6px 6px 5px rgba(0, 0, 0, 0.25)) drop-shadow(5rem 1.5rem rgba(29, 53, 87, 0.9));
+      border-radius: 50%;
+      filter: drop-shadow(2rem 2.5rem rgba(29, 53, 87, 0.9));
       background-color: white; }
     .hero__shapes::before {
       content: '';
       position: absolute;
       background-repeat: no-repeat;
       background-size: cover;
-      z-index: 4;
+      z-index: 1;
       top: -160%;
-      left: -120%;
+      left: -80%;
       border-radius: 50%;
-      height: 30rem;
-      width: 30rem;
-      filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)) drop-shadow(55rem 35.5rem #fca311);
+      height: 25rem;
+      width: 25rem;
+      filter: drop-shadow(40rem 37.5rem #fca311);
       background-color: #EEE; }
   .hero__nav {
     align-self: flex-end;
@@ -761,10 +765,21 @@ p, span {
     margin: 0 1rem; }
 
 .chart-container {
+  position: relative;
+  z-index: 1;
   background: white;
   height: 100vh;
-  color: black;
   font-size: 3rem; }
+  .chart-container::before {
+    background: url("../images/alt-border-white.svg");
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    top: -35%;
+    width: 100%;
+    height: 30rem; }
 
 .chart {
   margin: 2rem; }

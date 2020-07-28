@@ -15,13 +15,13 @@
 
   &::after {
     height: 31rem;
-    z-index: 1;
+    z-index: -1;
     width: 100%;
     background: url("../images/border.svg");
     @include shape-pseudo-element;
     transform: scale(-1, 1);
-    filter: drop-shadow(0 -1rem rgba($color-primary, .9));
-    bottom: -5%;
+    // filter: drop-shadow(0 -1rem rgba($color-primary, .9));
+    bottom: -3%;
   }
 
   &__bubbles{
@@ -176,24 +176,24 @@
     &::after {
       @include shape-pseudo-element;
       z-index: -1;
-      top: -250%;
-      left: -200%;
+      top: -277%;
+      left: -210%;
       height: 80rem;
-      border-radius: 50%;
       width: 80rem;
-      filter: drop-shadow($shadow-large) drop-shadow(5rem 1.5rem rgba($color-primary-dark, 0.9));
+      border-radius: 50%;
+      filter: drop-shadow(2rem 2.5rem rgba($color-primary-dark, 0.9));
       background-color: $color-white;
     }
 
     &::before {
       @include shape-pseudo-element;
-      z-index: 4;
+      z-index: 1;
       top: -160%;
-      left: -120%;
+      left: -80%;
       border-radius: 50%;
-      height: 30rem;
-      width: 30rem;
-      filter: drop-shadow($shadow-small) drop-shadow(55rem 35.5rem $color-orange);
+      height: 25rem;
+      width: 25rem;
+      filter:  drop-shadow(40rem 37.5rem $color-orange);
       background-color: $color-grey;
     }
   }
