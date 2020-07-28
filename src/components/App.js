@@ -8,8 +8,8 @@ import Nav from './Nav'
 function App() {
   return (
     <div className="App">
-      <Nav/>
       <Hero/>
+      <Nav/>
       <GoalContainer/>
       <Footer/>
     </div>

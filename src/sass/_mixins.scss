@@ -38,19 +38,19 @@
   }
 
   10%{
-      transform: translateY(-20rem) rotate(0deg);
+      transform: translateY(-30rem) rotate(0deg);
       opacity: 1;
       border-radius: 50%;
 
   }
 
   50%{
-      transform: translateY(-50rem) rotate(500deg);
+      transform: translateY(-70rem) rotate(500deg);
       border-radius: 45%;
   }
 
   100%{
-      transform: translateY(-80rem) rotate(720deg);
+      transform: translateY(-110rem) rotate(720deg);
       border-radius: 50%;
   }
 
