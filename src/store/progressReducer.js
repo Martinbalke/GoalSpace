@@ -51,14 +51,14 @@ export const updateProgressPoints = (goalId, amount) => {
       progress.dailyProgress[day] ? progress.dailyProgress[day] += amount : progress.dailyProgress[day] = amount;
       //Update the progress in the database
       await superAgentAPICallSend('put', `http://localhost:3045/progress/${progress._id}`, progress)
-      dispatch({ type: 'UPDATE_POINTS', progress, amount })
+      dispatch({ type: 'UPDATE_POINTS', progress })
   }
 }
 
 
 
 
-const progressReducer = (state = [], { type, amount, progress }) => {
+const progressReducer = (state = [], { type, progress }) => {
   const newState = [...state];
   switch (type) {
     case 'LOAD_PROGRESS':

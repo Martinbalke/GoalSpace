@@ -12,11 +12,11 @@ import { loadGoals } from '../store/goalReducer';
 import {AnimatePresence} from 'framer-motion';
 
 
-function GoalContainer({goals, dispatch, progressData}) {
+function GoalContainer({goals, dispatch}) {
   //State variable to keep track of which goal is currently being edited
   const [editing, setEditing] = useState(-1);
 
-  
+
   useEffect( () => {
     dispatch(loadGoals());
   },[dispatch])
@@ -32,7 +32,7 @@ function GoalContainer({goals, dispatch, progressData}) {
   }
 
   return (
-    <section className="contentContainer">
+    <main className="contentContainer">
       <SetGoal setEditing={setEditing}>
         <EditGoal setEditing={setEditing}/>
       </SetGoal>
@@ -47,13 +47,13 @@ function GoalContainer({goals, dispatch, progressData}) {
       <ChartContainer>
         <Chart/>
       </ChartContainer>
-    </section>
+    </main>
   );
 }
 
-const mSTP = state => ({
+const mapStateToProps = state => ({
   goals: state.goals,
   progressData: state.progress
 });
 
-export default connect(mSTP)(GoalContainer);
+export default connect(mapStateToProps)(GoalContainer);

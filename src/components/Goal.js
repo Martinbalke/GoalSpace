@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import {completeGoal} from '../store/goalReducer' 
 import {updateProgressPoints} from '../store/progressReducer';
 
+
+
+
 function Goal({ goal, children, index,  dispatch}) {
   if(!goal.habits) return <div></div>
 
