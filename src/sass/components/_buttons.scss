@@ -44,7 +44,7 @@
     transition: all .2s;
 
     &::after{
-      background:  url('../button-blob.svg');
+      background:  url('../images/button-blob.svg');
       z-index: -1;
       @include shape-pseudo-element;
       top: -6.5rem;

@@ -11,21 +11,10 @@
   &::before{
     z-index: -1;
     height: 35rem;
-    background: url("../border-dark.svg");
+    background: url("../images/border-dark.svg");
     @include shape-pseudo-element;
     width: 100vw;
     top: -28rem;
-    filter: drop-shadow($shadow-large);
-  }
-
-  &::after{
-    z-index: -2;
-    height: 40rem;
-    background: url("../border-dark.svg");
-    @include shape-pseudo-element;
-    opacity: .9;
-    width: 100vw;
-    top: -34rem;
 
   }
 }

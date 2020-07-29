@@ -36,7 +36,7 @@
   }
 
   &::after{
-    background: url('../milestone-blob.svg');
+    background: url('../images/milestone-blob.svg');
     @include shape-pseudo-element;
     height: 30rem;
     width: 30rem;

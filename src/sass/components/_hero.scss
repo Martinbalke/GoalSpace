@@ -1,11 +1,12 @@
 .hero {
-  background-image: url("../color.jpg");
+  background-image: url("../images/color.jpg");
   background-size: cover;
-  overflow: hidden;
   background-attachment: fixed;
+  overflow: hidden;
   height: 60rem;
   display: flex;
   position: relative;
+  z-index: 2;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -14,21 +15,82 @@
 
   &::after {
     height: 31rem;
-    width: 110%;
-    background: url("../border.svg");
+    z-index: -1;
+    width: 100%;
+    background: url("../images/border.svg");
     @include shape-pseudo-element;
     transform: scale(-1, 1);
-    filter: drop-shadow(5rem -2.2rem $color-primary);
-    bottom: -5%;
+    // filter: drop-shadow(0 -1rem rgba($color-primary, .9));
+    bottom: -3%;
   }
 
   &__bubbles{
     position: absolute;
-    width: 10rem;
-    height: 10rem;
-    background: red;
-    @include animate-bubbles
+    top: -25rem;
+    left: 0;
+    width: 100vw;
+    height: 68rem;
+    overflow: hidden;
+    z-index: -100;
+
+    & div{
+      position: absolute;
+      bottom: -15%;
+      right: 10%;
+      @include animate-bubbles;
+
+      &:nth-child(1){
+        height: 8rem;
+        width: 8rem;
+        right: 50%;
+        animation-delay: 5s;
+        background: $color-white;
+      }
+
+      &:nth-child(2){
+        height: 3rem;
+        width: 3rem;
+        right: 90%;
+        animation-delay: 23s;
+        background: $color-grey;
+      }
+
+      &:nth-child(3){
+        height: 1rem;
+        width: 1rem;
+        right: 55%;
+        animation-delay: -1s;
+        background: $color-orange;
+      }
+
+      &:nth-child(4){
+        height: 2rem;
+        width: 2rem;
+        right: 80%;
+        animation-delay: 2s;
+        background: $color-primary-light;
+      }
+      &:nth-child(5){
+        height: 4rem;
+        width: 4rem;
+        right: 71%;
+        animation-delay: 16s;
+        background: $color-orange;
+      }
+      &:nth-child(6){
+        height: 3rem;
+        width: 3rem;
+        right: 60%;
+        animation-delay: 10s;
+        background: $color-primary;
+      }
+    }
+    
+
+   
   }
+
+  
 
   &__header {
     font-family: $font-header;
@@ -65,7 +127,7 @@
     &-logo {
      font-family: inherit;
      font-size: 9rem;
-     left: 28rem;
+     left: 30rem;
      top: -15rem;
      position: absolute;
      color: rgba($color-primary, 1);
@@ -114,24 +176,24 @@
     &::after {
       @include shape-pseudo-element;
       z-index: -1;
-      top: -250%;
-      left: -200%;
+      top: -277%;
+      left: -210%;
       height: 80rem;
-      border-radius: 50%;
       width: 80rem;
-      filter: drop-shadow($shadow-large) drop-shadow(5rem 1.5rem rgba($color-primary-dark, 0.9));
+      border-radius: 50%;
+      filter: drop-shadow(2rem 2.5rem rgba($color-primary-dark, 0.9));
       background-color: $color-white;
     }
 
     &::before {
       @include shape-pseudo-element;
-      z-index: 4;
+      z-index: 1;
       top: -160%;
-      left: -120%;
+      left: -80%;
       border-radius: 50%;
-      height: 30rem;
-      width: 30rem;
-      filter: drop-shadow($shadow-small) drop-shadow(55rem 35.5rem $color-orange);
+      height: 25rem;
+      width: 25rem;
+      filter:  drop-shadow(40rem 37.5rem $color-orange);
       background-color: $color-grey;
     }
   }

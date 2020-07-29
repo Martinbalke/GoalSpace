@@ -8,6 +8,9 @@ function Hero(props) {
         <div/>
         <div/>
         <div/>
+        <div/>
+        <div/>
+        <div/>
       </div>
       <span className='hero__header-logo'>GS</span>
       <span className='hero__header-text-1'>Set a meaningful goal</span>
