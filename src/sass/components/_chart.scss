@@ -36,8 +36,7 @@
       filter: drop-shadow(2px 2px $color-primary) drop-shadow(-3px 1px $color-orange);
 
       &:hover{
-        transform: scale(1.02) translateY(-.1rem);
-        box-shadow: $shadow-small;
+        transform: scale(1.05) translateY(-.3rem);
       }
     }
   }
