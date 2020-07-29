@@ -863,7 +863,8 @@ p, span {
   z-index: 1;
   background: white;
   height: 100vh;
-  font-size: 3rem; }
+  font-size: 3rem;
+  margin-bottom: 5rem; }
   .chart-container::before {
     background: url("../images/alt-border-white.svg");
     content: "";

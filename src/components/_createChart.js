@@ -3,6 +3,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 am4core.useTheme(am4themes_animated);
 
+
 class ChartClass {
   constructor(data) {
     this.chart = am4core.create('chart', am4charts.XYChart)
@@ -12,6 +13,9 @@ class ChartClass {
 
   chartSetup = () => {
     this.chart.colors.step = 2;
+
+    this.chart.scrollbarX = new am4core.Scrollbar();
+    this.chart.scrollbarX.parent = this.chart.bottomAxesContainer;
 
     this.chart.legend = new am4charts.Legend()
     this.chart.legend.position = 'top'
@@ -34,6 +38,8 @@ class ChartClass {
     series.dataFields.valueY = value
     series.dataFields.categoryX = 'date'
     series.name = name
+    series.columns.template.column.cornerRadiusTopLeft = 20;
+    series.columns.template.column.cornerRadiusTopRight = 20;
 
     series.events.on("hidden", this.arrangeColumns);
     series.events.on("shown", this.arrangeColumns);
@@ -84,7 +90,25 @@ class ChartClass {
     }
   }
 
+  
+
 }
 
 
+function chartTheme(target) {
+    if(target instanceof am4core.InterfaceColorSet){
+      target.setFor('grid',	am4core.color("#FFF"))    
+      target.setFor('text', am4core.color("#3282E7"))    
+      target.setFor('secondaryButton', am4core.color("#3282E7"))    
+      target.setFor('secondaryButtonHover', am4core.color("#3282E7").lighten(-.2))    
+    }
+
+    if (target instanceof am4core.ColorSet) {
+      target.list = [
+        am4core.color('#3282E7')
+      ];
+    }
+}
+
+am4core.useTheme(chartTheme)
 export default ChartClass;
