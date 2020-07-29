@@ -1,10 +1,12 @@
 .setgoals {
+
   height: 60rem;
   display: flex;
   position: relative;
   flex-direction: column;
 
   &__header-container{
+    margin-top: 5rem;
     display: flex;
     align-self: center;
     width: 50rem;
