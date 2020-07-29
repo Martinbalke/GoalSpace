@@ -22,7 +22,8 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req,res) => {
  let id = req.params.id;
- let updated = goalModel.update(id, req.body)
+ console.log(id, req.body)
+ let updated = await goalModel.update(id, req.body)
  res.send(updated);
 })
 

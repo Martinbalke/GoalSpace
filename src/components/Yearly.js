@@ -21,7 +21,10 @@ function Yearly({ goals, setEditing }) {
       <div className="border"/>
       <h3 className='yearly__header'>Create a new yearly goal</h3>
       <button className='btn yearly__btn-main' onClick={() => setEditing(goals.length)}></button>
-      {yearlyGoals()}
+      <div className="yearly__edit">
+        <h3 className="yearly__edit-tertiary">Edit your goals :</h3>
+        {yearlyGoals()}
+      </div>
       <div className='yearly__blob'>
         <h3>Did you know?</h3>
         <p>It's been proven that when you set a goal if you set three simple habits to accomplish daily you're more likely to succeed</p>

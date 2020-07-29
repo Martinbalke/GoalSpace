@@ -1,0 +1,17 @@
+@mixin tertiary-blue-skew{
+  background: $color-primary;
+  color: $color-white;
+  padding: 1rem 2rem;
+  box-shadow: $shadow-small;
+  border-radius: $radius-large;
+  transform: skew(-4deg);
+}
+
+@mixin tertiary-white-skew{
+  background: $color-white;
+  color: $color-primary;
+  padding: 1rem 2rem;
+  box-shadow: $shadow-small;
+  border-radius: $radius-large;
+  transform: skew(-4deg);
+}
