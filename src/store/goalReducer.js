@@ -24,7 +24,6 @@ export const superAgentAPICallSend = async (method, uri, data) => {
   }
 }
 
-
 export const loadGoals = () => {
   return async (dispatch) => {
     let res = await superAgentAPICallRecieve('get', 'http://localhost:3045/goals')
