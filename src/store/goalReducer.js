@@ -1,106 +1,78 @@
 
 import superagent from 'superagent';
-import {createProgressData, loadProgressData} from './progressReducer';
+import { createProgressData, loadProgressData } from './progressReducer';
 
-export const superAgentAPICall = async (method, uri) => {
-  
+
+export const superAgentAPICallRecieve = async (method, uri) => {
+  try {
+    return await superagent[method](uri).retry()
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+export const superAgentAPICallSend = async (method, uri, data) => {
+  let jsonData = JSON.stringify(data);
+  try {
+    return await superagent[method](uri)
+      .set('Content-Type', 'application/json')
+      .send(jsonData)
+      .retry()
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 
 export const loadGoals = () => {
   return async (dispatch) => {
-    let goals = [];
-    try {
-      let res = await superagent.get('http://localhost:3045/goals').retry()
-      res.body.forEach(goal => goals.push(goal));
-      dispatch({ type: 'LOAD_GOALS', goals });
-      dispatch(loadProgressData());
-    } catch (error) {
-      console.error(error);
-    }
-
+    let res = await superAgentAPICallRecieve('get', 'http://localhost:3045/goals')
+    dispatch({ type: 'LOAD_GOALS', goals: [...res.body] });
+    dispatch(loadProgressData());
   }
 }
 
 
 export const newGoal = (goal, index) => {
-
   return async (dispatch) => {
-    let jsonGoal = JSON.stringify(goal);
-    try {
-      let res = await superagent.post('http://localhost:3045/goals')
-        .set('Content-Type', 'application/json')
-        .send(jsonGoal)
-        .retry()
-
-      dispatch(createProgressData(res.body._id));
-      dispatch({ type: 'NEW_GOAL', goal: res.body, index })
-      
-    } catch (error) {
-      console.error(error);
-    }
+    let res = await superAgentAPICallSend('post', 'http://localhost:3045/goals', goal)
+    dispatch(createProgressData(res.body._id));
+    dispatch({ type: 'NEW_GOAL', goal: res.body, index })
   }
 }
 
 export const completeGoal = (id, index) => {
   return async (dispatch) => {
-    try {
-      await superagent.delete(`http://localhost:3045/goals/${id}`)
-        .set('Content-Type', 'application/json')
-        .retry()
+      await superAgentAPICallRecieve('delete', `http://localhost:3045/goals/${id}`);
       dispatch({ type: 'COMPLETE_GOAL', index })
-    } catch (error) {
-      console.error(error);
-    }
   }
 }
 
 export const updateGoal = (goal, index) => {
   return async (dispatch) => {
-    let jsonGoal = JSON.stringify(goal);
-    try {
-      await superagent.put(`http://localhost:3045/goals/${goal._id}`)
-        .set('Content-Type', 'application/json')
-        .send(jsonGoal)
-        .retry()
+      await superAgentAPICallSend('put', `http://localhost:3045/goals/${goal._id}`, goal)
       dispatch({ type: 'UPDATE_GOAL', goal, index })
-    } catch (error) {
-      console.error(error);
-    }
   }
-
 }
 
 
 
-
-let initialState = []
-
-
-let goalReducer = (state = initialState, { goals, goal, type, index }) => {
+let goalReducer = (state = [], { goals, goal, type, index }) => {
   let newState = [...state]
   
-
   switch (type) {
     case 'LOAD_GOALS':
-      newState = [...goals]
-      break;
+      return [...goals]
     case 'NEW_GOAL':
-      newState = [...newState, goal]
-      break;
+      return [...newState, goal]
     case 'UPDATE_GOAL':
-      newState = [
-        ...newState.slice(0, index),
-        goal,
-        ...newState.slice(index + 1)
-      ]
-      break;
+      return newState.map(state => state._id === goal._id ? state = goal : state);
     case 'COMPLETE_GOAL':
       return newState.filter((g, i) => index !== i);
     default:
       return newState;
   }
-  return newState;
 }
 
 

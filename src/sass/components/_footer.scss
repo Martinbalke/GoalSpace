@@ -26,8 +26,23 @@
     margin: 0.75rem;
   }
 
-  &__social {
-    height: 5rem;
+  &__git{
+    background: url('../images/git.svg');
+  }
+  &__linked{
+    background: url('../images/linked.svg');
+  }
+
+  &__git, &__linked {
+    height: 6rem;
+    width: 6rem;
     margin: 0 1rem;
+    background-size: cover;
+    transition: all .2s;
+
+    &:hover{
+      transform: scale(1.05) translateY(-.2rem);
+      filter: drop-shadow(0.2rem 0.2rem $color-orange) drop-shadow(-0.2rem 0.2rem $color-primary);
+    }
   }
 }

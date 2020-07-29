@@ -67,7 +67,7 @@ p, span {
     .btn-main:after {
       content: "+";
       display: block; }
-    .btn-main:hover, .btn-main:focus {
+    .btn-main:hover {
       transform: scale(1.05) translateY(2px);
       background-color: white;
       color: #2f80ed;
@@ -401,6 +401,7 @@ p, span {
     z-index: 200; }
     .edit__blob h3 {
       position: relative;
+      text-align: center;
       z-index: 200;
       margin: 1rem auto;
       width: 80%;
@@ -436,6 +437,7 @@ p, span {
   position: relative;
   flex-direction: column; }
   .setgoals__header-container {
+    margin-top: 5rem;
     display: flex;
     align-self: center;
     width: 50rem;
@@ -528,7 +530,7 @@ p, span {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  min-height: 100vh;
+  height: 100%;
   padding-top: 10rem;
   position: relative; }
   .goalContainer::before {
@@ -711,9 +713,9 @@ p, span {
     letter-spacing: -1px;
     padding-left: 1.5rem;
     text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    font-weight: 900;
     z-index: 1;
     width: 18ch;
-    font-weight: 900;
     font-size: 4.5rem;
     color: #1d3557; }
     .hero__header-text-1 {
@@ -831,9 +833,19 @@ p, span {
   .footer__socials {
     display: flex;
     margin: 0.75rem; }
-  .footer__social {
-    height: 5rem;
-    margin: 0 1rem; }
+  .footer__git {
+    background: url("../images/git.svg"); }
+  .footer__linked {
+    background: url("../images/linked.svg"); }
+  .footer__git, .footer__linked {
+    height: 6rem;
+    width: 6rem;
+    margin: 0 1rem;
+    background-size: cover;
+    transition: all .2s; }
+    .footer__git:hover, .footer__linked:hover {
+      transform: scale(1.05) translateY(-0.2rem);
+      filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
 
 .chart-container {
   position: relative;

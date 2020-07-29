@@ -21,8 +21,7 @@
       display: block;
     }
 
-    &:hover,
-    &:focus {
+    &:hover {
       transform: scale(1.05) translateY(2px);
       background-color: $color-white;
       color: $color-primary;
