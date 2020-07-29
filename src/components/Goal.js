@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {completeGoal} from '../store/goalReducer' 
+import {updateProgressPoints} from '../store/progressReducer';
 
 function Goal({ goal, children, index,  dispatch}) {
   if(!goal.habits) return <div></div>
@@ -11,7 +12,7 @@ function Goal({ goal, children, index,  dispatch}) {
       {goal.habits.map( (habit, index) => (
         <div className="goal__habit" key={index}>
           <p className="goal__habit-text">{habit}</p>
-          <button className="goal__habit-button btn btn-main"></button>
+          <button className="goal__habit-button btn btn-main" onClick={() => dispatch(updateProgressPoints(goal._id, 5))}></button>
         </div>
       ))}
       {children}

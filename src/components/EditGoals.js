@@ -12,6 +12,10 @@ function EditGoals({goals, setEditing}) {
             <h3 className='edit__tertiary'>{goal.goal}</h3>
             <button className='btn btn-main edit__btn' onClick={() => { setEditing(index) }}></button>
           </div>))}
+          <div className='edit__blob'>
+            <h3>Did you know?</h3>
+            <p>It's been proven that when you set a goal if you set three simple habits to accomplish daily you're more likely to succeed</p>
+          </div>
       </div>
     );
   }

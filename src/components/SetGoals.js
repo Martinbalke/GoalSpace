@@ -33,10 +33,6 @@ function SetGoals({ goals, setEditing, children }) {
       </div>
 
       {children}
-      <div className='setgoals__blob'>
-        <h3>Did you know?</h3>
-        <p>It's been proven that when you set a goal if you set three simple habits to accomplish daily you're more likely to succeed</p>
-      </div>
     </div>
   )
 }

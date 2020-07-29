@@ -9,7 +9,7 @@
   z-index: 201;
   padding: 2.5rem 2rem;
   transform: skew(-4deg);
-  height: 45rem;
+  height: 50rem;
 
   &__tertiary{
     margin: 1rem 1.5rem;
@@ -19,13 +19,52 @@
   }
 
   &__goal {
-    height: 10rem;
+    height: 3rem;
     display: flex;
   }
 
   &__btn{
     position: relative;
-    left: -14%;
-    top: -15%;
+    left: -3.5rem;
+    top: -1.5rem;
+  }
+
+
+  &__blob {
+    align-self: flex-end;
+    position: relative;
+    margin-top: 2rem;
+    top:9rem;
+    left: 20%;
+    z-index: 200;
+
+
+
+    h3 {
+      position: relative;
+      z-index: 200;
+      margin: 1rem auto;
+      width: 80%;
+      font-size: 3rem;
+      @include tertiary-blue-skew;
+    }
+    p {
+      position: relative;
+      z-index: 200;
+      color: rgba($color-primary-dark,.8);
+      font-size: 1.4rem;
+      width: 30rem;
+    }
+
+    &::after{
+      z-index: 199;
+      height: 40rem;
+      width: 40rem;
+      left: -15%;
+      top: -100%;
+      background: url('../blob.svg');
+      @include shape-pseudo-element;
+      filter: drop-shadow(5rem .5rem rgba($color-orange, .9));
+    }
   }
 }

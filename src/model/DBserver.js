@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import express from 'express'
 import goalrouter from '../routes/goals-routes';
+import progressRouter from '../routes/progress-routes';
 import cors from 'cors';
 
 
@@ -15,6 +16,7 @@ app.get('/', async (req, res, next) => {
 });
 
 app.use('/goals',goalrouter);
+app.use('/progress', progressRouter);
 
 const server = {
 server: app,
@@ -31,6 +33,7 @@ start() {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
+    useFindAndModify: false 
   };
 
   mongoose.connect(PATH, options);

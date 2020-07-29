@@ -1,10 +1,14 @@
-import { createStore, applyMiddleware } from 'redux';
-import goalReducer from './goalReducer';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import goals from './goalReducer';
+import progress from './progressReducer';
 import thunk from 'redux-thunk';
+
+const rootReducer = combineReducers({goals, progress})
+
 
 export default function configureStore() {
   return createStore(
-    goalReducer,
+    rootReducer,
     applyMiddleware(thunk)
   );
 }
