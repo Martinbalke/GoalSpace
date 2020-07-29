@@ -70,8 +70,8 @@ export const updateProgressPoints = (goalId, amount) =>{
       .retry()
       //Modify the progress data
       let progress = res.body;
-      progress.monthlyProgress[month] += amount;
-      progress.dailyProgress[day] += amount;
+      progress.monthlyProgress[month] ? progress.monthlyProgress[month] += amount : progress.monthlyProgress[month] = amount;
+      progress.dailyProgress[day] ? progress.dailyProgress[day] += amount : progress.dailyProgress[day] = amount ;
       //Update the progress in the database
       const jsonProgressData = JSON.stringify(progress);
       await superagent.put(`http://localhost:3045/progress/${progress._id}`)

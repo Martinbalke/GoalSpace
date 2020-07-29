@@ -4,7 +4,7 @@ import React from 'react';
 function Nav() {
   return (
   <div class="navigation">
-      <input type="checkbox" class="navigation__checkbox" id="nav-check" />
+      <input type="checkbox" class="navigation__checkbox" id="nav-check"/>
       <label for="nav-check" class="navigation__button">
           <span class="navigation__icon">&nbsp;</span>
       </label>

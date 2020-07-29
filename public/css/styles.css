@@ -257,7 +257,7 @@ p, span {
     width: 7rem;
     position: fixed;
     top: 3rem;
-    right: 3rem;
+    right: 2rem;
     border-radius: 50%;
     z-index: 2000;
     text-align: center;
@@ -266,13 +266,13 @@ p, span {
     height: 6rem;
     width: 6rem;
     position: fixed;
-    top: 10.5rem;
-    right: -3.5rem;
-    background: #FF577D;
-    background: -webkit-linear-gradient(to top, #FF2AAC, #FF577D);
-    background: linear-gradient(to top, #FF2AAC, #FF577D);
+    top: 3.5rem;
+    right: 2.5rem;
+    background: linear-gradient(to top, white, white);
     z-index: 1000;
-    transition: all 1.5s; }
+    transition: all 1s;
+    transform: rotate(45deg);
+    border-radius: 4px; }
   .navigation__nav {
     height: 100vh;
     position: fixed;
@@ -284,6 +284,7 @@ p, span {
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .navigation__list {
     position: absolute;
+    display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -295,47 +296,32 @@ p, span {
   .navigation__link {
     position: relative;
     z-index: 1;
-    margin-bottom: 13rem;
+    margin-bottom: 10rem;
     backface-visibility: hidden; }
     .navigation__link:link, .navigation__link:visited {
       display: inline-block;
       font-family: "Roboto", sans-serif;
       text-transform: uppercase;
-      font-size: 3rem;
-      font-weight: 300;
+      font-size: 8rem;
+      font-weight: 900;
       padding: 1rem 2rem;
-      color: #FF3892;
+      color: white;
       text-decoration: none;
       letter-spacing: 1.5px;
-      transition: all 0.4s; }
-      .navigation__link:link:hover, .navigation__link:visited:hover {
-        backface-visibility: none;
-        transform: translateY(-1rem) scale(1.05); }
-    .navigation__link::after {
-      z-index: -1;
-      background: url("../images/nav-blob.svg");
-      content: "";
-      position: absolute;
-      background-repeat: no-repeat;
-      background-size: cover;
-      top: -150%;
-      left: -8rem;
-      width: 30rem;
-      height: 30rem;
-      filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.4)); }
-  .navigation__checkbox:checked ~ .navigation__background {
-    transform: scale(70) rotate(-700deg);
-    border-radius: 50%; }
-  .navigation__checkbox:checked ~ .navigation__nav {
-    opacity: 1;
-    width: 100%; }
+      transition: all 0.5s;
+      transform: skew(-4deg);
+      filter: drop-shadow(0.5rem 0.5rem #fca311) drop-shadow(-0.5rem 0.5rem #2f80ed); }
+      .navigation__link:link:hover, .navigation__link:link:focus, .navigation__link:visited:hover, .navigation__link:visited:focus {
+        color: transparent;
+        -webkit-text-stroke: 2px #2f80ed;
+        filter: drop-shadow(0.5rem 0.5rem #fca311) drop-shadow(0.5rem 0.5rem #2f80ed); }
   .navigation__icon {
     position: relative;
     margin-top: 3.5rem; }
     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
       width: 3rem;
       height: 2px;
-      background-color: #EEE;
+      background-color: #fca311;
       display: inline-block; }
     .navigation__icon::before, .navigation__icon::after {
       content: "";
@@ -346,18 +332,31 @@ p, span {
       top: -0.8rem; }
     .navigation__icon::after {
       top: 0.8rem; }
+  .navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(70);
+    background: linear-gradient(to right, white, #EEE); }
+  .navigation__checkbox:checked ~ .navigation__nav {
+    opacity: 1;
+    width: 100%; }
   .navigation__button:hover .navigation__icon::before {
     top: -1rem; }
   .navigation__button:hover .navigation__icon::after {
     top: 1rem; }
   .navigation__checkbox:checked + .navigation__button .navigation__icon {
     background-color: transparent; }
+  .navigation__checkbox:checked ~ .navigation__nav > .navigation__list {
+    display: inline-block; }
   .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
     top: 0;
     transform: rotate(135deg); }
   .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
     top: 0;
     transform: rotate(-135deg); }
+  .navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(70); }
+  .navigation__checkbox:checked ~ .navigation__nav {
+    opacity: 1;
+    width: 100%; }
 
 .contentContainer {
   position: relative;
