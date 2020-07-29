@@ -18,12 +18,6 @@ function Hero(props) {
       <span className='hero__header-text-2'>Accomplish it with daily habits</span>
     </h1>
     <div className="hero__shapes"/>
-    <nav className="hero__nav">
-      <p>JUMP TO</p>
-      <a href='#login'className="hero__nav-1">Login</a>
-      <a href='#goals'className="hero__nav-2">Yearly Goals</a>
-      <a href='#footer'className="hero__nav-3">Contact us</a>
-    </nav>
   </section>);
 }
 

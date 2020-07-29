@@ -26,10 +26,10 @@
 
   &__bubbles{
     position: absolute;
-    top: -25rem;
+    top: -45rem;
     left: 0;
     width: 100vw;
-    height: 68rem;
+    height: 80rem;
     overflow: hidden;
     z-index: -100;
 
@@ -198,36 +198,5 @@
     }
   }
 
-  &__nav {
-    align-self: flex-end;
-    position: relative;
-    z-index: 5;
-    display: inline-flex;
-    flex-direction: column;
-    margin: 2rem 4rem;
-    transform: skew(-4deg);
 
-    p {
-      color: $color-white;
-      font-family: $font-primary;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-    & a,
-    a:visited,
-    a:active {
-      font-family: $font-primary;
-      font-weight: bold;
-      font-size: 2rem;
-      margin: 1px;
-      padding: 2px 5px;
-      text-decoration: none;
-      color: $color-white;
-      transition: all 0.3s;
-
-      &:hover {
-        transform: translateX(-5px);
-      }
-    }
-  }
 }

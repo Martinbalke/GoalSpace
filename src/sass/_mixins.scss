@@ -1,4 +1,4 @@
-@mixin tertiary-blue-skew{
+@mixin tertiary-blue-skew {
   background: $color-primary;
   color: $color-white;
   padding: 1rem 2rem;
@@ -7,7 +7,7 @@
   transform: skew(-4deg);
 }
 
-@mixin tertiary-white-skew{
+@mixin tertiary-white-skew {
   background: $color-white;
   color: $color-primary;
   padding: 1rem 2rem;
@@ -16,42 +16,38 @@
   transform: skew(-4deg);
 }
 
-@mixin shape-pseudo-element{
-  content: '';
+@mixin shape-pseudo-element {
+  content: "";
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-
-
 @mixin animate-bubbles {
   animation: bubbles 15s linear infinite;
 }
 
-@keyframes bubbles{
-  0%{
-      transform: translateY(-10rem) rotate(0deg);
-      opacity: 0;
-      border-radius: 50%;
-
+@keyframes bubbles {
+  0% {
+    transform: translateY(-10rem) rotate(0deg);
+    opacity: 0;
+    border-radius: 50%;
   }
 
-  10%{
-      transform: translateY(-20rem) rotate(0deg);
-      opacity: 1;
-      border-radius: 50%;
-
+  10% {
+    transform: translateY(-30rem) rotate(0deg);
+    opacity: 1;
+    border-radius: 50%;
   }
 
-  50%{
-      transform: translateY(-50rem) rotate(500deg);
-      border-radius: 45%;
+  50% {
+    transform: translateY(-70rem) rotate(500deg);
+    border-radius: 45%;
   }
 
-  100%{
-      transform: translateY(-80rem) rotate(720deg);
-      border-radius: 50%;
+  100% {
+    transform: translateY(-110rem) rotate(720deg);
+    border-radius: 50%;
   }
+}
 
-} 

@@ -2,6 +2,10 @@
 import superagent from 'superagent';
 import {createProgressData, loadProgressData} from './progressReducer';
 
+export const superAgentAPICall = async (method, uri) => {
+  
+}
+
 
 export const loadGoals = () => {
   return async (dispatch) => {
