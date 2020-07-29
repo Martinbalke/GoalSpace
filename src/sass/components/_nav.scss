@@ -23,11 +23,7 @@
     position: fixed;
     top: 3.5rem;
     right: 2.5rem;
-    background: linear-gradient(
-      to top,
-    $color-white,
-      $color-white
-    );
+    background: linear-gradient(to top, $color-white, $color-white);
     z-index: 1000;
     transition: all 1s;
     transform: rotate(45deg);
@@ -78,20 +74,16 @@
       letter-spacing: 1.5px;
       transition: all 0.5s;
       transform: skew(-4deg);
-      
-      filter: drop-shadow(.5rem .5rem $color-orange) drop-shadow(-.5rem .5rem $color-primary);
-      &:hover, &:focus{
+
+      filter: drop-shadow(0.5rem 0.5rem $color-orange) drop-shadow(-0.5rem 0.5rem $color-primary);
+      &:hover,
+      &:focus {
         color: transparent;
         -webkit-text-stroke: 2px $color-primary;
-              filter: drop-shadow(.5rem .5rem $color-orange) drop-shadow(.5rem .5rem $color-primary);
+        filter: drop-shadow(0.5rem 0.5rem $color-orange) drop-shadow(0.5rem 0.5rem $color-primary);
       }
-      
-   
     }
-
-    
   }
-
 
   &__icon {
     position: relative;
@@ -103,7 +95,7 @@
       width: 3rem;
       height: 2px;
       background-color: $color-orange;
-      display: inline-block;
+      display: inline-block !important;
     }
 
     &::before,
@@ -113,7 +105,6 @@
       left: 0;
       transition: all 0.2s;
     }
-
     &::before {
       top: -0.8rem;
     }
@@ -125,7 +116,6 @@
   &__checkbox:checked ~ &__background {
     transform: scale(70);
     background: linear-gradient(to right, $color-white, $color-grey);
-
   }
 
   &__checkbox:checked ~ &__nav {
@@ -144,7 +134,7 @@
   &__checkbox:checked + &__button &__icon {
     background-color: transparent;
   }
-  &__checkbox:checked  ~ &__nav > &__list {
+  &__checkbox:checked ~ &__nav > &__list {
     display: inline-block;
   }
 
