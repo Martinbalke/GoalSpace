@@ -8,7 +8,7 @@
 *::after{
   box-sizing: inherit;
 }
-
+body { height: 100%; overflow-x: hidden; }
 html{
   //One REM is 10px
   font-size: 62.5%;
