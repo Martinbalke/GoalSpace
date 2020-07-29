@@ -181,7 +181,7 @@ p, span {
     align-self: flex-start;
     font-size: 2rem; }
   .yearly__blob {
-    z-index: 200;
+    z-index: -200;
     align-self: flex-end;
     position: absolute;
     top: 40%;
@@ -210,149 +210,6 @@ p, span {
       width: 55rem;
       fill: #EEE;
       filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
-
-.popup {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .popup-background {
-    background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-  .popup__sidebar {
-    max-width: 30rem;
-    height: 60rem;
-    margin-left: -1rem;
-    border-radius: 4px;
-    padding: 2rem;
-    background-color: #EEE;
-    position: relative; }
-    .popup__sidebar-svg {
-      width: 60rem;
-      height: auto;
-      position: absolute;
-      top: 38.8%;
-      right: 35%;
-      transform: rotateZ(-90deg) translateY(50%);
-      fill: #EEE; }
-    .popup__sidebar-tertiary {
-      margin-top: 1rem;
-      font-size: 2rem;
-      background: #2f80ed;
-      color: white;
-      padding: 1rem 2rem;
-      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-      border-radius: 4px;
-      transform: skew(-4deg); }
-    .popup__sidebar-paragraph {
-      margin: 2rem 0;
-      position: relative;
-      color: rgba(11, 26, 47, 0.8);
-      font-size: 1.5rem;
-      line-height: 2;
-      width: 27rem; }
-      .popup__sidebar-paragraph > span {
-        background-color: #2f80ed;
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-        display: inline-block;
-        line-height: 3rem;
-        text-align: center;
-        color: white;
-        height: 3rem;
-        width: 3rem;
-        border-radius: 50%; }
-  .popup__content {
-    height: 60rem;
-    max-width: 50rem; }
-  .popup__form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 50rem;
-    border-radius: 4px;
-    background-color: white;
-    padding: 1rem;
-    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.25); }
-  .popup__tertiary {
-    color: white;
-    margin-bottom: 2rem;
-    background-color: #2f80ed;
-    align-self: flex-start;
-    font-size: 2rem;
-    background: #2f80ed;
-    color: white;
-    padding: 1rem 2rem;
-    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    border-radius: 4px;
-    transform: skew(-4deg);
-    padding: 1rem 10rem;
-    position: relative;
-    top: -3rem;
-    left: -5rem; }
-  .popup__close {
-    align-self: flex-end;
-    flex-shrink: 0;
-    margin: 1rem;
-    height: 2.5rem;
-    width: 2.5rem;
-    font-size: 1rem;
-    z-index: 300; }
-    .popup__close:after {
-      content: "\00D7";
-      display: block; }
-  .popup__input {
-    display: flex;
-    flex-direction: column-reverse;
-    margin-left: 4rem;
-    height: 11rem; }
-    .popup__input label {
-      align-self: flex-start;
-      font-family: "Noto Sans JP", sans-serif;
-      font-weight: bold;
-      font-size: 1.5rem;
-      padding: 0.5rem 1rem;
-      transition: all 0.5s;
-      color: rgba(11, 26, 47, 0.7); }
-    .popup__input input {
-      font-family: "Roboto", sans-serif;
-      align-self: flex-start;
-      color: rgba(11, 26, 47, 0.7);
-      font-size: 2rem;
-      border: none;
-      outline: none;
-      text-align: center;
-      border-bottom: 2px solid #0B1A2F;
-      width: 30rem; }
-      .popup__input input:focus + label, .popup__input input:valid + label {
-        background: #2f80ed;
-        color: white;
-        padding: 1rem 2rem;
-        box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-        border-radius: 4px;
-        transform: skew(-4deg);
-        transform: translateX(25rem) skew(-4deg);
-        margin-bottom: 0; }
-  .popup__habits {
-    display: flex;
-    flex-direction: column; }
-  .popup__submit {
-    flex-shrink: 0;
-    height: 6rem;
-    width: 6rem;
-    margin-top: auto;
-    margin-bottom: 4rem;
-    margin-right: 4rem;
-    align-self: flex-end;
-    z-index: 300; }
 
 .goalContainer {
   background-color: #0B1A2F; }
@@ -399,3 +256,251 @@ p, span {
   .footer__social {
     height: 5rem;
     margin: 0 1rem; }
+
+.goalForm {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .goalForm__background {
+    background: linear-gradient(to right, rgba(47, 128, 237, 0.2), rgba(47, 128, 237, 0.2)), url("../doodlesdark.png");
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .goalForm__sidebar {
+    max-width: 30rem;
+    height: 60rem;
+    margin-left: -1rem;
+    border-radius: 4px;
+    padding: 2rem;
+    background-color: #EEE;
+    position: relative; }
+    .goalForm__sidebar-svg {
+      width: 60rem;
+      height: auto;
+      position: absolute;
+      top: 38.8%;
+      right: 35%;
+      transform: rotateZ(-90deg) translateY(50%);
+      fill: #EEE; }
+    .goalForm__sidebar-tertiary {
+      margin-top: 1rem;
+      font-size: 2rem;
+      background: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(-4deg); }
+    .goalForm__sidebar-paragraph {
+      margin: 2rem 0;
+      position: relative;
+      color: rgba(11, 26, 47, 0.8);
+      font-size: 1.5rem;
+      line-height: 2;
+      width: 27rem; }
+    .goalForm__sidebar-numbers {
+      background-color: #2f80ed;
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      display: inline-block;
+      line-height: 3rem;
+      text-align: center;
+      color: white;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%; }
+  .goalForm__content {
+    height: 60rem;
+    max-width: 50rem; }
+  .goalForm__form-element {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50rem;
+    border-radius: 4px;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.25); }
+  .goalForm__tertiary {
+    color: white;
+    margin-bottom: 2rem;
+    background-color: #2f80ed;
+    align-self: flex-start;
+    font-size: 2rem;
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg);
+    padding: 1rem 10rem;
+    position: relative;
+    top: -3rem;
+    left: -5rem; }
+  .goalForm__close {
+    align-self: flex-end;
+    flex-shrink: 0;
+    margin: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1rem;
+    z-index: 300; }
+    .goalForm__close:after {
+      content: "\00D7";
+      display: block; }
+  .goalForm__inputs-container {
+    margin-top: -10%; }
+  .goalForm__input {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 4rem;
+    height: 11rem; }
+    .goalForm__input label {
+      align-self: flex-start;
+      font-family: "Noto Sans JP", sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.5s;
+      color: rgba(11, 26, 47, 0.7); }
+    .goalForm__input input {
+      font-family: "Roboto", sans-serif;
+      align-self: flex-start;
+      color: rgba(11, 26, 47, 0.7);
+      font-size: 2rem;
+      border: none;
+      outline: none;
+      text-align: center;
+      border-bottom: 2px solid #0B1A2F;
+      width: 30rem; }
+      .goalForm__input input:focus + label, .goalForm__input input:valid + label {
+        background: #2f80ed;
+        color: white;
+        padding: 1rem 2rem;
+        box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+        border-radius: 4px;
+        transform: skew(-4deg);
+        transform: translateX(25rem) skew(-4deg);
+        margin-bottom: 0; }
+  .goalForm__submit {
+    flex-shrink: 0;
+    height: 6rem;
+    width: 6rem;
+    margin-top: auto;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+    align-self: flex-end;
+    z-index: 300; }
+
+.modal__background {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 210; }
+
+.modal__reference {
+  z-index: 250; }
+
+.edit {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  margin-top: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  z-index: 201;
+  padding: 2.5rem 2rem;
+  transform: skew(-4deg); }
+  .edit__tertiary {
+    margin: 1rem 1.5rem;
+    align-self: flex-start;
+    font-size: 2.2rem;
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg); }
+  .edit__goal {
+    height: 10rem;
+    display: flex; }
+  .edit__btn {
+    position: relative;
+    left: -14%;
+    top: -15%; }
+
+.setgoals {
+  min-height: 50rem;
+  display: flex;
+  position: relative;
+  flex-direction: column; }
+  .setgoals__header-container {
+    display: flex;
+    justify-content: center; }
+  .setgoals__cursor {
+    position: relative;
+    right: 12%;
+    margin: 1.5rem 0;
+    border-left: 0.2rem solid white;
+    animation: blink 1s steps(1) infinite; }
+
+@keyframes blink {
+  50% {
+    border-color: transparent; } }
+  .setgoals__header {
+    font-size: 3rem;
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
+  .setgoals__btn {
+    z-index: 1;
+    position: relative;
+    left: -2rem;
+    bottom: 2.25rem; }
+  .setgoals__tertiary {
+    background: #2f80ed;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+    border-radius: 4px;
+    transform: skew(-4deg);
+    align-self: flex-start;
+    font-size: 2rem; }
+  .setgoals__blob {
+    z-index: 200;
+    align-self: flex-end;
+    position: absolute;
+    top: 40%;
+    left: 45%; }
+    .setgoals__blob h3 {
+      position: absolute;
+      left: 15rem;
+      z-index: 400;
+      top: 21.5rem;
+      font-size: 3rem;
+      background: #2f80ed;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
+      border-radius: 4px;
+      transform: skew(-4deg); }
+    .setgoals__blob p {
+      position: absolute;
+      left: 12rem;
+      top: 28rem;
+      color: rgba(11, 26, 47, 0.8);
+      font-size: 1.2rem;
+      z-index: 400;
+      width: 30rem; }
+    .setgoals__blob svg {
+      width: 55rem;
+      fill: #EEE;
+      filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }

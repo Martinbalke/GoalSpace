@@ -1,0 +1,30 @@
+.edit{
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  margin-top: 5%;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  z-index: 201;
+  padding: 2.5rem 2rem;
+  transform: skew(-4deg);
+
+  &__tertiary{
+    margin: 1rem 1.5rem;
+    align-self: flex-start;
+    font-size: 2.2rem;
+    @include tertiary-blue-skew
+  }
+
+  &__goal {
+    height: 10rem;
+    display: flex;
+  }
+
+  &__btn{
+    position: relative;
+    left: -14%;
+    top: -15%;
+  }
+}

@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import Goal from './Goal';
-import Yearly from './Yearly'
-import Popup from './Popup';
+import Modal from './Modal'
+import GoalForm from './GoalForm';
+import EditGoal from './EditGoals';
+import SetGoal from './SetGoals';
 import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
-import {AnimatePresence} from 'framer-motion'
+import {AnimatePresence} from 'framer-motion';
 
 
 function GoalContainer({goals, dispatch}) {
@@ -22,9 +24,13 @@ function GoalContainer({goals, dispatch}) {
 
   return (
     <div className="contentContainer">
-      <Yearly setEditing={setEditing}/>
+      <SetGoal setEditing={setEditing}>
+        <EditGoal setEditing={setEditing}/>
+      </SetGoal>
       <AnimatePresence>
-      {editing >= 0 && (<Popup close={() => setEditing(-1)} index={editing} /> )}
+      {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
+        <GoalForm index={editing} close={() => setEditing(-1)} />
+      </Modal>)}
       </AnimatePresence>
       <div className="goalContainer">
         <div className="border-dark"></div>
