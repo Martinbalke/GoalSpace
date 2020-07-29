@@ -1,6 +1,15 @@
 *{
   padding: 0 ;
   margin: 0 ;
+  box-sizing: border-box;
+  &::-moz-selection{
+    background: $color-orange;
+    color: $color-primary-dark;
+  }
+  &::selection{
+    background: $color-orange;
+    color: $color-primary-dark;
+  }
 }
 
 *,
@@ -8,7 +17,14 @@
 *::after{
   box-sizing: inherit;
 }
-body { height: 100%; overflow-x: hidden; }
+
+
+
+body { 
+  height: 100%; 
+  overflow-x: hidden;
+ 
+}
 html{
   //One REM is 10px
   font-size: 62.5%;

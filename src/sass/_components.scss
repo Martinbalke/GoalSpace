@@ -1,244 +1,30 @@
 //UTILITIES // GENERAL USE
 
-.border {
-  z-index: 100;
-  height: 4.5rem;
-  background: url("../border.svg");
-  width: 100%;
-  transform: translateY(-4rem);
-  background-size: cover;
-}
-.border-dark {
-  z-index: 100;
-  height: 4.5rem;
-  background: url("../border-dark.svg");
-  min-width: calc(100vw + 2px);
-  transform: translateY(-4rem) translateX(-2px);
-  background-size: cover;
-}
-
-.btn {
-  border: none;
-  background-color: $color-primary;
-  border-radius: 50%;
-  box-shadow: $shadow-medium;
-  display: inline-block;
-  text-align: center;
-  color: $color-white;
-  font-size: 3.5rem;
-  height: 5rem;
-  width: 5rem;
-  border: 3px solid $color-primary;
-  transition: all 0.2s;
-  outline: none;
-
-  &:after {
-    content: "+";
-    display: block;
-  }
-
-  &:hover,
-  &:focus {
-    transform: scale(1.05) translateY(2px);
-    background-color: $color-white;
-    color: $color-primary;
-    cursor: pointer;
-  }
-}
-
-///COMPONENTS IN ORDER OF PAGE APPEARANCE
-.hero {
-  background-image: url("../doodles.png");
-  background-attachment: fixed;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  border-radius: $radius-small;
-  margin-bottom: 1rem;
-
-  &__header {
-    font-size: 8rem;
-    color: $color-white;
-    background-color: $color-primary;
-    padding: 1rem 2rem;
-    border-radius: $radius-large;
-    letter-spacing: 1.5px;
-    margin: 1rem 2rem;
-  }
-
-  &__subtext {
-    margin: 0 2rem;
-    font-size: 1.8rem;
-    background-color: $color-white;
-    color: $color-primary;
-    border-radius: $radius-large;
-  }
-
-  &__nav {
-    align-self: flex-end;
-    display: inline-flex;
-    flex-direction: column;
-    margin: 2rem 4rem;
-
-    p {
-      color: $color-white;
-      background-color: $color-primary;
-      font-family: $font-primary;
-      font-weight: bold;
-      text-align: center;
-      font-size: 1.5rem;
-      margin: 1px;
-      padding: 2px 10px;
-    }
-    & a,
-    a:visited,
-    a:active {
-      align-self: flex-end;
-      text-transform: lowercase;
-      font-weight: thin;
-      font-size: 1.5rem;
-      margin: 1px;
-      padding: 2px 5px;
-      text-decoration: none;
-      color: $color-white;
-      background-color: $color-primary;
-      border-radius: $radius-small;
-      transition: all 0.3s;
-
-      &:hover {
-        color: $color-primary;
-        background-color: $color-white;
-        transform: translateX(-5px);
-      }
-    }
-  }
-}
-
-.yearly {
-  min-height: 80vh;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-
-  &__header {
-    align-self: center;
-    font-size: 3rem;
-    @include tertiary-blue-skew;
-    box-shadow: $shadow-medium;
-  }
-  &__btn-main {
-    align-self: center;
-    margin-left: 37rem;
-    margin-top: -8.5rem;
-    z-index: 1;
-  }
-  &__edit{
-    display: flex;
-    flex-wrap: wrap;
-    align-self: center;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: relative;
-    top: 10rem;
-    padding: 1.5rem 2rem;
-    
-    transform: skew(-4deg);
-
-    &-tertiary{
-      margin: 1rem 1.5rem;
-      align-self: flex-start;
-      font-size: 2.2rem;
-      @include tertiary-blue-skew
-    }
-  }
-  &__goal {
-    margin-top: 1rem;
-    height: 10rem;
-    display: flex;
-  }
-
-  &__btn{
-    position: relative;
-    left: -1.5rem;
-    top: -2.5rem;
-  }
-
-  &__tertiary {
-    @include tertiary-blue-skew;
-    align-self: flex-start;
-    font-size: 2rem;
-  }
-
-  &__blob {
-    // object-fit: cover;
-    z-index: -200;
-    align-self: flex-end;
-    position: absolute;
-    top: 40%;
-    left: 45%;
-    h3 {
-      position: absolute;
-      left: 15rem;
-      z-index: 400;
-      top: 21.5rem;
-      font-size: 3rem;
-      @include tertiary-blue-skew;
-    }
-    p {
-      position: absolute;
-      left: 12rem;
-      top: 28rem;
-      color: rgba($color-primary-dark, 0.8);
-      font-size: 1.2rem;
-      z-index: 400;
-      width: 30rem;
-    }
-
-    & svg {
-      width: 55rem;
-      fill: $color-grey;
-      filter: drop-shadow($shadow-small);
-    }
-  }
-}
 
 
-.goalContainer {
-  background-color: $color-primary-dark;
-}
-.goal {
-  display: flex;
-  flex-direction: column;
-  min-height: 25vh;
 
-  &__header {
-    align-self: flex-start;
-    font-size: 2rem;
-    width: 20rem;
-    text-align: center;
-    margin: 1rem;
-    @include tertiary-white-skew;
-  }
 
-  &__habit {
-    align-self: flex-start;
-    &-text {
-      @include tertiary-white-skew;
-    }
 
-    &-button {
-    }
-  }
-}
+
 
 .footer {
   display: flex;
+  z-index: 1;
+  position: relative;
   height: 45vh;
   justify-content: flex-end;
   align-items: flex-end;
   background: linear-gradient(to right, rgba($color-primary, 0.2), rgba($color-primary, 0.2)), url("../doodlesdark.png");
+  &::before{
+    background: url('../border-dark.svg');
+    @include shape-pseudo-element;
+    z-index: 10;
+    top: -20%;
+    left: 0;
+    height: 30rem;
+    width: 100%;
+    transform: scale(-1,-1);
+  }
   &__copy {
     margin: 1rem;
     color: rgba($color: #fff, $alpha: 0.9);

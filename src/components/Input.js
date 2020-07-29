@@ -11,7 +11,7 @@ function Input({defaultValue, callback, className, id, labelText}){
   })
   return(
     <div className={className}>
-      <input type="text" required id={id} defaultValue={text} onChange={(e) => inputTextChange(e)} />
+      <input type="text" required id={id} defaultValue={text} onChange={(e) => inputTextChange(e)}  maxLength='40'/>
       <label htmlFor={id}>{labelText}</label>
     </div>
   )

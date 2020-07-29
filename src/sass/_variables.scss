@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap');
 
 $font-primary: 'Roboto', sans-serif;
+$font-header: 'Poppins', sans-serif;
 $font-secondary: 'Noto Sans JP', sans-serif;
 
 
 $color-primary: #2f80ed;
-$color-primary-light: #00c9ff;
-$color-primary-dark: #0B1A2F;
+$color-primary-light: #008CFF;
+$color-primary-dark: #1d3557;
 
 $color-white: white;
 $color-grey:  #EEE;
+$color-orange: #fca311;
 
 
 $radius-small: 2px;

@@ -1,0 +1,68 @@
+
+.btn {
+  border: none;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+
+  &-main{
+    background-color: $color-primary;
+    border-radius: 50%;
+    box-shadow: $shadow-medium;
+    color: $color-white;
+    font-size: 3.5rem;
+    height: 5rem;
+    width: 5rem;
+    border: 3px solid $color-primary;
+    transition: all 0.2s;
+
+    &:after {
+      content: "+";
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05) translateY(2px);
+      background-color: $color-white;
+      color: $color-primary;
+      cursor: pointer;
+    }
+  }
+
+
+  &-blob{
+    position: relative;
+    display: inline-block;
+    padding-left: 1.25rem;
+    z-index: 200;
+    color: $color-white;
+    letter-spacing: .5px;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: skew(-4deg) translateZ(0);
+    transition: all .2s;
+
+    &::after{
+      background:  url('../button-blob.svg');
+      z-index: -1;
+      @include shape-pseudo-element;
+      top: -6.5rem;
+      left: -2.5rem;
+      width: 15rem;
+      height: 15rem;
+
+      filter: drop-shadow($shadow-small);
+
+    }
+    &:hover,
+    &:focus {
+      filter: saturate(180%);
+    }
+  }
+ 
+
+  &:hover{
+    cursor: pointer;
+  }
+}

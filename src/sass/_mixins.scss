@@ -15,3 +15,10 @@
   border-radius: $radius-large;
   transform: skew(-4deg);
 }
+
+@mixin shape-pseudo-element{
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

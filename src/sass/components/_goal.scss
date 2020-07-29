@@ -1,0 +1,139 @@
+.goalContainer {
+  background-color: #0B1A2F;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  padding-top: 10rem;
+  position: relative;
+
+  &::before{
+    z-index: -1;
+    height: 35rem;
+    background: url("../border-dark.svg");
+    @include shape-pseudo-element;
+    width: 100vw;
+    top: -28rem;
+    filter: drop-shadow($shadow-large);
+  }
+
+  &::after{
+    z-index: -2;
+    height: 40rem;
+    background: url("../border-dark.svg");
+    @include shape-pseudo-element;
+    opacity: .9;
+    width: 100vw;
+    top: -34rem;
+
+  }
+}
+
+
+.goal {
+  position: relative;
+  align-self: flex-start;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  min-height: 45rem;
+  flex: 0 0 51%;
+  margin: 1rem 5rem 1rem 30rem;
+  padding: 2rem 1rem 0rem 7rem;
+  filter:  drop-shadow(1rem .5rem  .5px rgba($color-orange,.9));
+  transform: scale(-1,1);
+
+  & h3, & p, & textarea, & button {
+    transform: scale(-1,1);
+  }
+
+
+  &:nth-child(even){
+    margin-left: calc(100% - 60rem);
+    transform: scale(1);
+
+    & h3, & p, & textarea, & button{
+      transform: scale(1);
+    }
+  }
+
+  &::after{
+    @include shape-pseudo-element;
+    z-index: -1;
+    left: -5rem;
+    top: -5rem;
+    height: 55rem;
+    width: 55rem;
+    
+  }
+
+
+  &__header {
+    align-self: flex-start;
+    font-size: 2rem;
+    width: 20rem;
+    text-align: center;
+    margin: 1rem 0rem 2rem 4rem;
+    @include tertiary-blue-skew;
+  }
+
+  &__habit {
+    display: flex;
+    max-width: 25rem;
+    position: relative;
+    right: 10rem;
+    &:nth-child(2){
+      right: 4rem;
+    }
+
+    &:nth-child(3){
+      left: -7rem;
+    }
+
+    &:nth-child(4){
+      top: 1rem;
+      left: -5rem;
+    }
+    &-text {
+      @include tertiary-white-skew;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex: 1;
+      margin: 1.5rem 0rem;
+ 
+    }
+
+    &-button {
+      position: relative;
+      right: 1.25rem;
+      height: 3.5rem;
+      width: 3.5rem;
+      line-height: 3rem;
+      transform: scale(1) !important;
+    }
+
+  }
+
+  &__complete{
+      background-color: $color-primary;
+      align-self: flex-start;
+      margin: auto 0rem auto 10rem; 
+      height: 4.25rem;
+      color: white;
+      line-height: 1rem;
+      font-size: 2rem;
+      padding: 1.25rem 2.25rem;
+      border-radius: 2rem;
+      box-shadow: $shadow-small;
+      transition: all .2s;
+      transform: skew(-4deg);
+
+      &:hover,
+      &:focus{
+        background-color: $color-primary-light;
+        box-shadow: $shadow-medium;
+      }
+
+  }
+}
