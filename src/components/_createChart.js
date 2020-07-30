@@ -14,8 +14,8 @@ class ChartClass {
   chartSetup = () => {
     this.chart.colors.step = 2;
 
-    // this.chart.scrollbarX = new am4core.Scrollbar();
-    // this.chart.scrollbarX.parent = this.chart.bottomAxesContainer;
+    this.chart.scrollbarX = new am4core.Scrollbar();
+    this.chart.scrollbarX.parent = this.chart.bottomAxesContainer;
 
     this.chart.legend = new am4charts.Legend()
     this.chart.legend.position = 'top'
@@ -41,7 +41,7 @@ class ChartClass {
     series.dataFields.categoryX = 'date'
     series.name = name
     series.columns.template.column.cornerRadiusTopLeft = 10;
-    series.columns.template.column.cornerRadiusTopRight = 10;
+    series.columns.template.column.cornerRadiusTopRight = 0;
 
     series.events.on("hidden", this.arrangeColumns);
     series.events.on("shown", this.arrangeColumns);

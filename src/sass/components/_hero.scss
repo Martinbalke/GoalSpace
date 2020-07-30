@@ -94,84 +94,109 @@
 
   &__header {
     font-family: $font-header;
-    text-align: center;
-    align-self: center;
-    
+    position: relative;
+    top: 2em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
     text-shadow: $shadow-small;
     font-weight: 900;
     z-index: 1;
-    max-width: 25ch;
+    width: 18ch;
     font-size: 4.5rem;
-    color: $color-white;
+    color: $color-primary-dark;
 
     &-text-1 {
+      
       z-index: 3;
       position: relative;
-      top: -2rem;
-      font-size: 7rem;
       font-family: inherit;
-      line-height: 7rem;
+      line-height: 0;
       padding: .2rem;
+      top: 3rem;
+      left: 4rem;
   
     }
     &-text-2 {
-      font-size: 3rem;
       position: relative;
-      font-family: $font-secondary;
+      top: 3rem;
+      left: 4rem;
+      font-family: inherit;
       line-height: 0;
-      top: -3rem;
-      color: rgba($color-white, .9);
-      font-weight: 300;
+      color: rgba($color-primary-dark, 0.8);
     }
     &-logo {
-    position: absolute;
-    display: block;
      font-family: inherit;
-     letter-spacing: 1px;
-     font-size: 3rem;
-    color: $color-white;
+     font-size: 9rem;
+     left: 30rem;
+     top: -15rem;
+     position: absolute;
+     color: rgba($color-primary, 1);
      text-shadow: none;
-     top: 4rem;
-     left: 1rem;
-     filter: drop-shadow(0.3rem 0.2rem $color-orange) drop-shadow(-0.2rem 0.1rem $color-primary);
+
+     &::after{
+       @include shape-pseudo-element;
+       content: 'GoalSpace';
+       text-align: center;
+       font-size: 5rem;
+      background: $color-white;
+       z-index: 3;
+       border-radius: 50%;
+       top: 50%;
+       left: 50%;
+       line-height: 18rem;
+       transform: translate(-50%,-50%);
+       height: 18rem;
+       width: 18rem;
+       filter: drop-shadow($shadow-small) ;
+     }
+     &::before{
+       @include shape-pseudo-element;
+       background-color: rgba($color-orange, 0.9);
+       z-index: -1;
+       border-radius: 50%;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       height: 20rem;
+       width: 20rem;
+       filter: drop-shadow($shadow-small) ;
+     }
+    }
   }
-}
 
-  // &__shapes {
-  //   z-index: 0;
-  //   position: absolute;
-  //   top: 40%;
-  //   left: 1rem;
-  //   content: "";
-  //   height: 17rem;
-  //   width: 10rem;
+  &__shapes {
+    z-index: 0;
+    position: absolute;
+    top: 40%;
+    left: 1rem;
+    content: "";
+    height: 17rem;
+    width: 10rem;
 
-  //   &::after {
-  //     @include shape-pseudo-element;
-  //     z-index: -1;
-  //     top: -277%;
-  //     left: -210%;
-  //     height: 80rem;
-  //     width: 80rem;
-  //     border-radius: 50%;
-  //     filter: drop-shadow(2rem 2.5rem rgba($color-primary-dark, 0.9));
-  //     background-color: $color-white;
-  //   }
+    &::after {
+      @include shape-pseudo-element;
+      z-index: -1;
+      top: -277%;
+      left: -210%;
+      height: 80rem;
+      width: 80rem;
+      border-radius: 50%;
+      filter: drop-shadow(2rem 2.5rem rgba($color-primary-dark, 0.9));
+      background-color: $color-white;
+    }
 
-  //   &::before {
-  //     @include shape-pseudo-element;
-  //     z-index: 1;
-  //     top: -160%;
-  //     left: -80%;
-  //     border-radius: 50%;
-  //     height: 25rem;
-  //     width: 25rem;
-  //     filter:  drop-shadow(40rem 37.5rem $color-orange);
-  //     background-color: $color-grey;
-  //   }
-  // }
+    &::before {
+      @include shape-pseudo-element;
+      z-index: 1;
+      top: -160%;
+      left: -80%;
+      border-radius: 50%;
+      height: 25rem;
+      width: 25rem;
+      filter:  drop-shadow(40rem 37.5rem $color-orange);
+      background-color: $color-grey;
+    }
+  }
 
 
 }
