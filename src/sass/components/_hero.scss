@@ -24,7 +24,7 @@
     bottom: -3%;
   }
 
-  &__bubbles {
+  &__bubbles{
     position: absolute;
     top: -45rem;
     left: 0;
@@ -33,13 +33,13 @@
     overflow: hidden;
     z-index: -100;
 
-    & div {
+    & div{
       position: absolute;
       bottom: -15%;
       right: 10%;
       @include animate-bubbles;
 
-      &:nth-child(1) {
+      &:nth-child(1){
         height: 8rem;
         width: 8rem;
         right: 50%;
@@ -47,7 +47,7 @@
         background: $color-white;
       }
 
-      &:nth-child(2) {
+      &:nth-child(2){
         height: 3rem;
         width: 3rem;
         right: 90%;
@@ -55,7 +55,7 @@
         background: $color-grey;
       }
 
-      &:nth-child(3) {
+      &:nth-child(3){
         height: 1rem;
         width: 1rem;
         right: 55%;
@@ -63,21 +63,21 @@
         background: $color-orange;
       }
 
-      &:nth-child(4) {
+      &:nth-child(4){
         height: 2rem;
         width: 2rem;
         right: 80%;
         animation-delay: 2s;
         background: $color-primary-light;
       }
-      &:nth-child(5) {
+      &:nth-child(5){
         height: 4rem;
         width: 4rem;
         right: 71%;
         animation-delay: 16s;
         background: $color-orange;
       }
-      &:nth-child(6) {
+      &:nth-child(6){
         height: 3rem;
         width: 3rem;
         right: 60%;
@@ -85,24 +85,36 @@
         background: $color-primary;
       }
     }
+    
+
+   
   }
 
+  
+
   &__header {
+    font-family: $font-header;
     position: relative;
     top: 2em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
+    text-shadow: $shadow-small;
+    font-weight: 900;
     z-index: 1;
+    width: 18ch;
+    font-size: 4.5rem;
+    color: $color-primary-dark;
 
     &-text-1 {
+      
       z-index: 3;
       position: relative;
-font-family: $font-header;
-      text-shadow: $shadow-small;
+      font-family: inherit;
       line-height: 0;
-      padding: 0.2rem;
+      padding: .2rem;
       top: 3rem;
       left: 4rem;
+  
     }
     &-text-2 {
       position: relative;
@@ -113,13 +125,42 @@ font-family: $font-header;
       color: rgba($color-primary-dark, 0.8);
     }
     &-logo {
-font-family: $font-header;
-      font-size: 4rem;
-      left: 2rem;
-      top: -25rem;
-      position: absolute;
-      color: $color-white;
-      filter: drop-shadow(0.2rem 0.2rem $color-orange) drop-shadow(-0.2rem 0.2rem $color-primary);
+     font-family: inherit;
+     font-size: 9rem;
+     left: 30rem;
+     top: -15rem;
+     position: absolute;
+     color: rgba($color-primary, 1);
+     text-shadow: none;
+
+     &::after{
+       @include shape-pseudo-element;
+       content: 'GoalSpace';
+       text-align: center;
+       font-size: 5rem;
+      background: $color-white;
+       z-index: 3;
+       border-radius: 50%;
+       top: 50%;
+       left: 50%;
+       line-height: 18rem;
+       transform: translate(-50%,-50%);
+       height: 18rem;
+       width: 18rem;
+       filter: drop-shadow($shadow-small) ;
+     }
+     &::before{
+       @include shape-pseudo-element;
+       background-color: rgba($color-orange, 0.9);
+       z-index: -1;
+       border-radius: 50%;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%,-50%);
+       height: 20rem;
+       width: 20rem;
+       filter: drop-shadow($shadow-small) ;
+     }
     }
   }
 
@@ -152,8 +193,10 @@ font-family: $font-header;
       border-radius: 50%;
       height: 25rem;
       width: 25rem;
-      filter: drop-shadow(40rem 37.5rem $color-orange);
+      filter:  drop-shadow(40rem 37.5rem $color-orange);
       background-color: $color-grey;
     }
   }
+
+
 }
