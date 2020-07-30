@@ -707,23 +707,18 @@ p, span {
         animation-delay: 10s;
         background: #2f80ed; }
   .hero__header {
-    font-family: "Poppins", sans-serif;
     position: relative;
     top: 2em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
-    text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    font-weight: 900;
-    z-index: 1;
-    width: 18ch;
-    font-size: 4.5rem;
-    color: #1d3557; }
+    z-index: 1; }
     .hero__header-text-1 {
       z-index: 3;
       position: relative;
-      font-family: inherit;
+      font-family: "Poppins", sans-serif;
+      text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
       line-height: 0;
-      padding: .2rem;
+      padding: 0.2rem;
       top: 3rem;
       left: 4rem; }
     .hero__header-text-2 {
@@ -734,45 +729,13 @@ p, span {
       line-height: 0;
       color: rgba(29, 53, 87, 0.8); }
     .hero__header-logo {
-      font-family: inherit;
-      font-size: 9rem;
-      left: 30rem;
-      top: -15rem;
+      font-family: "Poppins", sans-serif;
+      font-size: 4rem;
+      left: 2rem;
+      top: -25rem;
       position: absolute;
-      color: #2f80ed;
-      text-shadow: none; }
-      .hero__header-logo::after {
-        content: "";
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: cover;
-        content: 'GoalSpace';
-        text-align: center;
-        font-size: 5rem;
-        background: white;
-        z-index: 3;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        line-height: 18rem;
-        transform: translate(-50%, -50%);
-        height: 18rem;
-        width: 18rem;
-        filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
-      .hero__header-logo::before {
-        content: "";
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(252, 163, 17, 0.9);
-        z-index: -1;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 20rem;
-        width: 20rem;
-        filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
+      color: white;
+      filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
   .hero__shapes {
     z-index: 0;
     position: absolute;
