@@ -5,6 +5,7 @@ import GoalForm from './GoalForm';
 import EditGoal from './EditGoals';
 import SetGoal from './SetGoals';
 import Chart from './Chart';
+import Blob from './Blob';
 import Milestone from './Milestone';
 import ChartContainer from './ChartsContainer'
 import { connect } from 'react-redux';
@@ -35,6 +36,7 @@ function GoalContainer({goals, dispatch}) {
     <main className="contentContainer">
       <SetGoal setEditing={setEditing}>
         <EditGoal setEditing={setEditing}/>
+        <Blob/>
       </SetGoal>
       <AnimatePresence>
       {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
