@@ -9,7 +9,6 @@
     margin-top: 5rem;
     display: flex;
     align-self: center;
-    width: 50rem;
     justify-content: center;
   }
 
@@ -24,27 +23,25 @@
 
   @keyframes blink {
     0% {
-      border-color: $color-white;
+      border-color: $color-primary-dark-2;
     }
     50% {
       border-color: transparent;
     }
     100% {
-      border-color: $color-white;
+      border-color: $color-primary-dark-2;
     }
   }
 
   &__header {
-    font-size: 3rem;
-    @include tertiary-blue-skew;
-    box-shadow: $shadow-medium;
+    font-size: 4rem;
+    color: $color-primary-dark-2;
   }
 
   &__btn{
     z-index: 1;
     position: relative;
-    left: -2rem;
-    bottom: 2.25rem;
+    bottom: 1rem;
   }
 
 

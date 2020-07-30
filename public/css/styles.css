@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
 @keyframes bubbles {
   0% {
@@ -42,10 +42,10 @@ html {
 
 h1, h3 {
   font-weight: bold;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Poppins", sans-serif; }
 
 p, span {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   line-height: 1.6; }
 
@@ -143,7 +143,7 @@ p, span {
       width: 27rem; }
     .goalForm__sidebar-numbers {
       background-color: #2f80ed;
-      font-family: "Roboto", sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: 700;
       box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
       display: inline-block;
@@ -201,14 +201,14 @@ p, span {
     height: 11rem; }
     .goalForm__input label {
       align-self: flex-start;
-      font-family: "Noto Sans JP", sans-serif;
+      font-family: "Roboto", sans-serif;
       font-weight: bold;
       font-size: 1.5rem;
       padding: 0.5rem 1rem;
       transition: all 0.5s;
       color: rgba(29, 53, 87, 0.7); }
     .goalForm__input input {
-      font-family: "Roboto", sans-serif;
+      font-family: "Poppins", sans-serif;
       align-self: flex-start;
       color: rgba(29, 53, 87, 0.7);
       font-size: 2rem;
@@ -300,7 +300,7 @@ p, span {
     backface-visibility: hidden; }
     .navigation__link:link, .navigation__link:visited {
       display: inline-block;
-      font-family: "Roboto", sans-serif;
+      font-family: "Poppins", sans-serif;
       text-transform: uppercase;
       font-size: 8rem;
       font-weight: 900;
@@ -358,10 +358,6 @@ p, span {
     opacity: 1;
     width: 100%; }
 
-.contentContainer {
-  position: relative;
-  z-index: 200; }
-
 .edit {
   display: flex;
   flex-wrap: wrap;
@@ -395,13 +391,11 @@ p, span {
     align-self: flex-end;
     position: relative;
     margin-top: 2rem;
-    margin-bottom: 10rem;
     top: 9rem;
-    left: -10%;
+    left: 20%;
     z-index: 200; }
     .edit__blob h3 {
       position: relative;
-      text-align: center;
       z-index: 200;
       margin: 1rem auto;
       width: 80%;
@@ -424,7 +418,7 @@ p, span {
       width: 40rem;
       left: -15%;
       top: -100%;
-      background: url("../images/blob.svg");
+      background: url("../blob.svg");
       content: "";
       position: absolute;
       background-repeat: no-repeat;
@@ -440,7 +434,6 @@ p, span {
     margin-top: 5rem;
     display: flex;
     align-self: center;
-    width: 50rem;
     justify-content: center; }
   .setgoals__cursor {
     position: relative;
@@ -452,25 +445,18 @@ p, span {
 
 @keyframes blink {
   0% {
-    border-color: white; }
+    border-color: #0B1A2E; }
   50% {
     border-color: transparent; }
   100% {
-    border-color: white; } }
+    border-color: #0B1A2E; } }
   .setgoals__header {
-    font-size: 3rem;
-    background: #2f80ed;
-    color: white;
-    padding: 1rem 2rem;
-    box-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
-    border-radius: 4px;
-    transform: skew(-4deg);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); }
+    font-size: 4rem;
+    color: #0B1A2E; }
   .setgoals__btn {
     z-index: 1;
     position: relative;
-    left: -2rem;
-    bottom: 2.25rem; }
+    bottom: 1rem; }
   .setgoals__tertiary {
     background: #2f80ed;
     color: white;
@@ -589,7 +575,8 @@ p, span {
     display: flex;
     max-width: 25rem;
     position: relative;
-    right: 10rem; }
+    right: 10rem;
+    text-align: center; }
     .goal__habit:nth-child(2) {
       right: 4rem; }
     .goal__habit:nth-child(3) {
@@ -708,105 +695,43 @@ p, span {
         background: #2f80ed; }
   .hero__header {
     font-family: "Poppins", sans-serif;
-    position: relative;
-    top: 2em;
+    text-align: center;
+    align-self: center;
     letter-spacing: -1px;
     padding-left: 1.5rem;
     text-shadow: 3px 2px 5px rgba(85, 85, 85, 0.3);
     font-weight: 900;
     z-index: 1;
-    width: 18ch;
+    max-width: 25ch;
     font-size: 4.5rem;
-    color: #1d3557; }
+    color: white; }
     .hero__header-text-1 {
       z-index: 3;
       position: relative;
+      top: -2rem;
+      font-size: 7rem;
       font-family: inherit;
-      line-height: 0;
-      padding: .2rem;
-      top: 3rem;
-      left: 4rem; }
+      line-height: 7rem;
+      padding: .2rem; }
     .hero__header-text-2 {
+      font-size: 3rem;
       position: relative;
-      top: 3rem;
-      left: 4rem;
-      font-family: inherit;
+      font-family: "Roboto", sans-serif;
       line-height: 0;
-      color: rgba(29, 53, 87, 0.8); }
+      top: -3rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 300; }
     .hero__header-logo {
+      position: absolute;
+      display: block;
       font-family: inherit;
-      font-size: 9rem;
-      left: 30rem;
-      top: -15rem;
-      position: absolute;
-      color: #2f80ed;
-      text-shadow: none; }
-      .hero__header-logo::after {
-        content: "";
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: cover;
-        content: 'GoalSpace';
-        text-align: center;
-        font-size: 5rem;
-        background: white;
-        z-index: 3;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        line-height: 18rem;
-        transform: translate(-50%, -50%);
-        height: 18rem;
-        width: 18rem;
-        filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
-      .hero__header-logo::before {
-        content: "";
-        position: absolute;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: rgba(252, 163, 17, 0.9);
-        z-index: -1;
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 20rem;
-        width: 20rem;
-        filter: drop-shadow(3px 2px 5px rgba(85, 85, 85, 0.3)); }
-  .hero__shapes {
-    z-index: 0;
-    position: absolute;
-    top: 40%;
-    left: 1rem;
-    content: "";
-    height: 17rem;
-    width: 10rem; }
-    .hero__shapes::after {
-      content: "";
-      position: absolute;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: -1;
-      top: -277%;
-      left: -210%;
-      height: 80rem;
-      width: 80rem;
-      border-radius: 50%;
-      filter: drop-shadow(2rem 2.5rem rgba(29, 53, 87, 0.9));
-      background-color: white; }
-    .hero__shapes::before {
-      content: "";
-      position: absolute;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 1;
-      top: -160%;
-      left: -80%;
-      border-radius: 50%;
-      height: 25rem;
-      width: 25rem;
-      filter: drop-shadow(40rem 37.5rem #fca311);
-      background-color: #EEE; }
+      letter-spacing: 1px;
+      font-size: 3rem;
+      color: white;
+      text-shadow: none;
+      top: 4rem;
+      left: 1rem;
+      filter: drop-shadow(0.3rem 0.2rem #fca311) drop-shadow(-0.2rem 0.1rem #2f80ed); }
 
 .footer {
   display: flex;
@@ -882,8 +807,9 @@ p, span {
     margin: .5rem 1rem;
     border-radius: 2rem;
     font-size: 1.5rem;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: .5px;
     height: 4rem;
     padding: 1rem 2rem;
     color: #2f80ed;
@@ -896,7 +822,7 @@ p, span {
     width: 100%;
     height: 50rem;
     background-color: white;
-    font-family: "Roboto", sans-serif; }
+    font-family: "Poppins", sans-serif; }
 
 .loading {
   display: inline-block;
