@@ -14,9 +14,6 @@ class ChartClass {
   chartSetup = () => {
     this.chart.colors.step = 2;
 
-    this.chart.scrollbarX = new am4core.Scrollbar();
-    this.chart.scrollbarX.parent = this.chart.bottomAxesContainer;
-
     this.chart.legend = new am4charts.Legend()
     this.chart.legend.position = 'top'
     this.chart.legend.paddingBottom = 20

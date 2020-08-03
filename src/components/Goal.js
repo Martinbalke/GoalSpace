@@ -15,7 +15,7 @@ function Goal({ goal, children, index,  dispatch}) {
       {goal.habits.map( (habit, index) => (
         <div className="goal__habit" key={index}>
           <p className="goal__habit-text">{habit}</p>
-          <button className="goal__habit-button btn btn-main" onClick={() => dispatch(updateProgressPoints(goal._id, 5))}></button>
+          <button className="goal__habit-button btn btn-round" onClick={() => dispatch(updateProgressPoints(goal._id, 5))}>+</button>
         </div>
       ))}
       {children}

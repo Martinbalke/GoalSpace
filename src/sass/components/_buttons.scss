@@ -6,25 +6,22 @@
   outline: none;
 
   &-main{
-    background-color: $color-primary;
-    border-radius: 50%;
-    box-shadow: $shadow-medium;
-    color: $color-white;
-    font-size: 3.5rem;
-    height: 5rem;
-    width: 5rem;
-    border: 3px solid $color-primary;
-    transition: all 0.2s;
-
-    &:after {
-      content: "+";
-      display: block;
-    }
+   margin:.5rem 1rem;
+   border-radius: $radius-XL;
+   font-size: 1.5rem;
+   font-weight: bold;
+   font-family: $font-primary;
+   width: 12rem;
+   height: 4rem;
+   padding: 1rem 3rem;
+   color: $color-primary;
+   background: $color-white;
+   transition: all .1s;
+   filter: $drop-shadow;
 
     &:hover {
-      transform: scale(1.05) translateY(2px);
-      background-color: $color-white;
-      color: $color-primary;
+      transform: scale(1.02) translateY(1px);
+      box-shadow: $shadow-medium;
       cursor: pointer;
     }
   }
@@ -43,9 +40,10 @@
     transition: all .2s;
 
     &::after{
-      background:  url('../images/button-blob.svg');
+      background:  $gradient;
       z-index: -1;
       @include shape-pseudo-element;
+      border-radius: 50%;
       top: -6.5rem;
       left: -2.5rem;
       width: 15rem;
@@ -56,12 +54,26 @@
     }
     &:hover,
     &:focus {
-      filter: saturate(180%);
+      cursor: pointer;
     }
   }
- 
 
-  &:hover{
-    cursor: pointer;
+  &-round{
+    font-family: $font-primary;
+    background: $color-white;
+    color: $color-primary;
+    font-size: 2rem;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    filter: $drop-shadow;
+    transition: all .3s;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
   }
+
+ 
 }

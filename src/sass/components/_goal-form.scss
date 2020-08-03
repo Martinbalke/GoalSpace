@@ -5,8 +5,7 @@
 
   /////////////////STYLES FOR THE FORM BACKGROUND
   &__background {
-    background: linear-gradient(to right, rgba($color-primary, 0.2), rgba($color-primary, 0.2)),
-      url("../images/doodlesdark.png");
+    background: linear-gradient( to right, rgba(0,0,0,.6) , rgba(0,0,0,.5)), $gradient;
     display: flex;
     align-items: center;
     justify-content: center;

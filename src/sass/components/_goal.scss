@@ -30,7 +30,7 @@
   flex: 0 0 51%;
   margin: 1rem 5rem 1rem 30rem;
   padding: 2rem 1rem 0rem 7rem;
-  filter:  drop-shadow(1rem .5rem  .5px rgba($color-orange,.9));
+  filter:  drop-shadow(.5rem .5rem  .5px rgba($color-orange,.9));
   transform: scale(-1,1);
 
   & h3, & p, & textarea, & button {
@@ -97,22 +97,20 @@
     &-button {
       position: relative;
       right: 1.25rem;
-      height: 3.5rem;
-      width: 3.5rem;
-      line-height: 3rem;
-      transform: scale(1) !important;
     }
 
   }
 
   &__complete{
-      background-color: $color-primary;
+      background: $gradient;
       align-self: flex-start;
       margin: auto 0rem auto 10rem; 
       height: 4.25rem;
       color: white;
       line-height: 1rem;
+      font-family: $font-primary;
       font-size: 2rem;
+      font-weight: bold;
       padding: 1.25rem 2.25rem;
       border-radius: $radius-XL;
       box-shadow: $shadow-small;

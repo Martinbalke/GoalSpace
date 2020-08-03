@@ -1,7 +1,8 @@
 @mixin tertiary-blue-skew {
-  background: $color-primary;
+  background: linear-gradient(to right, $color-primary, #5104CB);
+  letter-spacing: .5px;
   color: $color-white;
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
   box-shadow: $shadow-small;
   border-radius: $radius-large;
   transform: skew(-4deg);

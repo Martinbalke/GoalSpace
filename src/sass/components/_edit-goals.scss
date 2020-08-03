@@ -4,21 +4,15 @@
 }
 
 .edit {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-self: center;
-  align-items: center;
-  margin: 5vh 0;
-  flex-direction: row;
-  position: relative;
-  z-index: 201;
+  margin: 2.5rem 0;
   padding: 2.5rem 2rem;
   transform: skew(-4deg);
-  height: 50rem;
 
   &__tertiary {
-    margin: 1rem 1.5rem;
-    align-self: flex-start;
     font-size: 2.2rem;
     @include tertiary-blue-skew;
   }
@@ -26,48 +20,15 @@
   &__goal {
     align-self: flex-start;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2.5rem;
   }
 
   &__btn {
     position: relative;
-    left: -3.5rem;
-    top: -1.5rem;
+    z-index: 1;
+    top: -2rem;
   }
 }
 
-.blob {
-  position: relative;
-  width: 40rem;
-  z-index: 500;
-  right: -60vw;
-  margin: 4rem 0;
-  h3 {
-    position: relative;
-    text-align: center;
-    z-index: 200;
-    margin: 1rem 0;
-    left: 7.5rem;
-    width: 25rem;
-    font-size: 3rem;
-    @include tertiary-blue-skew;
-  }
-  p {
-    position: relative;
-    left: 3.5rem;
-    z-index: 200;
-    color: rgba($color-primary-dark, 0.8);
-    font-size: 1.4rem;
-    width: 29rem;
-    margin: 0;
-  }
-
-  &::after {
-    z-index: 199;
-    height: 40rem;
-    width: 40rem;
-    top: -100%;
-    background: url("../images/blob.svg");
-    @include shape-pseudo-element;
-    filter: drop-shadow(5rem 0.5rem rgba($color-orange, 0.9));
-  }
-}
