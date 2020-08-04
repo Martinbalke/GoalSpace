@@ -506,7 +506,7 @@ p, span {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  height: 100%;
+  min-height: 80vh;
   padding-top: 10rem;
   position: relative; }
   .goalContainer::before {

@@ -48,6 +48,8 @@ const Chart = ({ progressData, goals }) => {
     //SET THE CURRENT REFERNCE FOR CLEANUP TO THE CREATED CHART
     chartRef.current = chartClass.chart;
 
+    return( () => chartRef.current.dispose())
+
   }, [dataToDisplay, dataType, goals]);
 
 
