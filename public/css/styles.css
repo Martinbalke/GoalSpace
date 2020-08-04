@@ -96,7 +96,8 @@ p, span {
       height: 15rem;
       filter: drop-shadow(1px 2px 5px rgba(85, 85, 85, 0.2)); }
     .btn-blob:hover, .btn-blob:focus {
-      cursor: pointer; }
+      cursor: pointer;
+      filter: hue-rotate(20deg); }
   .btn-round {
     font-family: "Roboto", sans-serif;
     background: white;
@@ -463,7 +464,7 @@ p, span {
   justify-content: center;
   height: 13rem;
   min-width: 20rem;
-  top: 15rem;
+  top: 17rem;
   left: 29rem; }
   .milestone__btn {
     position: relative;
@@ -604,8 +605,8 @@ p, span {
     transition: all .2s;
     transform: skew(-4deg); }
     .goal__complete:hover, .goal__complete:focus {
-      background-color: #008CFF;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25); }
+      cursor: pointer;
+      filter: hue-rotate(20deg); }
 
 .hero {
   background-image: url("../images/color.jpg");
@@ -791,20 +792,6 @@ p, span {
 
 .chart {
   margin: 2rem; }
-  .chart__buttons--daily, .chart__buttons--monthly {
-    margin: .5rem 1rem;
-    border-radius: 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    height: 4rem;
-    padding: 1rem 2rem;
-    color: #2f80ed;
-    background: white;
-    transition: all .1s;
-    filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
-    .chart__buttons--daily:hover, .chart__buttons--monthly:hover {
-      transform: scale(1.05) translateY(-0.1rem); }
   .chart__display {
     width: 100%;
     height: 50rem;

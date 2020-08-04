@@ -19,28 +19,6 @@
 .chart {
   margin: 2rem;
 
-  &__buttons{
-
-
-    &--daily,&--monthly{
-      margin:.5rem 1rem;
-      border-radius: $radius-XL;
-      font-size: 1.5rem;
-      font-weight: bold;
-      font-family: $font-primary;
-      height: 4rem;
-      padding: 1rem 2rem;
-      color: $color-primary;
-      background: $color-white;
-      transition: all .1s;
-      filter: $drop-shadow;
-
-      &:hover{
-        transform: scale(1.05) translateY(-.1rem);
-      }
-    }
-  }
-
   &__display {
     width: 100%;
     height: 50rem;

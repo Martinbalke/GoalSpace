@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {completeGoal} from '../store/goalReducer' 
 import {updateProgressPoints} from '../store/progressReducer';
-
+import {motion} from 'framer-motion';
+import { goalSlideInAnimationRight, goalSlideInAnimationLeft } from './animations'
 
 
 
@@ -10,7 +11,7 @@ function Goal({ goal, children, index,  dispatch}) {
   if(!goal.habits) return <div></div>
 
   return ( 
-    <div className="goal"> 
+    <motion.div className="goal" variants={index % 2 === 0 ? goalSlideInAnimationLeft : goalSlideInAnimationRight} initial='hidden' animate='visible' exit='exit'> 
       <h3 className="goal__header">{goal.goal}</h3>
       {goal.habits.map( (habit, index) => (
         <div className="goal__habit" key={index}>
@@ -20,7 +21,7 @@ function Goal({ goal, children, index,  dispatch}) {
       ))}
       {children}
         <button className='btn goal__complete ' onClick={ () => dispatch(completeGoal(goal._id, index))}>Complete</button>
-    </div>  
+    </motion.div>  
   );
 }
 

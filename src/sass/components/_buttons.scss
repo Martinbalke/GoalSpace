@@ -55,6 +55,7 @@
     &:hover,
     &:focus {
       cursor: pointer;
+      filter: hue-rotate(20deg);
     }
   }
 

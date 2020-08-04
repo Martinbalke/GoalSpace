@@ -119,8 +119,8 @@
 
       &:hover,
       &:focus{
-        background-color: $color-primary-light;
-        box-shadow: $shadow-medium;
+        cursor: pointer;
+        filter: hue-rotate(20deg)
       }
 
   }

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { updateGoal } from '../store/goalReducer';
 import { updateProgressPoints } from '../store/progressReducer';
 import { connect } from 'react-redux';
-import { milestoneSlideInLeft, milestoneSlideInRight } from './animations'
+
 
 const Milestone = ({ dispatch, goal, index }) => {
   const [milestone, setMilestone] = useState(goal.milestone || '');
@@ -20,7 +20,7 @@ const Milestone = ({ dispatch, goal, index }) => {
 
 
   return (
-    <motion.div className='milestone' variants={milestoneSlideInRight}>
+    <motion.div className='milestone'>
       <form className='milestone__form' onSubmit={async (e) => {
         e.preventDefault();
         updateMilestone();
