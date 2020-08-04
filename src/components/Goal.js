@@ -30,9 +30,7 @@ function Goal({ goal, children, index, dispatch, animationHeight }) {
         ))}
         {children}
         <button className='btn goal__complete '
-          onClick={() => {
-            setTimeout(dispatch(completeGoal(goal._id, index)), 2000);
-          }}>Complete</button>
+          onClick={() => {dispatch(completeGoal(goal._id, index))}}>Complete</button>
       </motion.div>
       ) 
       :(<div className='goal'></div>)

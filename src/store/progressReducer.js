@@ -30,9 +30,12 @@ export const createProgressData = (goalId) => {
 
   return async dispatch => {
     let res = await superAgentAPICallSend('post', 'http://localhost:3045/progress', createFirstProgressData)
-    dispatch({ type: 'CREATE_PROGESS', progess: res.body })
+    dispatch({ type: 'CREATE_PROGRESS', progress: res.body })
   }
 }
+
+
+export const removeProgressData = (index) => (dispatch) => dispatch({type: 'REMOVE_PROGRESS', index})
 
 
 
@@ -58,13 +61,15 @@ export const updateProgressPoints = (goalId, amount) => {
 
 
 
-const progressReducer = (state = [], { type, progress }) => {
+const progressReducer = (state = [], { type, progress, index }) => {
   const newState = [...state];
   switch (type) {
     case 'LOAD_PROGRESS':
       return [...progress];
     case 'CREATE_PROGRESS':
       return [...newState, progress];
+    case 'REMOVE_PROGRESS': 
+      return newState.filter((g, i) => index !== i);
     case 'UPDATE_POINTS':
       return newState.map(current => current._id === progress._id ? current = progress : current)
     default:

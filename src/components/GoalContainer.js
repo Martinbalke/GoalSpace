@@ -43,7 +43,9 @@ function GoalContainer({ goals, dispatch }) {
         </Modal>)}
       </AnimatePresence>
       <div className="goalContainer">
+        <AnimatePresence>
           {generateGoalsWithDynamicAnimations()}
+        </AnimatePresence>
       </div>
       <ChartContainer>
         <Chart />

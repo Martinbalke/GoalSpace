@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {connect} from 'react-redux'
 import Chart from './Chart';
 import Loading from './Loading'
@@ -6,18 +6,19 @@ import Loading from './Loading'
 
 
 
-const ChartsContainer = ({ progressData, dispatch}) => {
-
-
+const ChartsContainer = ({ progressData, goals}) => {
+  useEffect(() => {
+  }, [progressData, goals])
   return (
   <section className="chart-container">
-      {progressData && progressData.length ? <Chart/> : <Loading/>}
+      {progressData[0] ? <Chart/> : <Loading/>}
   </section>
   )
 }
 
 const mSTP = state => ({
-  progressData: state.progress
+  progressData: state.progress,
+  goals: state.goals
 })
 
 export default connect(mSTP)(ChartsContainer);

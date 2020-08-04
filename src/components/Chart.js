@@ -9,10 +9,11 @@ const Chart = ({ progressData, goals }) => {
   const chartRef = useRef(null);
   const [dataToDisplay, setDataToDisplay] = useState(null);
   const [dataType, setDataType] = useState('dailyProgress');
-
+  
 
   const combineProgressIntoDataSet = () => {
     const combinedProgressData = {};
+
     progressData.forEach(progress => {
       const { goal } = progress.associatedGoal
       Object.keys(progress[dataType]).forEach(key => {
@@ -50,19 +51,19 @@ const Chart = ({ progressData, goals }) => {
 
     return( () => chartRef.current.dispose())
 
-  }, [dataToDisplay, dataType, goals]);
+  });
 
 
 
   return (
+    goals.length && (
     <div className='chart'>
       <div className="chart__buttons">
         <button className='btn btn-main' onClick={() => setDataType('dailyProgress')}>Daily</button>
         <button className='btn btn-main' onClick={() => setDataType('monthlyProgress')}>Monthly</button>
       </div>
       <div id='chart' className='chart__display' />
-    </div>
-
+    </div>)
   )
 
 }
