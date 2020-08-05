@@ -29,6 +29,7 @@ function Goal({ goal, children, index, dispatch, animationHeight }) {
           </div>
         ))}
         {children}
+        
         <button className='btn goal__complete '
           onClick={() => {dispatch(completeGoal(goal._id, index))}}>Complete</button>
       </motion.div>
