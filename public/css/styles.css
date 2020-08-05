@@ -852,13 +852,21 @@ p, span {
 .confetti__button-container {
   position: relative; }
 
+.confetti__animation {
+  position: relative;
+  top: -20rem;
+  z-index: 500; }
+
 .confetti__text {
   position: absolute;
   top: 20rem;
   left: 5rem;
   z-index: 500;
   font-family: "Poppins", sans-serif;
-  color: #2f80ed;
+  background: linear-gradient(to right, #2f80ed, #5104CB);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   font-size: 5rem; }
   .confetti__text--mirror {
     animation: bubbles-mirror 15s linear infinite; }

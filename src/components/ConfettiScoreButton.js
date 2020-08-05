@@ -12,7 +12,7 @@ export default ({ width, height, onClickCallBack, buttonClass, buttonText, butto
     setRecycle(true)
     setTextAnimation(true)
     setTimeout(() => setRecycle(false), 2000)
-    setTimeout(() => setTextAnimation(false), 4000)
+    setTimeout(() => setTextAnimation(false), 6000)
   }
 
   //This code determins wether the goal container is mirrored or not for bubble text animation
@@ -30,7 +30,7 @@ export default ({ width, height, onClickCallBack, buttonClass, buttonText, butto
           numberOfPieces={200}
           wind={0}
           gravity={0.1}
-          confettiSource={{ x: 80, y: 100, w: 100, h: 30 }}
+          confettiSource={{ x: 80, y: 180, w: 100, h: 30 }}
           initialVelocityX={2}
           initialVelocityY={7}
           recycle={recycle}
