@@ -42,6 +42,7 @@ const Milestone = ({ dispatch, goal, index }) => {
         buttonText={goal.milestone ? 'Finish' : 'Create'} 
         scoreAmount='20'
         goalIndex={index}
+        shootConfetti={true}
         />
       </form>
     </motion.div>
