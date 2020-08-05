@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ConfettiScoreButton from './ConfettiScoreButton'
 import { connect } from 'react-redux';
 import { completeGoal } from '../store/goalReducer'
 import { updateProgressPoints } from '../store/progressReducer';
@@ -13,6 +14,7 @@ function Goal({ goal, children, index, dispatch, animationHeight }) {
 
   scrollY.onChange(y => { if (y > animationHeight) setVisibleWhenScrollDown(true) })
   if (!goal.habits) return <div></div>
+  let goalIndex = index;
   return (
     visibleWhenScrollDown ? (
       <motion.div
@@ -25,7 +27,15 @@ function Goal({ goal, children, index, dispatch, animationHeight }) {
         {goal.habits.map((habit, index) => (
           <div className="goal__habit" key={index}>
             <p className="goal__habit-text">{habit}</p>
-            <button className="goal__habit-button btn btn-round" onClick={() => dispatch(updateProgressPoints(goal._id, 5))}>+</button>
+            <ConfettiScoreButton 
+            buttonClass="goal__habit-button btn btn-round" 
+            buttonText='+' 
+            onClickCallBack={() => dispatch(updateProgressPoints(goal._id, 5))} 
+            width='500px' height='400px' 
+            buttonType='button' 
+            scoreAmount='5'
+            goalIndex={goalIndex}
+            />
           </div>
         ))}
         {children}

@@ -36,12 +36,13 @@ const Milestone = ({ dispatch, goal, index }) => {
           placeholder='Create a milestone for your goal'
         />
         <ConfettiScoreButton 
-        width='500px' height='300px' 
+        width='500px' height='400px' 
         buttonClass="milestone__btn btn btn-blob" 
         buttonType='submit' 
         buttonText={goal.milestone ? 'Finish' : 'Create'} 
         scoreAmount='20'
         goalIndex={index}
+        shootConfetti={true}
         />
       </form>
     </motion.div>

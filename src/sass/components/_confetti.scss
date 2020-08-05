@@ -3,6 +3,11 @@
   &__button-container{
     position: relative;
   }
+  &__animation{
+    position: relative;
+    top: -20rem;
+    z-index: 500;
+  }
 
   &__text{
     position: absolute;
@@ -10,7 +15,10 @@
     left: 5rem;
     z-index: 500;
     font-family: $font-header;
-    color: $color-primary;
+    background: $gradient;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     font-size: 5rem;
 
     &--mirror{

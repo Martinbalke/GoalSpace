@@ -1,19 +1,27 @@
 import React, { useState } from 'react'
 import Confetti from 'react-confetti'
 
-export default ({ width, height, onClickCallBack, buttonClass, buttonText, buttonType, scoreAmount, goalIndex }) => {
+export default ({ width, height, onClickCallBack, buttonClass, buttonText, buttonType, scoreAmount, goalIndex, shootConfetti }) => {
   const [run, setRun] = useState(false);
   const [recycle, setRecycle] = useState(false);
   const [textAnimation, setTextAnimation] = useState(false);
-  const [animation, setAnimation] = useState(false);
 
   function conffetiCannon(score) {
-    setRun(true)
-    setRecycle(true)
-    setTextAnimation(true)
-    setTimeout(() => setRecycle(false), 2000)
-    setTimeout(() => setTextAnimation(false), 4000)
-  }
+    //Only want this to fire when finishing a milestone
+    if(buttonText === 'Finish' || buttonText ==='+'){
+      //Only shoot confetti on milestone completion
+      if(shootConfetti){
+          setRun(true)
+          setRecycle(true)
+          setTimeout(() => setRecycle(false), 2000)
+        }
+
+        setTextAnimation(true)
+        setTimeout(() => setTextAnimation(false), 6000)
+      }
+    }
+
+
 
   //This code determins wether the goal container is mirrored or not for bubble text animation
   let mirrored;
@@ -27,10 +35,10 @@ export default ({ width, height, onClickCallBack, buttonClass, buttonText, butto
         <Confetti
           width={width}
           height={height}
-          numberOfPieces={200}
+          numberOfPieces={100}
           wind={0}
           gravity={0.1}
-          confettiSource={{ x: 80, y: 100, w: 100, h: 30 }}
+          confettiSource={{ x: 0, y: 180, w: 300, h: 30 }}
           initialVelocityX={2}
           initialVelocityY={7}
           recycle={recycle}
