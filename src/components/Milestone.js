@@ -16,7 +16,7 @@ const Milestone = ({ dispatch, goal, index }) => {
         await setMilestone('')
         dispatch(updateProgressPoints(goal._id, 20))
     }
-      dispatch(updateGoal(newGoal, index));
+      dispatch(updateGoal(newGoal, index))
   }
 
 
@@ -41,7 +41,6 @@ const Milestone = ({ dispatch, goal, index }) => {
         buttonType='submite' 
         buttonText={goal.milestone ? 'Finish' : 'Create'} 
         />
-        {/* <button type='submit' className="milestone__btn btn btn-blob">{goal.milestone ? 'Finish' : 'Create'}</button> */}
       </form>
     </motion.div>
   )
