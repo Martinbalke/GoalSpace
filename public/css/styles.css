@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,400;1,700&display=swap");
 @keyframes bubbles {
   0% {
-    transform: translateY(-10rem) rotate(0deg);
+    transform: translateY(-10rem) rotate(0);
     opacity: 0;
     border-radius: 50%; }
   10% {
-    transform: translateY(-30rem) rotate(0deg);
+    transform: translateY(-30rem) rotate(0);
     opacity: 1;
     border-radius: 50%; }
   50% {
@@ -14,6 +14,22 @@
     border-radius: 45%; }
   100% {
     transform: translateY(-110rem) rotate(720deg);
+    border-radius: 50%; } }
+
+@keyframes bubbles-mirror {
+  0% {
+    transform: translateY(-10rem) rotate(0) scale(-1, 1);
+    opacity: 0;
+    border-radius: 50%; }
+  10% {
+    transform: translateY(-30rem) rotate(0) scale(-1, 1);
+    opacity: 1;
+    border-radius: 50%; }
+  50% {
+    transform: translateY(-70rem) rotate(500deg) scale(-1, 1);
+    border-radius: 45%; }
+  100% {
+    transform: translateY(-110rem) rotate(720deg) scale(-1, 1);
     border-radius: 50%; } }
 
 * {
@@ -832,3 +848,19 @@ p, span {
     width: 5.8rem;
     height: 5.8rem;
     opacity: 0; } }
+
+.confetti__button-container {
+  position: relative; }
+
+.confetti__text {
+  position: absolute;
+  top: 20rem;
+  left: 5rem;
+  z-index: 500;
+  font-family: "Poppins", sans-serif;
+  color: #2f80ed;
+  font-size: 5rem; }
+  .confetti__text--mirror {
+    animation: bubbles-mirror 15s linear infinite; }
+  .confetti__text--normal {
+    animation: bubbles 15s linear infinite; }

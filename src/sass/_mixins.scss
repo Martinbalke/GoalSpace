@@ -30,13 +30,13 @@
 
 @keyframes bubbles {
   0% {
-    transform: translateY(-10rem) rotate(0deg);
+    transform: translateY(-10rem) rotate(0);
     opacity: 0;
     border-radius: 50%;
   }
 
   10% {
-    transform: translateY(-30rem) rotate(0deg);
+    transform: translateY(-30rem) rotate(0);
     opacity: 1;
     border-radius: 50%;
   }
@@ -48,6 +48,36 @@
 
   100% {
     transform: translateY(-110rem) rotate(720deg);
+    border-radius: 50%;
+  }
+}
+
+
+
+@mixin animate-bubbles-mirror {
+  animation: bubbles-mirror 15s linear infinite;
+}
+
+@keyframes bubbles-mirror {
+  0% {
+    transform: translateY(-10rem) rotate(0) scale(-1,1);
+    opacity: 0;
+    border-radius: 50%;
+  }
+
+  10% {
+    transform: translateY(-30rem) rotate(0) scale(-1,1);
+    opacity: 1;
+    border-radius: 50%;
+  }
+
+  50% {
+    transform: translateY(-70rem) rotate(500deg) scale(-1,1);
+    border-radius: 45%;
+  }
+
+  100% {
+    transform: translateY(-110rem) rotate(720deg) scale(-1, 1);
     border-radius: 50%;
   }
 }

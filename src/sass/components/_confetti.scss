@@ -1,0 +1,23 @@
+.confetti{
+
+  &__button-container{
+    position: relative;
+  }
+
+  &__text{
+    position: absolute;
+    top: 20rem;
+    left: 5rem;
+    z-index: 500;
+    font-family: $font-header;
+    color: $color-primary;
+    font-size: 5rem;
+
+    &--mirror{
+      @include animate-bubbles-mirror;
+    }
+    &--normal{
+      @include animate-bubbles;
+    }
+  }
+}
