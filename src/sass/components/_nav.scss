@@ -64,7 +64,7 @@
     &:link,
     &:visited {
       display: inline-block;
-      font-family: $font-primary;
+      font-family: $font-header;
       text-transform: uppercase;
       font-size: 8rem;
       font-weight: 900;
@@ -115,7 +115,7 @@
 
   &__checkbox:checked ~ &__background {
     transform: scale(70);
-    background: linear-gradient(to right, $color-white, $color-grey);
+
   }
 
   &__checkbox:checked ~ &__nav {

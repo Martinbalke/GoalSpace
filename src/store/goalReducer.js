@@ -1,6 +1,6 @@
 
 import superagent from 'superagent';
-import { createProgressData, loadProgressData } from './progressReducer';
+import { createProgressData, loadProgressData, removeProgressData } from './progressReducer';
 
 
 export const superAgentAPICallRecieve = async (method, uri) => {
@@ -36,7 +36,7 @@ export const loadGoals = () => {
 export const newGoal = (goal, index) => {
   return async (dispatch) => {
     let res = await superAgentAPICallSend('post', 'http://localhost:3045/goals', goal)
-    dispatch(createProgressData(res.body._id));
+    setTimeout(() => dispatch(createProgressData(res.body._id)), 2000);
     dispatch({ type: 'NEW_GOAL', goal: res.body, index })
   }
 }
@@ -45,6 +45,7 @@ export const completeGoal = (id, index) => {
   return async (dispatch) => {
       await superAgentAPICallRecieve('delete', `http://localhost:3045/goals/${id}`);
       dispatch({ type: 'COMPLETE_GOAL', index })
+      dispatch(removeProgressData(index))
   }
 }
 

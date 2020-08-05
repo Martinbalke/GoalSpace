@@ -1,7 +1,9 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
 am4core.useTheme(am4themes_animated);
+am4core.options.onlyShowOnViewport = true;
 
 
 class ChartClass {
@@ -12,10 +14,8 @@ class ChartClass {
   }
 
   chartSetup = () => {
+    
     this.chart.colors.step = 2;
-
-    this.chart.scrollbarX = new am4core.Scrollbar();
-    this.chart.scrollbarX.parent = this.chart.bottomAxesContainer;
 
     this.chart.legend = new am4charts.Legend()
     this.chart.legend.position = 'top'

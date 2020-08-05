@@ -29,7 +29,7 @@ function SetGoals({ goals, setEditing, children }) {
       <div className='setgoals__header-container'>
         <h3 className='setgoals__header'>{`Create a new ${typeWriterText} goal`}</h3>
         <span className='setgoals__cursor' style={{ display: `${typingAnimation}` }} />
-        {goals.length < 3 && (<button className='btn btn-main setgoals__btn' onClick={() => setEditing(goals.length)}></button>)} 
+        {goals.length < 3 && (<button className='btn btn-round setgoals__btn' onClick={() => setEditing(goals.length)}>+</button>)} 
       </div>
 
       {children}

@@ -1,5 +1,4 @@
 .setgoals {
-
   height: 60rem;
   display: flex;
   position: relative;
@@ -9,8 +8,8 @@
     margin-top: 5rem;
     display: flex;
     align-self: center;
-    width: 50rem;
     justify-content: center;
+
   }
 
   &__cursor {
@@ -37,12 +36,14 @@
   &__header {
     font-size: 3rem;
     @include tertiary-blue-skew;
-    box-shadow: $shadow-medium;
   }
 
   &__btn{
     z-index: 1;
     position: relative;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
     left: -2rem;
     bottom: 2.25rem;
   }
