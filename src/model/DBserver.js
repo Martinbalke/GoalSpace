@@ -18,7 +18,7 @@ app.get('/', async (req, res, next) => {
   res.send('Live server')
 });
 
-app.use('/goals',goalrouter);
+app.use('/goals', goalrouter);
 app.use('/progress', progressRouter);
 
 const server = {
