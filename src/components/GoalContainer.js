@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Goal from './Goal';
 import Modal from './Modal'
 import GoalForm from './GoalForm';
@@ -9,51 +9,54 @@ import Milestone from './Milestone';
 import ChartContainer from './ChartsContainer'
 import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
-import {AnimatePresence} from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 
-function GoalContainer({goals, dispatch, progressData}) {
+function GoalContainer({ goals, dispatch }) {
   //State variable to keep track of which goal is currently being edited
   const [editing, setEditing] = useState(-1);
 
-  
-  useEffect( () => {
+
+  useEffect(() => {
     dispatch(loadGoals());
-  },[dispatch])
+  }, [dispatch])
 
   //Generate a Goal component for each goal in the global state
-  function generateChildren(){
-    if(!goals) return <div/>
-      return goals.map( (goal,index) => 
-      <Goal index={index} key={index} goal={goal}>
-        <Milestone goal={goal} index={index}/>
-      </Goal> 
-      )
+  function generateGoalsWithDynamicAnimations() {
+    let heights = [800, 1100, 1400];
+    if (!goals) return <div />
+    return goals.map((goal, index) =>
+      <Goal index={index} key={index} goal={goal} animationHeight={heights[index]}>
+        <Milestone goal={goal} index={index} />
+      </Goal>
+    )
   }
 
   return (
-    <section className="contentContainer">
+    <main className="contentContainer">
       <SetGoal setEditing={setEditing}>
-        <EditGoal setEditing={setEditing}/>
+        <EditGoal setEditing={setEditing} />
       </SetGoal>
       <AnimatePresence>
-      {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
-        <GoalForm index={editing} close={() => setEditing(-1)} />
-      </Modal>)}
+        {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
+          <GoalForm index={editing} close={() => setEditing(-1)} />
+        </Modal>)}
       </AnimatePresence>
       <div className="goalContainer">
-        {generateChildren()}
+        <AnimatePresence>
+          {generateGoalsWithDynamicAnimations()}
+        </AnimatePresence>
       </div>
       <ChartContainer>
-        <Chart/>
+        <Chart />
       </ChartContainer>
-    </section>
+    </main>
   );
 }
 
-const mSTP = state => ({
+const mapStateToProps = state => ({
   goals: state.goals,
   progressData: state.progress
 });
 
-export default connect(mSTP)(GoalContainer);
+export default connect(mapStateToProps)(GoalContainer);

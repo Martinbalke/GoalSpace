@@ -1,11 +1,9 @@
 import mongoose from 'mongoose';
-
-
 import progressSchema from './progressSchema';
 
-
-
 const Schema = mongoose.Schema;
+
+
 const goalSchema = new Schema({
   goal: {type: String, required: true},
   milestone: {type: String},
@@ -13,6 +11,7 @@ const goalSchema = new Schema({
 })
 
 
+//Middleware 
 goalSchema.post('findOneAndDelete', async function (goal) {
   await progressSchema.deleteOne({associatedGoal: goal._id})
 })

@@ -24,14 +24,15 @@ export const popupContainerAnimation = {
   }
 }
 
-export const goalSlideInAnimationLeft = {
-  hidden: { opacity: 0, scale: 0 },
+export const goalSlideInAnimationRight = {
+  hidden: { opacity: 0, scale: 1, x: '150vw' },
   visible: {
     opacity: 1,
     scale: 1,
+    x: 0,
     transition: {
       duration: .4,
-      delay: 2,
+      delay: .5,
     }
   },
   exit: {
@@ -40,44 +41,16 @@ export const goalSlideInAnimationLeft = {
   }
 }
 
-export const goalSlideInAnimationRight = {
-  hidden: { opacity: 0, scale: 0 },
+export const goalSlideInAnimationLeft = {
+  hidden: { opacity: 0, x: '-100vw', scaleX: -1, scaleY: 1 },
   visible: {
     opacity: 1,
-    scale: 1,
+    scaleX: -1,
+    scaleY: 1,
+    x: 0,
     transition: {
       duration: .4,
-      delay: 2,
-    }
-  },
-  exit: {
-    x: '100vw',
-    opacity: 0,
-  }
-}
-
-export const milestoneSlideInLeft = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: .4,
-    }
-  },
-  exit: {
-    x: '100vw',
-    opacity: 0,
-  }
-}
-
-export const milestoneSlideInRight = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: .4,
+      delay: .5,
     }
   },
   exit: {

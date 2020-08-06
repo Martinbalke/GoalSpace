@@ -7,8 +7,9 @@ class ProgressModel extends Model {
     super(schema)
   }
 
-  async findByGoal(goalID){
-    let data = await schema.find({associatedGoal: goalID})
+  //Whenever we delete a goal // delete associated progress data
+  async findByGoal(goalID){ 
+    let data = await schema.find({associatedGoal: goalID}) 
     return data;
   }
 }

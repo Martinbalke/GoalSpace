@@ -3,7 +3,7 @@ import React from 'react';
 
 function Nav() {
   return (
-  <div classNameName="navigation">
+  <div className="navigation">
       <input type="checkbox" className="navigation__checkbox" id="nav-check"/>
       <label htmlFor="nav-check" className="navigation__button">
           <span className="navigation__icon">&nbsp;</span>

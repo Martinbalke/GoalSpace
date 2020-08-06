@@ -2,7 +2,8 @@ import express from 'express'
 import GoalModel from '../model/goalModel';
 
 const router = express.Router();
-const goalModel = new GoalModel();
+const goalModel = new GoalModel(); 
+
 
 router.get('/' ,async (req, res) => {
   let goals = await goalModel.read();
