@@ -20,6 +20,7 @@ $gradient: linear-gradient(to right, $color-primary, #5104CB);
 
 $drop-shadow: drop-shadow(0.2rem 0.2rem $color-orange) drop-shadow(-0.2rem 0.2rem $color-primary);
 $drop-shadow-large: drop-shadow(0.5rem 0.5rem $color-orange) drop-shadow(-0.5rem 0.5rem $color-primary);
+
 $radius-small: 2px;
 $radius-large: 4px;
 $radius-XL: 2rem;
@@ -27,6 +28,7 @@ $radius-XL: 2rem;
 $shadow-large: 6px 6px 5px rgba( #000, .25);
 $shadow-medium: 2px 2px 5px rgba( #000, .25);
 $shadow-small: 1px 2px 5px rgba( #555, .2);
+$shadow-colored: 2px 2px 10px rgba($color-primary-light, $alpha: 0.5);
 
 
 

@@ -85,7 +85,7 @@ p, span {
     filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
     .btn-main:hover {
       transform: scale(1.02) translateY(1px);
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
       cursor: pointer; }
   .btn-blob {
     position: relative;
@@ -126,6 +126,34 @@ p, span {
     transition: all .3s; }
     .btn-round:hover, .btn-round:focus {
       cursor: pointer; }
+  .btn-hero {
+    font-family: "Roboto", sans-serif;
+    border-radius: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 4.5rem;
+    width: 15rem;
+    transition: all .3s; }
+    .btn-hero:hover, .btn-hero:focus {
+      transform: translateY(-2px) scale(1.03);
+      cursor: pointer; }
+    .btn-hero--solid {
+      background: linear-gradient(to right, #2f80ed, #5104CB);
+      color: white; }
+      .btn-hero--solid:hover, .btn-hero--solid:focus {
+        box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.5);
+        filter: hue-rotate(30deg); }
+    .btn-hero--outline {
+      border: 2px solid white;
+      background: none;
+      color: white;
+      opacity: .7; }
+      .btn-hero--outline:hover, .btn-hero--outline:focus {
+        outline: none;
+        opacity: 1;
+        background: white;
+        color: #2f80ed;
+        box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.5); }
 
 .goalForm {
   display: flex;
@@ -704,7 +732,7 @@ p, span {
     justify-content: center;
     align-items: center;
     width: 100%;
-    top: 2em;
+    top: 0em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
     z-index: 1;
@@ -715,7 +743,7 @@ p, span {
       text-align: center;
       font-family: inherit;
       color: white;
-      max-width: 100rem;
+      width: 68.5rem;
       font-size: 7rem;
       line-height: 7rem;
       text-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
@@ -729,10 +757,19 @@ p, span {
       font-family: inherit;
       font-size: 4rem;
       left: 2rem;
-      top: -25rem;
+      top: -21rem;
       position: absolute;
       color: white;
       filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
+  .hero__buttons {
+    display: flex;
+    z-index: 3;
+    justify-content: space-between;
+    position: relative;
+    align-self: center;
+    top: 2.5rem; }
+    .hero__buttons button {
+      margin-left: 1rem; }
 
 .footer {
   display: flex;
