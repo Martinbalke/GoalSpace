@@ -18,11 +18,11 @@ function Hero(props) {
           <button className='btn btn-hero btn-hero--solid'>Login</button>
         </div>
       </section>
-      {showAbout && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {showAbout && (
           <About callback={setShowAbout} />
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </>
   );
 }
