@@ -1,7 +1,10 @@
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
 am4core.useTheme(am4themes_animated);
+am4core.options.onlyShowOnViewport = true;
+
 
 class ChartClass {
   constructor(data) {
@@ -11,12 +14,13 @@ class ChartClass {
   }
 
   chartSetup = () => {
+    
     this.chart.colors.step = 2;
 
     this.chart.legend = new am4charts.Legend()
     this.chart.legend.position = 'top'
     this.chart.legend.paddingBottom = 20
-    this.chart.legend.labels.template.maxWidth = 95
+    this.chart.legend.labels.template.maxWidth = 400
 
 
     this.xAxis.dataFields.category = 'date'
@@ -30,10 +34,14 @@ class ChartClass {
   }
 
   createSeries = (value, name) => {
+
+
     let series = this.chart.series.push(new am4charts.ColumnSeries())
     series.dataFields.valueY = value
     series.dataFields.categoryX = 'date'
     series.name = name
+    series.columns.template.column.cornerRadiusTopLeft = 10;
+    series.columns.template.column.cornerRadiusTopRight = 0;
 
     series.events.on("hidden", this.arrangeColumns);
     series.events.on("shown", this.arrangeColumns);
@@ -84,7 +92,32 @@ class ChartClass {
     }
   }
 
+
+
 }
 
 
+function chartTheme(target) {
+
+
+
+  if (target instanceof am4core.InterfaceColorSet) {
+    target.setFor('grid', am4core.color("#FFF"))
+    target.setFor('text', am4core.color("#3282E7").lighten(-.4))
+    target.setFor('secondaryButton', am4core.color("#3282E7"))
+    target.setFor('secondaryButtonHover', am4core.color("#3282E7").lighten(-.2))
+    target.setFor('secondaryButtonActive', am4core.color("#3282E7").lighten(-.2))
+    target.setFor('secondaryButtonDown', am4core.color("#3282E7").lighten(-.2))
+    target.setFor('secondaryButtonStroke', am4core.color("#FEA138"));
+    target.setFor('secondaryButtonText', am4core.color("#FEA138"));
+  }
+
+  if (target instanceof am4core.ColorSet) {
+    target.list = [
+      am4core.color("#3282E7")
+    ];
+  }
+}
+
+am4core.useTheme(chartTheme)
 export default ChartClass;

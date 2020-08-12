@@ -7,12 +7,13 @@ function Hero(props) {
         <div className="hero__bubbles">
           <div /><div /><div /><div /><div /><div />
         </div>
-        <span className='hero__header-logo'>GS</span>
-        <span className='hero__header-text-1'>Set a meaningful goal</span>
-        <br></br>
-        <span className='hero__header-text-2'>Accomplish it with daily habits</span>
+        <span className='hero__header-logo'>Goalspace</span>
+        <span className='hero__header-text-1'>From daily <em>habits</em> to finished <em>goals</em></span>
       </h1>
-      <div className="hero__shapes" />
+      <div className="hero__buttons">
+        <button className='btn btn-hero btn-hero--outline'>Learn more</button>
+        <button className='btn btn-hero btn-hero--solid'>Login</button>
+      </div>
     </section>);
 }
 

@@ -2,7 +2,6 @@
   background-image: url("../images/color.jpg");
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
   height: 60rem;
   display: flex;
   position: relative;
@@ -20,11 +19,10 @@
     background: url("../images/border.svg");
     @include shape-pseudo-element;
     transform: scale(-1, 1);
-    // filter: drop-shadow(0 -1rem rgba($color-primary, .9));
     bottom: -3%;
   }
 
-  &__bubbles{
+  &__bubbles {
     position: absolute;
     top: -45rem;
     left: 0;
@@ -33,21 +31,21 @@
     overflow: hidden;
     z-index: -100;
 
-    & div{
+    & div {
       position: absolute;
       bottom: -15%;
       right: 10%;
       @include animate-bubbles;
 
-      &:nth-child(1){
+      &:nth-child(1) {
         height: 8rem;
         width: 8rem;
         right: 50%;
         animation-delay: 5s;
-        background: $color-white;
+        background: $color-orange;
       }
 
-      &:nth-child(2){
+      &:nth-child(2) {
         height: 3rem;
         width: 3rem;
         right: 90%;
@@ -55,7 +53,7 @@
         background: $color-grey;
       }
 
-      &:nth-child(3){
+      &:nth-child(3) {
         height: 1rem;
         width: 1rem;
         right: 55%;
@@ -63,21 +61,21 @@
         background: $color-orange;
       }
 
-      &:nth-child(4){
+      &:nth-child(4) {
         height: 2rem;
         width: 2rem;
         right: 80%;
         animation-delay: 2s;
         background: $color-primary-light;
       }
-      &:nth-child(5){
+      &:nth-child(5) {
         height: 4rem;
         width: 4rem;
         right: 71%;
         animation-delay: 16s;
         background: $color-orange;
       }
-      &:nth-child(6){
+      &:nth-child(6) {
         height: 3rem;
         width: 3rem;
         right: 60%;
@@ -85,118 +83,63 @@
         background: $color-primary;
       }
     }
-    
-
-   
   }
-
-  
 
   &__header {
-    font-family: $font-header;
     position: relative;
-    top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
-    text-shadow: $shadow-small;
-    font-weight: 900;
     z-index: 1;
-    width: 18ch;
-    font-size: 4.5rem;
-    color: $color-primary-dark;
+    font-family: $font-header;
 
     &-text-1 {
-      
       z-index: 3;
-      position: relative;
+
+      align-self: center;
+      text-align: center;
       font-family: inherit;
-      line-height: 0;
-      padding: .2rem;
-      top: 3rem;
-      left: 4rem;
-  
-    }
-    &-text-2 {
-      position: relative;
-      top: 3rem;
-      left: 4rem;
-      font-family: inherit;
-      line-height: 0;
-      color: rgba($color-primary-dark, 0.8);
+      color: $color-white;
+      width: 68.5rem;
+      font-size: 7rem;
+      line-height: 7rem;
+      text-shadow: $shadow-small;
+      letter-spacing: .5px;
+      margin-top: -7rem;
+      padding: 0 1rem;
+      & em{
+        font-style: normal;
+        filter: $drop-shadow-large;
+      }
     }
     &-logo {
-     font-family: inherit;
-     font-size: 9rem;
-     left: 30rem;
-     top: -15rem;
-     position: absolute;
-     color: rgba($color-primary, 1);
-     text-shadow: none;
-
-     &::after{
-       @include shape-pseudo-element;
-       content: 'GoalSpace';
-       text-align: center;
-       font-size: 5rem;
-      background: $color-white;
-       z-index: 3;
-       border-radius: 50%;
-       top: 50%;
-       left: 50%;
-       line-height: 18rem;
-       transform: translate(-50%,-50%);
-       height: 18rem;
-       width: 18rem;
-       filter: drop-shadow($shadow-small) ;
-     }
-     &::before{
-       @include shape-pseudo-element;
-       background-color: rgba($color-orange, 0.9);
-       z-index: -1;
-       border-radius: 50%;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%,-50%);
-       height: 20rem;
-       width: 20rem;
-       filter: drop-shadow($shadow-small) ;
-     }
+      font-family: inherit;
+      font-size: 4rem;
+      left: 2rem;
+      top: -21rem;
+      position: absolute;
+      color: $color-white;
+      filter: $drop-shadow;
     }
   }
 
-  &__shapes {
-    z-index: 0;
-    position: absolute;
-    top: 40%;
-    left: 1rem;
-    content: "";
-    height: 17rem;
-    width: 10rem;
+  &__buttons{
+    display: flex;
+    z-index: 3;
+    justify-content: space-between;
+    position: relative;
+    align-self: center;
 
-    &::after {
-      @include shape-pseudo-element;
-      z-index: -1;
-      top: -277%;
-      left: -210%;
-      height: 80rem;
-      width: 80rem;
-      border-radius: 50%;
-      filter: drop-shadow(2rem 2.5rem rgba($color-primary-dark, 0.9));
-      background-color: $color-white;
+    top: 2.5rem;
+
+    & button {
+      margin-left: 1rem;
     }
 
-    &::before {
-      @include shape-pseudo-element;
-      z-index: 1;
-      top: -160%;
-      left: -80%;
-      border-radius: 50%;
-      height: 25rem;
-      width: 25rem;
-      filter:  drop-shadow(40rem 37.5rem $color-orange);
-      background-color: $color-grey;
-    }
   }
-
-
 }
