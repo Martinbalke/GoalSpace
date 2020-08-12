@@ -85,7 +85,7 @@ p, span {
     filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
     .btn-main:hover {
       transform: scale(1.02) translateY(1px);
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+      box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
       cursor: pointer; }
   .btn-blob {
     position: relative;
@@ -126,6 +126,33 @@ p, span {
     transition: all .3s; }
     .btn-round:hover, .btn-round:focus {
       cursor: pointer; }
+  .btn-hero {
+    font-family: "Roboto", sans-serif;
+    border-radius: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 4.5rem;
+    width: 15rem;
+    transition: all .3s; }
+    .btn-hero:hover, .btn-hero:focus {
+      transform: translateY(-2px) scale(1.03);
+      cursor: pointer; }
+    .btn-hero--solid {
+      background: linear-gradient(to right, #2f80ed, #5104CB);
+      color: white; }
+      .btn-hero--solid:hover, .btn-hero--solid:focus {
+        filter: hue-rotate(30deg); }
+    .btn-hero--outline {
+      border: 2px solid white;
+      background: none;
+      color: white;
+      opacity: .7; }
+      .btn-hero--outline:hover, .btn-hero--outline:focus {
+        outline: none;
+        opacity: 1;
+        background: white;
+        color: #2f80ed;
+        box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.2); }
 
 .goalForm {
   display: flex;
@@ -642,6 +669,7 @@ p, span {
     z-index: -1;
     width: 100%;
     background: url("../images/border.svg");
+    background-position: bottom;
     content: "";
     position: absolute;
     background-repeat: no-repeat;
@@ -704,7 +732,7 @@ p, span {
     justify-content: center;
     align-items: center;
     width: 100%;
-    top: 2em;
+    top: 0em;
     letter-spacing: -1px;
     padding-left: 1.5rem;
     z-index: 1;
@@ -715,7 +743,7 @@ p, span {
       text-align: center;
       font-family: inherit;
       color: white;
-      max-width: 100rem;
+      width: 68.5rem;
       font-size: 7rem;
       line-height: 7rem;
       text-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
@@ -729,10 +757,19 @@ p, span {
       font-family: inherit;
       font-size: 4rem;
       left: 2rem;
-      top: -25rem;
+      top: -21rem;
       position: absolute;
       color: white;
       filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
+  .hero__buttons {
+    display: flex;
+    z-index: 3;
+    justify-content: space-between;
+    position: relative;
+    align-self: center;
+    top: 2.5rem; }
+    .hero__buttons button {
+      margin-left: 1rem; }
 
 .footer {
   display: flex;
@@ -758,11 +795,12 @@ p, span {
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
-    content: 'Contact';
     font-size: 30rem;
-    opacity: .1;
+    opacity: .02;
     font-family: "Poppins", sans-serif;
     color: white;
+    z-index: -1;
+    content: 'Contact';
     z-index: 11;
     line-height: 0;
     top: 30%; }
@@ -890,3 +928,86 @@ p, span {
     animation: bubbles-mirror 15s linear infinite; }
   .confetti__text--normal {
     animation: bubbles 15s linear infinite; }
+
+.about {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: #0B1A2E;
+  text-align: center;
+  padding: 2rem; }
+  .about::before {
+    background: url("../images/alt-border-white.svg");
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    top: 65%;
+    left: 0;
+    height: 30rem;
+    width: 100%; }
+  .about::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 30rem;
+    opacity: .02;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    z-index: -1;
+    content: 'About Goalspace';
+    line-height: 25rem;
+    top: 10%;
+    left: 10%; }
+  .about__close {
+    position: fixed;
+    z-index: 100000;
+    top: 5vh;
+    right: 5vw;
+    color: #2f80ed;
+    font-family: "Roboto", sans-serif;
+    height: 4rem;
+    width: 4rem;
+    transition: all .3s; }
+    .about__close:hover {
+      cursor: pointer;
+      transform: translateY(-2px); }
+    .about__close:after {
+      content: "\00D7";
+      display: block;
+      font-size: 2.5rem; }
+  .about__header {
+    position: relative;
+    z-index: 1;
+    font-family: "Poppins", sans-serif;
+    margin: 5vh 0;
+    color: white;
+    font-size: 6rem;
+    transform: skew(-4deg);
+    filter: drop-shadow(0.5rem 0.5rem #fca311) drop-shadow(-0.5rem 0.5rem #2f80ed); }
+  .about__sections {
+    display: flex;
+    justify-content: space-around; }
+  .about__section {
+    margin: 2rem 2rem;
+    max-width: 35rem; }
+    .about__section-tertiary {
+      background: linear-gradient(to right, #2f80ed, #5104CB);
+      letter-spacing: .5px;
+      color: white;
+      padding: 1.5rem 3rem;
+      box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
+      border-radius: 4px;
+      transform: skew(-4deg);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.2); }
+    .about__section-paragraph {
+      font-size: 2rem;
+      color: white; }

@@ -18,12 +18,8 @@
     width: 100%;
   }
   &::after{
-    @include shape-pseudo-element;
+  @include watermark-text;
     content: 'Contact';
-    font-size: 30rem;
-    opacity: .1;
-    font-family: $font-header;
-    color: white;
     z-index: 11;
     line-height: 0;
     top: 30%;

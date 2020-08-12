@@ -24,6 +24,15 @@
   background-size: cover;
 }
 
+@mixin watermark-text{
+  @include shape-pseudo-element;
+  font-size: 30rem;
+  opacity: .02;
+  font-family: $font-header;
+  color: white;
+  z-index: -1;
+}
+
 @mixin animate-bubbles {
   animation: bubbles 15s linear infinite;
 }
