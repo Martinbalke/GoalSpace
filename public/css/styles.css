@@ -141,7 +141,6 @@ p, span {
       background: linear-gradient(to right, #2f80ed, #5104CB);
       color: white; }
       .btn-hero--solid:hover, .btn-hero--solid:focus {
-        box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.5);
         filter: hue-rotate(30deg); }
     .btn-hero--outline {
       border: 2px solid white;
@@ -153,7 +152,7 @@ p, span {
         opacity: 1;
         background: white;
         color: #2f80ed;
-        box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.5); }
+        box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.2); }
 
 .goalForm {
   display: flex;
@@ -927,3 +926,86 @@ p, span {
     animation: bubbles-mirror 15s linear infinite; }
   .confetti__text--normal {
     animation: bubbles 15s linear infinite; }
+
+.about {
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: #0B1A2E;
+  text-align: center;
+  padding: 2rem; }
+  .about::before {
+    background: url("../images/alt-border-white.svg");
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    top: 65%;
+    left: 0;
+    height: 30rem;
+    width: 100%; }
+  .about::after {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: 'About Goalspace';
+    font-size: 30rem;
+    opacity: .02;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    z-index: -1;
+    line-height: 25rem;
+    top: 10%;
+    left: 10%; }
+  .about__close {
+    position: fixed;
+    z-index: 100000;
+    top: 5vh;
+    right: 5vw;
+    color: #2f80ed;
+    font-family: "Roboto", sans-serif;
+    height: 4rem;
+    width: 4rem;
+    transition: all .3s; }
+    .about__close:hover {
+      cursor: pointer;
+      transform: translateY(-2px); }
+    .about__close:after {
+      content: "\00D7";
+      display: block;
+      font-size: 2.5rem; }
+  .about__header {
+    position: relative;
+    z-index: 1;
+    font-family: "Poppins", sans-serif;
+    margin: 5vh 0;
+    color: white;
+    font-size: 6rem;
+    transform: skew(-4deg);
+    filter: drop-shadow(0.5rem 0.5rem #fca311) drop-shadow(-0.5rem 0.5rem #2f80ed); }
+  .about__sections {
+    display: flex;
+    justify-content: space-around; }
+  .about__section {
+    margin: 2rem 2rem;
+    max-width: 35rem; }
+    .about__section-tertiary {
+      background: linear-gradient(to right, #2f80ed, #5104CB);
+      letter-spacing: .5px;
+      color: white;
+      padding: 1.5rem 3rem;
+      box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
+      border-radius: 4px;
+      transform: skew(-4deg);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.2); }
+    .about__section-paragraph {
+      font-size: 2rem;
+      color: white; }

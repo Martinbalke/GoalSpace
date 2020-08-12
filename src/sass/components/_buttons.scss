@@ -96,7 +96,6 @@
       color: white;
 
       &:hover, &:focus {
-        box-shadow: $shadow-colored;
         filter: hue-rotate(30deg);
       }
 
