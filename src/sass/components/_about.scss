@@ -21,13 +21,8 @@
   }
 
   &::after{
-    @include shape-pseudo-element;
+    @include watermark-text;
     content: 'About Goalspace';
-    font-size: 30rem;
-    opacity: .02;
-    font-family: $font-header;
-    color: white;
-    z-index: -1;
     line-height: 25rem;
     top: 10%;
     left: 10%;

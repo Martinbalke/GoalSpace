@@ -17,6 +17,7 @@
     z-index: -1;
     width: 100%;
     background: url("../images/border.svg");
+    background-position: bottom;
     @include shape-pseudo-element;
     transform: scale(-1, 1);
     bottom: -3%;
@@ -125,6 +126,7 @@
       position: absolute;
       color: $color-white;
       filter: $drop-shadow;
+
     }
   }
 
