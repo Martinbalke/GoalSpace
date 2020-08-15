@@ -14,6 +14,7 @@ const month = getAndFormatDate('month');
 
 
 export const loadProgressData = () => {
+  //TODO MAKE PROGRESS DEPEND ON GOALS 
   return async dispatch => {
     let res = await superAgentAPICallRecieve('get', `http://localhost:3045/progress`);
     dispatch({ type: 'LOAD_PROGRESS', progress: res.body })

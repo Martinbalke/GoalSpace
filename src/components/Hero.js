@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import About from './About';
-import Profile from './Profile'
 import { AnimatePresence } from 'framer-motion'
 import {useAuth0} from '@auth0/auth0-react';
 
 
 function Hero() {
   const [showAbout, setShowAbout] = useState(false);
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
     <>
       <section className='hero'>
@@ -20,7 +19,7 @@ function Hero() {
         </h1>
         <div className="hero__buttons">
           <button className='btn btn-hero btn-hero--outline' onClick={() => setShowAbout(true)}>Learn more</button>
-          <button className='btn btn-hero btn-hero--solid' onClick={() => isAuthenticated ? logout() : loginWithRedirect()}>{isAuthenticated ? 'Goals' : 'Login'}</button>
+          <button className='btn btn-hero btn-hero--solid' onClick={() => isAuthenticated ? 'TODO: MAKE THIS SCROLL TO GOALS WHEN LOGGED IN' : loginWithRedirect()}>{isAuthenticated ? 'Goals' : 'Login'}</button>
         </div>
       </section>
       <AnimatePresence>

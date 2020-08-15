@@ -10,21 +10,28 @@ import ChartContainer from './ChartsContainer'
 import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
 import { AnimatePresence } from 'framer-motion';
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 function GoalContainer({ goals, dispatch }) {
   //State variable to keep track of which goal is currently being edited
   const [editing, setEditing] = useState(-1);
 
+  //AUTHENTICATION
+  const { user, isAuthenticated } = useAuth0();
+  const [currentUser, setCurrentUser] = useState(isAuthenticated && user ? user.email : 'TODO: LOCAL STORAGE')
+
 
   useEffect(() => {
-    dispatch(loadGoals());
-  }, [dispatch])
+    if(isAuthenticated)setCurrentUser(user.email);
+    dispatch(loadGoals(currentUser));
+  }, [dispatch, currentUser, isAuthenticated, user])
 
   //Generate a Goal component for each goal in the global state
   function generateGoalsWithDynamicAnimations() {
+    if (!goals) return;
+
     let heights = [800, 1100, 1400];
-    if (!goals) return <div />
     return goals.map((goal, index) =>
       <Goal index={index} key={index} goal={goal} animationHeight={heights[index]}>
         <Milestone goal={goal} index={index} />
@@ -39,7 +46,7 @@ function GoalContainer({ goals, dispatch }) {
       </SetGoal>
       <AnimatePresence>
         {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
-          <GoalForm index={editing} close={() => setEditing(-1)} />
+          <GoalForm index={editing} user={currentUser} close={() => setEditing(-1)} />
         </Modal>)}
       </AnimatePresence>
       <div className="goalContainer">

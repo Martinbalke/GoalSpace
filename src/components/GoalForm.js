@@ -5,17 +5,16 @@ import { newGoal, updateGoal } from '../store/goalReducer';
 import { motion } from "framer-motion"
 import { popupFormAnimation } from './animations';
 
-function GoalForm({ close, dispatch, index, goals }) {
-  const blankGoal = { goal: '', habits: ['', '', '']}
+function GoalForm({ close, dispatch, index, goals, user }) {
+  const blankGoal = { goal: '', habits: ['', '', ''], user}
   const [goal, setGoal] = useState(goals[index] || blankGoal);
   
 
 
-  const inputTextChange = ((text, index) => {
-    if (index < 0) return setGoal({...goal, goal: text})
-      let newHabits = [...goal.habits];
-      newHabits[index] = text;
-      setGoal({ ...goal, habits: newHabits });
+  const inputTextChange = ((text, change) => {
+    if (change === 'goal') return setGoal({...goal, goal: text})
+      goal.habits[change] = text;
+      setGoal({ ...goal, ...goal.habits});
   })
 
 
@@ -32,7 +31,7 @@ function GoalForm({ close, dispatch, index, goals }) {
           <button type='button' className='btn btn-round goalForm__close' onClick={close}/>
           <h3 className='goalForm__tertiary'>Set a new goal</h3>
           <div className="goalForm__inputs-container">
-            <Input className='goalForm__input' id='goal' callback={(text) => inputTextChange(text, -1)} defaultValue={goal.goal} labelText='Goal' />
+            <Input className='goalForm__input' id='goal' callback={(text) => inputTextChange(text, 'goal')} defaultValue={goal.goal} labelText='Goal' />
             <Input className='goalForm__input' id='habit1' callback={(text) => { inputTextChange(text, 0) }} defaultValue={goal.habits[0]} labelText='Habit 1' />
             <Input className='goalForm__input' id='habit2' callback={(text) => { inputTextChange(text, 1) }} defaultValue={goal.habits[1]} labelText='Habit 2' />
             <Input className='goalForm__input' id='habit3' callback={(text) => { inputTextChange(text, 2) }} defaultValue={goal.habits[2]} labelText='Habit 3' />

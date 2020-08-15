@@ -13,11 +13,9 @@ function SetGoals({ goals, setEditing, children }) {
   function typingEffect() {
     const verb = verbs[index];
     length < verb.length ? setLength(length + 1) : setTypingAnimation('none')
-
-
     setTypeWriteText(verb.substring(0, length));
-
   }
+
   useEffect(() => {
     clearTimeout(timer);
     setTimer(setTimeout(typingEffect, 300))

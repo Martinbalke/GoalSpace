@@ -8,6 +8,7 @@ const goalSchema = new Schema({
   goal: {type: String, required: true},
   milestone: {type: String},
   habits: {type: Array, required: true},
+  user: {type: String, required: true}
 })
 
 
