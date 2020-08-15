@@ -19,7 +19,7 @@ function GoalContainer({ goals, dispatch }) {
 
   //AUTHENTICATION
   const { user, isAuthenticated } = useAuth0();
-  const [currentUser, setCurrentUser] = useState(isAuthenticated && user ? user.email : 'TODO: LOCAL STORAGE')
+  const [currentUser, setCurrentUser] = useState(isAuthenticated && user ? user.email : 'mrtnbalke@gmail.com')
 
 
   useEffect(() => {

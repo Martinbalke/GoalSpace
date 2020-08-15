@@ -25,7 +25,9 @@ export const superAgentAPICallSend = async (method, uri, data) => {
 export const loadGoals = (user) => {
 
   return async (dispatch) => {
-      let res = await superAgentAPICallRecieve('get', 'http://localhost:3045/goals')
+    console.log(user)
+      let res = await superAgentAPICallRecieve('get', `http://localhost:3045/goals/${user}`);
+      console.log(res)
       dispatch({ type: 'LOAD_GOALS', goals: [...res.body] });
       dispatch(loadProgressData());
     }
