@@ -22,7 +22,6 @@ export const loadProgressData = (user) => {
 }
 
 export const createProgressData = (goal) => {
-  console.log(goal)
   const createFirstProgressData = {
     dailyProgress: { [day]: 0 },
     monthlyProgress: { [month]: 0 },
