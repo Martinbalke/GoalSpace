@@ -27,9 +27,10 @@ export const loadGoals = (user) => {
   return async (dispatch) => {
     console.log(user)
       let res = await superAgentAPICallRecieve('get', `http://localhost:3045/goals/${user}`);
-      console.log(res)
-      dispatch({ type: 'LOAD_GOALS', goals: [...res.body] });
-      dispatch(loadProgressData());
+      if(res && res.body){
+        dispatch({ type: 'LOAD_GOALS', goals: [...res.body] });
+        dispatch(loadProgressData(user));
+      }
     }
 }
 
@@ -37,7 +38,7 @@ export const loadGoals = (user) => {
 export const newGoal = (goal, index) => {
   return async (dispatch) => {
       let res = await superAgentAPICallSend('post', 'http://localhost:3045/goals', goal)
-      setTimeout(() => dispatch(createProgressData(res.body._id)), 2000);
+      setTimeout(() => dispatch(createProgressData(res.body)), 2000);
       dispatch({ type: 'NEW_GOAL', goal: res.body, index })
   }
 }

@@ -8,7 +8,10 @@ import Loading from './Loading'
 
 const ChartsContainer = ({ progressData, goals}) => {
   useEffect(() => {
+    console.log(progressData)
   }, [progressData, goals])
+  
+  
   return (
   <section className="chart-container">
       {progressData[0] ? <Chart/> : <Loading/>}
