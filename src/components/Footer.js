@@ -2,7 +2,7 @@ import React from 'react';
 function Footer(props) {
 
   return (
-    <footer className='footer'>
+    <footer className='footer' id='Contact'>
       <h3 className='footer__logo'>
         <a href='/' className='footer__logo-link'>Goalspace</a></h3>
       <p className="footer__copy"> &copy; 2020 &nbsp; &nbsp; &nbsp;Martin Balke <span>&</span> Joshua Ho</p>

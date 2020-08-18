@@ -49,7 +49,7 @@ function GoalContainer({ goals, dispatch }) {
           <GoalForm index={editing} user={currentUser} close={() => setEditing(-1)} />
         </Modal>)}
       </AnimatePresence>
-      <div className="goalContainer">
+      <div className="goalContainer" id="Goals">
         <AnimatePresence>
           {generateGoalsWithDynamicAnimations()}
         </AnimatePresence>

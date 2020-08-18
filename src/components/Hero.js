@@ -9,7 +9,7 @@ function Hero() {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
     <>
-      <section className='hero'>
+      <section className='hero' id='Hero'>
         <h1 className='hero__header'>
           <div className="hero__bubbles">
             <div /><div /><div /><div /><div /><div />
