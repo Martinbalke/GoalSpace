@@ -3,7 +3,7 @@
   display: flex;
   z-index: 300;
   position: relative;
-  height: 45vh;
+  height: 35rem;
   justify-content: center;
   align-items: center;
   background: $color-primary-dark-2;
@@ -13,7 +13,7 @@
     background: url('../images/border-dark.svg');
     @include shape-pseudo-element;
     z-index: 10;
-    top: calc(-100% - -10rem);
+    top: calc(-100% - -5rem);
     height: 30rem;
     width: 100%;
   }

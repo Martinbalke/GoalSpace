@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { loadGoals } from '../store/goalReducer';
 import { AnimatePresence } from 'framer-motion';
 import { useAuth0 } from "@auth0/auth0-react";
+import { v4 as uuidv4 } from 'uuid';
 
 
 function GoalContainer({ goals, dispatch }) {
@@ -19,13 +20,23 @@ function GoalContainer({ goals, dispatch }) {
 
   //AUTHENTICATION
   const { user, isAuthenticated } = useAuth0();
-  const [currentUser, setCurrentUser] = useState(isAuthenticated && user ? user.email : 'local')
+  const [currentUser, setCurrentUser] = useState(false)
   
+  function getOrSetLocalUser(){
+      if(user?.email) return user.email;
+      let localUser = localStorage.getItem('goalSpaceUserName');
+      if(!localUser){
+        localUser = uuidv4();
+        localStorage.setItem('goalSpaceUserName', localUser)
+      }
+      return localUser;
+  }
 
   useEffect(() => {
-    if(isAuthenticated)setCurrentUser(user.email);
+    user?.email ? setCurrentUser(user.email) : getOrSetLocalUser();
+
     dispatch(loadGoals(currentUser));
-  }, [dispatch, currentUser, isAuthenticated, user])
+  }, [dispatch, user, currentUser])
 
   //Generate a Goal component for each goal in the global state
   function generateGoalsWithDynamicAnimations() {

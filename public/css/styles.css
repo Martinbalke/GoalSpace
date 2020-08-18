@@ -135,7 +135,7 @@ p, span {
     width: 15rem;
     transition: all .3s; }
     .btn-hero:hover, .btn-hero:focus {
-      transform: translateY(-2px) scale(1.03);
+      transform: translateY(-2px);
       cursor: pointer; }
     .btn-hero--solid {
       background: linear-gradient(to right, #2f80ed, #5104CB);
@@ -775,7 +775,7 @@ p, span {
   display: flex;
   z-index: 300;
   position: relative;
-  height: 45vh;
+  height: 35rem;
   justify-content: center;
   align-items: center;
   background: #0B1A2E;
@@ -787,7 +787,7 @@ p, span {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 10;
-    top: calc(-100% - -10rem);
+    top: calc(-100% - -5rem);
     height: 30rem;
     width: 100%; }
   .footer::after {
@@ -848,7 +848,7 @@ p, span {
   position: relative;
   z-index: 1;
   background: white;
-  height: 100vh;
+  height: 60rem;
   font-size: 3rem;
   margin-bottom: 5rem; }
   .chart-container::before {
@@ -858,7 +858,7 @@ p, span {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
-    top: -35%;
+    top: -30rem;
     width: 100%;
     height: 30rem; }
 

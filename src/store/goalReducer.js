@@ -25,7 +25,7 @@ export const superAgentAPICallSend = async (method, uri, data) => {
 export const loadGoals = (user) => {
 
   return async (dispatch) => {
-      let res = await superAgentAPICallRecieve('get', `http://localhost:3045/goals/${user}`);
+    let res = await superAgentAPICallRecieve('get', `${process.env.REACT_APP_PORT}/goals/${user}`);
       if(res && res.body){
         dispatch({ type: 'LOAD_GOALS', goals: [...res.body] });
         dispatch(loadProgressData(user));
@@ -36,7 +36,7 @@ export const loadGoals = (user) => {
 
 export const newGoal = (goal, index) => {
   return async (dispatch) => {
-      let res = await superAgentAPICallSend('post', 'http://localhost:3045/goals', goal)
+    let res = await superAgentAPICallSend('post', `${process.env.REACT_APP_PORT}/goals`, goal)
       setTimeout(() => dispatch(createProgressData(res.body)), 2000);
       dispatch({ type: 'NEW_GOAL', goal: res.body, index })
   }
@@ -44,7 +44,7 @@ export const newGoal = (goal, index) => {
 
 export const completeGoal = (id, index) => {
   return async (dispatch) => {
-      await superAgentAPICallRecieve('delete', `http://localhost:3045/goals/${id}`);
+    await superAgentAPICallRecieve('delete', `${process.env.REACT_APP_PORT}/goals/${id}`);
       dispatch({ type: 'COMPLETE_GOAL', index })
       dispatch(removeProgressData(index))
   }
@@ -52,7 +52,7 @@ export const completeGoal = (id, index) => {
 
 export const updateGoal = (goal, index) => {
   return async (dispatch) => {
-      await superAgentAPICallSend('put', `http://localhost:3045/goals/${goal._id}`, goal)
+    await superAgentAPICallSend('put', `${process.env.REACT_APP_PORT}/goals/${goal._id}`, goal)
       dispatch({ type: 'UPDATE_GOAL', goal, index })
   }
 }

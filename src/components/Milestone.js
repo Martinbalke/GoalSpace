@@ -10,11 +10,12 @@ const Milestone = ({ dispatch, goal, index }) => {
   const [milestone, setMilestone] = useState(goal.milestone || '');
   
   const updateMilestone= async() => {
+    if(!milestone.length)return;
     let newGoal = {...goal, milestone: milestone}
       if(goal.milestone) {
         newGoal.milestone = '';
         await setMilestone('')
-        dispatch(updateProgressPoints(goal._id, 20))
+        setTimeout(() => { dispatch(updateProgressPoints(goal._id, 20))} , 2000)
     }
       dispatch(updateGoal(newGoal, index))
   }

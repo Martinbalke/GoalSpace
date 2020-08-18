@@ -16,7 +16,7 @@ const month = getAndFormatDate('month');
 export const loadProgressData = (user) => {
   //TODO MAKE PROGRESS DEPEND ON GOALS 
   return async dispatch => {
-    let res = await superAgentAPICallRecieve('get', `http://localhost:3045/progress/user/${user}`);
+    let res = await superAgentAPICallRecieve('get', `${process.env.REACT_APP_PORT}/progress/user/${user}`);
     if(res && res.body)dispatch({ type: 'LOAD_PROGRESS', progress: res.body })
   }
 }
@@ -30,7 +30,7 @@ export const createProgressData = (goal) => {
   }
 
   return async dispatch => {
-    let res = await superAgentAPICallSend('post', 'http://localhost:3045/progress', createFirstProgressData)
+    let res = await superAgentAPICallSend('post', `${process.env.REACT_APP_PORT}/progress`, createFirstProgressData)
     dispatch({ type: 'CREATE_PROGRESS', progress: res.body })
   }
 }
@@ -47,14 +47,14 @@ export const removeProgressData = (index) => (dispatch) => dispatch({type: 'REMO
 export const updateProgressPoints = (goalId, amount) => {
   return async dispatch => {
       //Get the progress for the goal by goaldID
-      const res = await superAgentAPICallRecieve('get', `http://localhost:3045/progress/goal/${goalId}`)
+    const res = await superAgentAPICallRecieve('get', `${process.env.REACT_APP_PORT}/progress/goal/${goalId}`)
 
       //Modify the progress data
       let progress = res.body;
       progress.monthlyProgress[month] ? progress.monthlyProgress[month] += amount : progress.monthlyProgress[month] = amount;
       progress.dailyProgress[day] ? progress.dailyProgress[day] += amount : progress.dailyProgress[day] = amount;
       //Update the progress in the database
-      await superAgentAPICallSend('put', `http://localhost:3045/progress/${progress._id}`, progress)
+    await superAgentAPICallSend('put', `${process.env.REACT_APP_PORT}/progress/${progress._id}`, progress)
       dispatch({ type: 'UPDATE_POINTS', progress })
   }
 }

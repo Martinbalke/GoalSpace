@@ -56,14 +56,13 @@ const Chart = ({ progressData, goals }) => {
 
 
   return (
-    goals.length && (
     <div className='chart'>
       <div className="chart__buttons">
         <button className='btn btn-main' onClick={() => setDataType('dailyProgress')}>Daily</button>
         <button className='btn btn-main' onClick={() => setDataType('monthlyProgress')}>Monthly</button>
       </div>
       <div id='chart' className='chart__display' />
-    </div>)
+    </div>
   )
 
 }
