@@ -35,7 +35,7 @@ export default ({ width, height, onClickCallBack, buttonClass, buttonText, butto
         <Confetti
           width={width}
           height={height}
-          numberOfPieces={100}
+          numberOfPieces={50}
           wind={0}
           gravity={0.1}
           confettiSource={{ x: 0, y: 180, w: 300, h: 30 }}

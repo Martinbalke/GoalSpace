@@ -1,13 +1,15 @@
 import React from 'react';
 import Footer from './Footer';
-import GoalContainer from './GoalContainer';
+import AuthWrapper from './AuthWrapper'
 import Hero from './Hero';
 import Nav from './Nav';
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider} from "@auth0/auth0-react";
 
 
 
 function App() {
+
+
   return (
     <Auth0Provider
       domain={process.env.REACT_APP_DOMAIN}
@@ -17,7 +19,7 @@ function App() {
       <div className="App">
         <Hero />
         <Nav />
-        <GoalContainer />
+        <AuthWrapper/>
         <Footer />
       </div>
     </Auth0Provider>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import { popupContainerAnimation } from './animations';
 
 function Modal({ close, children, className}) {
-
+  ///state = show or dont show
   //Credit to Ben Bud github.com/benox3 for this code functionality
   const popupRef = useRef(null);
   useClosePopup(popupRef);
@@ -22,7 +22,6 @@ function Modal({ close, children, className}) {
       };
     }, [ref]);
   }
-
 
 
   return (

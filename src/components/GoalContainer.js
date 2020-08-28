@@ -19,8 +19,8 @@ function GoalContainer({ goals, dispatch }) {
   const [editing, setEditing] = useState(-1);
 
   //AUTHENTICATION
-  const { user, isAuthenticated } = useAuth0();
-  const [currentUser, setCurrentUser] = useState(false)
+  const { user } = useAuth0();
+  const [currentUser] = useState(user?.email || getOrSetLocalUser())
   
   function getOrSetLocalUser(){
       if(user?.email) return user.email;
@@ -33,8 +33,6 @@ function GoalContainer({ goals, dispatch }) {
   }
 
   useEffect(() => {
-    user?.email ? setCurrentUser(user.email) : getOrSetLocalUser();
-
     dispatch(loadGoals(currentUser));
   }, [dispatch, user, currentUser])
 
@@ -49,7 +47,7 @@ function GoalContainer({ goals, dispatch }) {
       </Goal>
     )
   }
-
+  
   return (
     <main className="contentContainer">
       <SetGoal setEditing={setEditing}>

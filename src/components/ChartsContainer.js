@@ -6,21 +6,17 @@ import Loading from './Loading'
 
 
 
-const ChartsContainer = ({ progressData, goals}) => {
-  useEffect(() => {
-  }, [progressData])
-  
+const ChartsContainer = ({ progressData}) => {
   
   return (
   <section className="chart-container">
-      {progressData[0] ? <Chart/> : <Loading/>}
+      {progressData[0] ? <Loading/> : <Loading/>}
   </section>
   )
 }
 
 const mSTP = state => ({
   progressData: state.progress,
-  goals: state.goals
 })
 
 export default connect(mSTP)(ChartsContainer);

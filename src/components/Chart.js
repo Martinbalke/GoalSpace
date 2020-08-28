@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 
-const Chart = ({ progressData, goals }) => {
+const Chart = ({ progressData}) => {
 
   const chartRef = useRef(null);
   const [dataToDisplay, setDataToDisplay] = useState(null);
@@ -34,7 +34,7 @@ const Chart = ({ progressData, goals }) => {
 
   useEffect(() => {
     setDataToDisplay(combineDataSetsIntoChartData(dataType))
-  }, [progressData, dataType]);
+  }, []);
 
 
 //CREAT A AND DISPLAY CHART
@@ -42,9 +42,9 @@ const Chart = ({ progressData, goals }) => {
     //CREATE A CHART AND SET IT'S DATA
     const chartClass = new ChartClass(dataToDisplay);
     chartClass.chartSetup();
-
+    console.log(progressData)
     //CREATE AN ENTRY IN THE CHART FOR EACH GOAL
-    goals.forEach(goalObject => chartClass.createSeries(goalObject.goal, goalObject.goal))
+    progressData.forEach(progress => chartClass.createSeries(progress.associatedGoal.goal, progress.associatedGoal.goal))
     
     //SET THE CURRENT REFERNCE FOR CLEANUP TO THE CREATED CHART
     chartRef.current = chartClass.chart;
@@ -69,6 +69,5 @@ const Chart = ({ progressData, goals }) => {
 
 const mSTP = state => ({
   progressData: state.progress,
-  goals: state.goals
 });
 export default connect(mSTP)(Chart);

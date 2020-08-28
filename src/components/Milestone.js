@@ -17,7 +17,7 @@ const Milestone = ({ dispatch, goal, index }) => {
         await setMilestone('')
         setTimeout(() => { dispatch(updateProgressPoints(goal._id, 20))} , 2000)
     }
-      dispatch(updateGoal(newGoal, index))
+      dispatch(updateGoal(newGoal, index));
   }
 
 
@@ -37,7 +37,7 @@ const Milestone = ({ dispatch, goal, index }) => {
           placeholder='Create a milestone for your goal'
         />
         <ConfettiScoreButton 
-        width='500px' height='400px' 
+        width='1000px' height='1000px' 
         buttonClass="milestone__btn btn btn-blob" 
         buttonType='submit' 
         buttonText={goal.milestone ? 'Finish' : 'Create'} 
