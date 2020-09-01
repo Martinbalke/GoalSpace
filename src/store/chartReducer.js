@@ -21,7 +21,7 @@ const combineDataSetsIntoFormatedChartData = (progressData, dataType) => {
 const createTotalPointsForEachGoal = (monthlyChartData) => {
   const totalPoints = {}
 
-  monthlyChartData.forEach( monthlyData => {
+  monthlyChartData.forEach(monthlyData => {
     const goalName = Object.keys(monthlyData)[1];
     const pointsThisMonth = monthlyData[goalName];
     !totalPoints[goalName] ? totalPoints[goalName] = pointsThisMonth : totalPoints[goalName] += pointsThisMonth;
@@ -35,21 +35,37 @@ export const createChartData = progressData => {
   const monthlyChartData = combineDataSetsIntoFormatedChartData(progressData, 'monthlyProgress')
   const totalPointsForEachGoal = createTotalPointsForEachGoal(monthlyChartData);
 
-  return dispatch => dispatch({ 
-    type: "CREATE_CHART_DATA", 
-    chartData: { 
-      daily: dailyChartData, 
+  return dispatch => dispatch({
+    type: "CREATE_CHART_DATA",
+    chartData: {
+      daily: dailyChartData,
       monthly: monthlyChartData,
       total: totalPointsForEachGoal
-    } });
+    }
+  });
+}
+
+export const updateChartPoints = (goalName, points) => {
+
+
+  return (dispatch, getState) => {
+    const {chartData} = getState();
+    chartData.daily[chartData.daily.length - 1][goalName] += points;
+    chartData.monthly[chartData.monthly.length - 1][goalName] += points;
+    chartData.total[goalName] += points;
+    
+
+    dispatch({ type: "UPDATE_CHART_POINTS", chartData })
+  }
 }
 
 
-const chartReducer = (state = {}, { type, chartData }) => {
-
+const chartReducer = (state = {}, { type, chartData}) => {
   switch (type) {
     case "CREATE_CHART_DATA":
-      return { ...chartData};
+      return { ...chartData };
+    case "UPDATE_CHART_POINTS":
+      return { ...chartData };
     default:
       return state;
   }

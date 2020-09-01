@@ -51,6 +51,7 @@ export const completeGoal = (id, index) => {
 }
 
 export const updateGoal = (goal, index) => {
+  console.log(goal)
   return async (dispatch) => {
     await superAgentAPICallSend('put', `${process.env.REACT_APP_PORT}/goals/${goal._id}`, goal)
       dispatch({ type: 'UPDATE_GOAL', goal, index })
