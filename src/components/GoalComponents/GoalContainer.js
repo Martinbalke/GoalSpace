@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Goal from './Goal';
-import Modal from './Modal'
-import GoalForm from './GoalForm';
-import EditGoal from './EditGoals';
-import SetGoal from './SetGoals';
-import Chart from './Chart';
-import Milestone from './Milestone';
-import ChartContainer from './ChartsContainer'
+import { Goal, Modal, GoalForm, EditGoal, SetGoal, Chart, Milestone, ChartContainer } from '../Components';
+import {loadGoals} from '../../store/actions';
 import { connect } from 'react-redux';
-import { loadGoals } from '../store/goalReducer';
 import { AnimatePresence } from 'framer-motion';
 import { useAuth0 } from "@auth0/auth0-react";
 import { v4 as uuidv4 } from 'uuid';

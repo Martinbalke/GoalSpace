@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import About from './About';
+import { About } from '../Components';
 import { AnimatePresence } from 'framer-motion'
-import {useAuth0} from '@auth0/auth0-react';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 function Hero() {
+
   const [showAbout, setShowAbout] = useState(false);
   const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   return (
     <>
       <section className='hero' id='Hero'>
@@ -23,9 +25,7 @@ function Hero() {
         </div>
       </section>
       <AnimatePresence>
-        {showAbout && (
-          <About callback={setShowAbout} />
-        )}
+        {showAbout && (<About callback={setShowAbout} />)}
       </AnimatePresence>
     </>
   );

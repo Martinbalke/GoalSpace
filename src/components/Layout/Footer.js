@@ -1,6 +1,6 @@
 import React from 'react';
-function Footer(props) {
 
+export default function Footer() {
   return (
     <footer className='footer' id='Contact'>
       <h3 className='footer__logo'>
@@ -12,6 +12,3 @@ function Footer(props) {
       </div>
     </footer>);
 }
-
-
-export default Footer;

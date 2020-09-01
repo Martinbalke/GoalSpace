@@ -1,8 +1,5 @@
 import React from 'react';
-import Footer from './Footer';
-import AuthWrapper from './AuthWrapper'
-import Hero from './Hero';
-import Nav from './Nav';
+import {Nav, Hero, AuthWrapper, Footer } from './Components';
 import { Auth0Provider} from "@auth0/auth0-react";
 
 

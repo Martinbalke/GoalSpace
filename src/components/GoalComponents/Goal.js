@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import ConfettiScoreButton from './ConfettiScoreButton'
+import { ConfettiScoreButton } from '../Components';
+import { completeGoal, updateChartPoints, updateProgressPoints } from '../../store/actions';
 import { connect } from 'react-redux';
-import { completeGoal } from '../store/goalReducer'
-import { updateProgressPoints } from '../store/progressReducer';
-import { updateChartPoints } from '../store/chartReducer';
 import { motion, useViewportScroll } from 'framer-motion';
-import { goalSlideInAnimationRight, goalSlideInAnimationLeft } from './animations'
+import { goalSlideInAnimationRight, goalSlideInAnimationLeft } from '../Utilities/animations'
 
 
 

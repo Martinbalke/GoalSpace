@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Input from './Input';
 import { connect } from 'react-redux';
-import { newGoal, updateGoal } from '../store/goalReducer';
 import { motion } from "framer-motion"
-import { popupFormAnimation } from './animations';
+
+import { Input } from '../Components';
+import { newGoal, updateGoal } from '../../store/actions';
+import { popupFormAnimation } from '../Utilities/animations';
 
 function GoalForm({ close, dispatch, index, goals, user }) {
   const blankGoal = { goal: '', habits: ['', '', ''], user}

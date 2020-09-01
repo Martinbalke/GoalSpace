@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useRef, useState} from 'react';
-// import SimpleProgress from './SimpleProgress'
-import ChartClass from './_createChart';
+import ChartClass from './ChartClass';
 import { connect } from 'react-redux';
 
 

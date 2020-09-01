@@ -1,6 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion'
-import {popupContainerAnimation} from './animations'
+import {popupContainerAnimation} from '../Utilities/animations'
 
 
 export default ({ callback }) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import Chart from './Chart';
-import Loading from './Loading'
+import { Chart, Loading } from '../Components';
 
 
 

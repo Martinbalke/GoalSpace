@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ConfettiScoreButton from './ConfettiScoreButton'
 import { motion } from 'framer-motion'
-import { updateGoal } from '../store/goalReducer';
-import { updateProgressPoints } from '../store/progressReducer';
-import { updateChartPoints } from '../store/chartReducer';
 import { connect } from 'react-redux';
+
+import { ConfettiScoreButton } from '../Components';
+import { updateGoal, updateProgressPoints, updateChartPoints } from '../../store/actions';
+
 
 
 const Milestone = ({ dispatch, goal, index }) => {
