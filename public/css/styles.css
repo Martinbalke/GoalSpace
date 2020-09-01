@@ -454,7 +454,7 @@ p, span {
   position: relative;
   flex-direction: column; }
   .setgoals__header-container {
-    margin-top: 5rem;
+    margin: 5rem -5rem 0 0;
     display: flex;
     align-self: center;
     justify-content: center; }
