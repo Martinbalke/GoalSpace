@@ -26,7 +26,7 @@ function GoalForm({ close, dispatch, index, goals, user }) {
           onSubmit={ (e) => {
             e.preventDefault();
             goal._id ? dispatch(updateGoal(goal, index)) : dispatch(newGoal(goal, index));
-            setTimeout(close, 50);
+            close();
           }}>
           <button type='button' className='btn btn-round goalForm__close' onClick={close}/>
           <h3 className='goalForm__tertiary'>Set a new goal</h3>

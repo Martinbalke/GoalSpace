@@ -1,4 +1,5 @@
 import { superAgentAPICallRecieve, superAgentAPICallSend } from './goalReducer';
+import {createChartData} from './chartReducer';
 
 
 const getAndFormatDate = (format) => {
@@ -14,12 +15,17 @@ const month = getAndFormatDate('month');
 
 
 export const loadProgressData = (user) => {
-  //TODO MAKE PROGRESS DEPEND ON GOALS 
+
   return async dispatch => {
     let res = await superAgentAPICallRecieve('get', `${process.env.REACT_APP_PORT}/progress/user/${user}`);
-    if(res && res.body)dispatch({ type: 'LOAD_PROGRESS', progress: res.body })
+    if(res?.body){
+      dispatch({ type: 'LOAD_PROGRESS', progress: res.body })
+      dispatch(createChartData(res.body));
+    }
+
   }
 }
+
 
 export const createProgressData = (goal) => {
   const createFirstProgressData = {

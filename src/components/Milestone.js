@@ -15,7 +15,7 @@ const Milestone = ({ dispatch, goal, index }) => {
       if(goal.milestone) {
         newGoal.milestone = '';
         await setMilestone('')
-        setTimeout(() => { dispatch(updateProgressPoints(goal._id, 20))} , 2000)
+        dispatch(updateProgressPoints(goal._id, 20))
     }
       dispatch(updateGoal(newGoal, index));
   }

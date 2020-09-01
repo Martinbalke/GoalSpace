@@ -6,17 +6,17 @@ import Loading from './Loading'
 
 
 
-const ChartsContainer = ({ progressData}) => {
+const ChartsContainer = ({ chartData}) => {
   
   return (
   <section className="chart-container">
-      {progressData[0] ? <Loading/> : <Loading/>}
+      {chartData?.total ? <Chart/> : <Loading/>}
   </section>
   )
 }
 
 const mSTP = state => ({
-  progressData: state.progress,
+  chartData: state.chartData
 })
 
 export default connect(mSTP)(ChartsContainer);
