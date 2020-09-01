@@ -434,7 +434,9 @@ p, span {
     padding: 1.5rem 3rem;
     box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
     border-radius: 4px;
-    transform: skew(-4deg); }
+    transform: skew(-4deg);
+    text-align: center;
+    min-width: 25rem; }
   .edit__goal {
     align-self: flex-start;
     display: flex;
@@ -444,7 +446,7 @@ p, span {
   .edit__btn {
     position: relative;
     z-index: 1;
-    top: -2rem; }
+    top: -1rem; }
 
 .setgoals {
   height: 60rem;

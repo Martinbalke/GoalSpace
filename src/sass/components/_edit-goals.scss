@@ -15,6 +15,8 @@
   &__tertiary {
     font-size: 2.2rem;
     @include tertiary-blue-skew;
+    text-align: center;
+    min-width: 25rem;
   }
 
   &__goal {
@@ -28,7 +30,7 @@
   &__btn {
     position: relative;
     z-index: 1;
-    top: -2rem;
+    top: -1rem;
   }
 }
 
