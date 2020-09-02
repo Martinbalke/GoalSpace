@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Hero, AuthWrapper, Footer } from './Components';
+import {Nav, Hero, AuthWrapper, GoalContainer, Footer } from './Components';
 import { Auth0Provider} from "@auth0/auth0-react";
 
 
@@ -16,8 +16,10 @@ function App() {
       <div className="App">
         <Hero />
         <Nav />
-        <AuthWrapper/>
-        <Footer />
+        <AuthWrapper>
+          <GoalContainer/>
+          <Footer />
+        </AuthWrapper>
       </div>
     </Auth0Provider>
   );
