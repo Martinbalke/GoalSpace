@@ -32,7 +32,6 @@ export const goalSlideInAnimationRight = {
     x: 0,
     transition: {
       duration: .4,
-      delay: .5,
     }
   },
   exit: {
@@ -50,7 +49,6 @@ export const goalSlideInAnimationLeft = {
     x: 0,
     transition: {
       duration: .4,
-      delay: .5,
     }
   },
   exit: {

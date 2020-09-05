@@ -33,7 +33,7 @@ function GoalContainer({ goals, dispatch }) {
   function generateGoalsWithDynamicAnimations() {
     if (!goals) return;
 
-    let heights = [0.4, 0.45, 0.5];
+    let heights = [0.4, 0.45, 0.55];
     return goals.map((goal, index) =>
       <Goal index={index} key={index} goal={goal} animationHeight={heights[index]}>
         <Milestone goal={goal} index={index} />

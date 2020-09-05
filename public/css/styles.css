@@ -95,8 +95,7 @@ span {
     transition: all .1s;
     filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed); }
     .btn-main:hover {
-      transform: scale(1.02) translateY(1px);
-      box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
+      transform: scale(1.03) translateY(1px);
       cursor: pointer; }
   .btn-blob {
     position: relative;
@@ -518,6 +517,9 @@ span {
   display: flex;
   position: relative;
   flex-direction: column; }
+  @media only screen and (max-width: 56.25em) {
+    .setgoals {
+      margin-bottom: 10rem; } }
   .setgoals__header-container {
     margin: 5rem -5rem 0 0;
     display: flex;
@@ -751,7 +753,7 @@ span {
       filter: hue-rotate(20deg); }
 
 .hero {
-  background-image: url("../images/color.jpg");
+  background-image: url("../images/color-medium.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60rem;
@@ -763,6 +765,13 @@ span {
   align-items: flex-start;
   border-radius: 2px;
   margin-bottom: 1rem; }
+  @media only screen and (min-width: 112.5em) {
+    .hero {
+      background-image: url("../images/color-large.jpg"); } }
+  @media only screen and (max-width: 28em) {
+    .hero {
+      background-image: url("../images/color-small.jpg");
+      background-position: center; } }
   .hero::after {
     height: 31rem;
     z-index: -1;

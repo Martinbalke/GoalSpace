@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("../images/color.jpg");
+  background-image: url("../images/color-medium.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60rem;
@@ -12,6 +12,13 @@
   border-radius: $radius-small;
   margin-bottom: 1rem;
 
+  @include respond(4k){
+    background-image: url("../images/color-large.jpg");
+  }
+@include respond(mobile){
+  background-image: url("../images/color-small.jpg");
+  background-position: center;
+}
   &::after {
     height: 31rem;
     z-index: -1;

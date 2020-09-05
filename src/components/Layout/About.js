@@ -19,7 +19,7 @@ export default ({ callback }) => {
           <p className="about__section-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quas dicta ducimus incidunt ea alias maiores quos beatae quis, animi eum assumenda, voluptatibus, accusamus eligendi labore? Repellendus quos tenetur ullam.</p>
         </div>
         <div className="about__section">
-          <h3 className="about__section-tertiary">Milestone</h3>
+          <h3 className="about__section-tertiary">Milestones</h3>
           <p className="about__section-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi quas dicta ducimus incidunt ea alias maiores quos beatae quis, animi eum assumenda, voluptatibus, accusamus eligendi labore? Repellendus quos tenetur ullam.</p>
         </div>
       </div>

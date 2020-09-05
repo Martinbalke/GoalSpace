@@ -20,8 +20,7 @@
    filter: $drop-shadow;
 
     &:hover {
-      transform: scale(1.02) translateY(1px);
-      box-shadow: $shadow-small;
+      transform: scale(1.03) translateY(1px);
       cursor: pointer;
     }
   }
