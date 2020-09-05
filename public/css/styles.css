@@ -55,21 +55,23 @@ body {
 html {
   font-size: 62.5%;
   box-sizing: border-box; }
-  @media only screen and (max-width: 26.5em) {
+  @media only screen and (min-width: 112.5em) {
     html {
-      font-size: 45%; } }
+      font-size: 90%; } }
   @media only screen and (max-width: 56.25em) {
     html {
       font-size: 56.25%; } }
-  @media only screen and (min-width: 112.5em) {
+  @media only screen and (max-width: 28em) {
     html {
-      font-size: 75%; } }
+      font-size: 30%; } }
 
-h1, h3 {
+h1,
+h3 {
   font-weight: bold;
   font-family: "Roboto", sans-serif; }
 
-p, span {
+p,
+span {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
   line-height: 1.6; }
@@ -91,7 +93,7 @@ p, span {
     color: #2f80ed;
     background: white;
     transition: all .1s;
-    filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
+    filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed); }
     .btn-main:hover {
       transform: scale(1.02) translateY(1px);
       box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
@@ -120,6 +122,9 @@ p, span {
       width: 15rem;
       height: 15rem;
       filter: drop-shadow(1px 2px 5px rgba(85, 85, 85, 0.2)); }
+      @media only screen and (min-width: 112.5em) {
+        .btn-blob::after {
+          background-position: right; } }
     .btn-blob:hover, .btn-blob:focus {
       cursor: pointer;
       filter: hue-rotate(20deg); }
@@ -131,7 +136,7 @@ p, span {
     border-radius: 50%;
     height: 4rem;
     width: 4rem;
-    filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed);
+    filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed);
     transition: all .3s; }
     .btn-round:hover, .btn-round:focus {
       cursor: pointer; }
@@ -156,6 +161,9 @@ p, span {
       background: none;
       color: white;
       opacity: .7; }
+      @media only screen and (max-width: 56.25em) {
+        .btn-hero--outline {
+          border: 1px solid white; } }
       .btn-hero--outline:hover, .btn-hero--outline:focus {
         outline: none;
         opacity: 1;
@@ -166,7 +174,9 @@ p, span {
 .goalForm {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative;
+  z-index: 280; }
   .goalForm__background {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), linear-gradient(to right, #2f80ed, #5104CB);
     display: flex;
@@ -180,6 +190,9 @@ p, span {
     padding: 2rem;
     background-color: #EEE;
     position: relative; }
+    @media only screen and (max-width: 28em) {
+      .goalForm__sidebar {
+        display: none; } }
     .goalForm__sidebar-svg {
       width: 60rem;
       height: auto;
@@ -198,6 +211,9 @@ p, span {
       box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
       border-radius: 4px;
       transform: skew(-4deg); }
+      @media only screen and (max-width: 28em) {
+        .goalForm__sidebar-tertiary {
+          border-radius: 2px; } }
     .goalForm__sidebar-paragraph {
       margin: 2rem 0;
       position: relative;
@@ -219,7 +235,12 @@ p, span {
       border-radius: 50%; }
   .goalForm__content {
     height: 60rem;
-    max-width: 50rem; }
+    width: 50rem; }
+    @media only screen and (max-width: 28em) {
+      .goalForm__content {
+        height: 80rem;
+        width: 65rem;
+        margin-top: -20%; } }
   .goalForm__form-element {
     display: flex;
     flex-direction: column;
@@ -229,6 +250,9 @@ p, span {
     background-color: white;
     padding: 1rem;
     box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.25); }
+    @media only screen and (max-width: 28em) {
+      .goalForm__form-element {
+        width: 100%; } }
   .goalForm__tertiary {
     color: white;
     margin-bottom: 2rem;
@@ -246,6 +270,9 @@ p, span {
     position: relative;
     top: -3rem;
     left: -5rem; }
+    @media only screen and (max-width: 28em) {
+      .goalForm__tertiary {
+        border-radius: 2px; } }
   .goalForm__close {
     align-self: flex-end;
     flex-shrink: 0;
@@ -259,11 +286,17 @@ p, span {
       display: block; }
   .goalForm__inputs-container {
     margin-top: -10%; }
+    @media only screen and (max-width: 28em) {
+      .goalForm__inputs-container {
+        align-self: center; } }
   .goalForm__input {
     display: flex;
     flex-direction: column-reverse;
     margin-left: 4rem;
     height: 11rem; }
+    @media only screen and (max-width: 28em) {
+      .goalForm__input {
+        transform: scale(1.2); } }
     .goalForm__input label {
       align-self: flex-start;
       font-family: "Noto Sans JP", sans-serif;
@@ -282,6 +315,9 @@ p, span {
       text-align: center;
       border-bottom: 2px solid #1d3557;
       width: 30rem; }
+      @media only screen and (max-width: 28em) {
+        .goalForm__input input {
+          border-bottom: 1px solid #1d3557; } }
       .goalForm__input input:focus + label, .goalForm__input input:valid + label {
         background: linear-gradient(to right, #2f80ed, #5104CB);
         letter-spacing: .5px;
@@ -292,6 +328,9 @@ p, span {
         transform: skew(-4deg);
         transform: translateX(25rem) skew(-4deg);
         margin-bottom: 0; }
+        @media only screen and (max-width: 28em) {
+          .goalForm__input input:focus + label, .goalForm__input input:valid + label {
+            border-radius: 2px; } }
   .goalForm__submit {
     flex-shrink: 0;
     height: 6rem;
@@ -301,17 +340,24 @@ p, span {
     margin-right: 4rem;
     align-self: flex-end;
     z-index: 300; }
+    @media only screen and (max-width: 28em) {
+      .goalForm__submit {
+        align-self: flex-end;
+        margin-bottom: 15rem;
+        transform: scale(1.3); } }
 
-.modal__background {
-  height: 100%;
-  width: 100%;
+.modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2100; }
-
-.modal__reference {
-  z-index: 2500; }
+  z-index: 500; }
+  .modal__background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 505; }
+  .modal__reference {
+    z-index: 510; }
 
 .navigation {
   position: relative;
@@ -426,7 +472,7 @@ p, span {
 .contentContainer {
   position: relative;
   overflow: hidden;
-  z-index: 200; }
+  z-index: 205; }
 
 .edit {
   position: relative;
@@ -436,6 +482,9 @@ p, span {
   margin: 2.5rem 0;
   padding: 2.5rem 2rem;
   transform: skew(-4deg); }
+  @media only screen and (max-width: 56.25em) {
+    .edit {
+      flex-direction: column; } }
   .edit__tertiary {
     font-size: 2.2rem;
     background: linear-gradient(to right, #2f80ed, #5104CB);
@@ -447,12 +496,18 @@ p, span {
     transform: skew(-4deg);
     text-align: center;
     min-width: 25rem; }
+    @media only screen and (max-width: 28em) {
+      .edit__tertiary {
+        border-radius: 2px; } }
   .edit__goal {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 2.5rem; }
+    @media only screen and (max-width: 56.25em) {
+      .edit__goal {
+        margin-top: 2rem; } }
   .edit__btn {
     position: relative;
     z-index: 1;
@@ -492,6 +547,9 @@ p, span {
     box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
     border-radius: 4px;
     transform: skew(-4deg); }
+    @media only screen and (max-width: 28em) {
+      .setgoals__header {
+        border-radius: 2px; } }
   .setgoals__btn {
     z-index: 1;
     position: relative;
@@ -510,6 +568,9 @@ p, span {
     transform: skew(-4deg);
     align-self: flex-start;
     font-size: 2rem; }
+    @media only screen and (max-width: 28em) {
+      .setgoals__tertiary {
+        border-radius: 2px; } }
 
 .milestone {
   position: absolute;
@@ -553,7 +614,10 @@ p, span {
     height: 30rem;
     width: 30rem;
     z-index: -1;
-    filter: drop-shadow(1px 2px 5px rgba(85, 85, 85, 0.2)) drop-shadow(1rem 1rem #eeeeee); }
+    filter: drop-shadow(1px 2px 5px rgba(85, 85, 85, 0.2)) drop-shadow(10px 10px #eeeeee); }
+    @media only screen and (min-width: 112.5em) {
+      .milestone::after {
+        background-position: right; } }
 
 .goalContainer {
   background-color: #0B1A2F;
@@ -566,7 +630,7 @@ p, span {
   position: relative; }
   .goalContainer::before {
     z-index: -1;
-    height: 35rem;
+    height: 30rem;
     background: url("../images/border-dark.svg");
     content: "";
     position: absolute;
@@ -574,6 +638,9 @@ p, span {
     background-size: cover;
     width: 100vw;
     top: -28rem; }
+    @media only screen and (min-width: 112.5em) {
+      .goalContainer::before {
+        background-position: right; } }
 
 .goal {
   position: relative;
@@ -585,15 +652,29 @@ p, span {
   flex: 0 0 51%;
   margin: 1rem 5rem 1rem 30rem;
   padding: 2rem 1rem 0rem 7rem;
-  filter: drop-shadow(0.5rem 0.5rem 0.5px rgba(252, 163, 17, 0.9));
+  filter: drop-shadow(5px 5px 0.5px rgba(252, 163, 17, 0.9));
   transform: scale(-1, 1); }
+  @media only screen and (min-width: 112.5em) {
+    .goal {
+      transform: scale(-1.2, 1.2);
+      margin: 1rem 5rem 1rem 50rem; } }
   .goal h3, .goal p, .goal textarea, .goal button {
     transform: scale(-1, 1); }
+    @media only screen and (min-width: 112.5em) {
+      .goal h3, .goal p, .goal textarea, .goal button {
+        transform: scale(-1.2, 1.2); } }
   .goal:nth-child(even) {
     margin-left: calc(100% - 60rem);
     transform: scale(1); }
+    @media only screen and (min-width: 112.5em) {
+      .goal:nth-child(even) {
+        margin-left: calc(100% - 80rem);
+        transform: scale(1.2); } }
     .goal:nth-child(even) h3, .goal:nth-child(even) p, .goal:nth-child(even) textarea, .goal:nth-child(even) button {
       transform: scale(1); }
+      @media only screen and (min-width: 112.5em) {
+        .goal:nth-child(even) h3, .goal:nth-child(even) p, .goal:nth-child(even) textarea, .goal:nth-child(even) button {
+          transform: scale(1.2); } }
   .goal::after {
     content: "";
     position: absolute;
@@ -604,6 +685,9 @@ p, span {
     top: -5rem;
     height: 55rem;
     width: 55rem; }
+    @media only screen and (min-width: 112.5em) {
+      .goal::after {
+        background-position: right; } }
   .goal__header {
     align-self: flex-start;
     font-size: 2rem;
@@ -617,6 +701,9 @@ p, span {
     box-shadow: 1px 2px 5px rgba(85, 85, 85, 0.2);
     border-radius: 4px;
     transform: skew(-4deg); }
+    @media only screen and (max-width: 28em) {
+      .goal__header {
+        border-radius: 2px; } }
   .goal__habit {
     display: flex;
     max-width: 25rem;
@@ -688,6 +775,9 @@ p, span {
     background-size: cover;
     transform: scale(-1, 1);
     bottom: -3%; }
+    @media only screen and (min-width: 112.5em) {
+      .hero::after {
+        background-position: right; } }
   .hero__bubbles {
     position: absolute;
     top: -45rem;
@@ -764,7 +854,7 @@ p, span {
       padding: 0 1rem; }
       .hero__header-text-1 em {
         font-style: normal;
-        filter: drop-shadow(0.5rem 0.5rem #fca311) drop-shadow(-0.5rem 0.5rem #2f80ed); }
+        filter: drop-shadow(5px 5px #fca311) drop-shadow(5px 5px #2f80ed); }
     .hero__header-logo {
       font-family: inherit;
       font-size: 4rem;
@@ -772,7 +862,7 @@ p, span {
       top: -21rem;
       position: absolute;
       color: white;
-      filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
+      filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed); }
   .hero__buttons {
     display: flex;
     z-index: 3;
@@ -785,8 +875,8 @@ p, span {
 
 .footer {
   display: flex;
-  z-index: 300;
   position: relative;
+  z-index: 205;
   height: 35rem;
   justify-content: center;
   align-items: center;
@@ -802,6 +892,9 @@ p, span {
     top: calc(-100% - -5.2rem);
     height: 30rem;
     width: 100%; }
+    @media only screen and (min-width: 112.5em) {
+      .footer::before {
+        background-position: right; } }
   .footer::after {
     content: "";
     position: absolute;
@@ -821,13 +914,15 @@ p, span {
     content: 'Contact';
     z-index: 11;
     line-height: 0; }
+    @media only screen and (min-width: 112.5em) {
+      .footer::after {
+        background-position: right; } }
   .footer__logo {
     position: relative;
-    z-index: 900;
     font-family: "Poppins", sans-serif;
     font-size: 5rem;
     letter-spacing: 2px;
-    filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed);
+    filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed);
     margin-bottom: -10rem; }
     .footer__logo a:visited, .footer__logo a:active, .footer__logo a {
       color: white;
@@ -841,7 +936,7 @@ p, span {
     font-size: 2rem;
     width: 100%; }
     .footer__copy span {
-      filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
+      filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed); }
   .footer__socials {
     position: relative;
     z-index: 100;
@@ -859,7 +954,7 @@ p, span {
     transition: all .2s; }
     .footer__git:hover, .footer__linked:hover {
       transform: scale(1.05) translateY(-0.2rem);
-      filter: drop-shadow(0.2rem 0.2rem #fca311) drop-shadow(-0.2rem 0.2rem #2f80ed); }
+      filter: drop-shadow(2px 2px #fca311) drop-shadow(-2px 2px #2f80ed); }
 
 .chart-container {
   position: relative;
@@ -867,7 +962,7 @@ p, span {
   background: white;
   height: 60rem;
   font-size: 3rem;
-  margin-bottom: 5rem; }
+  margin-bottom: 10rem; }
   .chart-container::before {
     background: url("../images/alt-border-white.svg");
     content: "";
@@ -878,6 +973,9 @@ p, span {
     top: -30rem;
     width: 100%;
     height: 30rem; }
+    @media only screen and (min-width: 112.5em) {
+      .chart-container::before {
+        background-position: right; } }
 
 .chart {
   margin: 2rem; }
@@ -965,10 +1063,13 @@ p, span {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
-    top: 65%;
+    bottom: -5%;
     left: 0;
     height: 30rem;
     width: 100%; }
+    @media only screen and (min-width: 112.5em) {
+      .about::before {
+        background-position: right; } }
   .about::after {
     content: "";
     position: absolute;
@@ -983,6 +1084,9 @@ p, span {
     line-height: 25rem;
     top: 10%;
     left: 10%; }
+    @media only screen and (min-width: 112.5em) {
+      .about::after {
+        background-position: right; } }
   .about__close {
     position: fixed;
     z-index: 100000;
@@ -1008,7 +1112,7 @@ p, span {
     color: white;
     font-size: 6rem;
     transform: skew(-4deg);
-    filter: drop-shadow(0.5rem 0.5rem #fca311) drop-shadow(-0.5rem 0.5rem #2f80ed); }
+    filter: drop-shadow(5px 5px #fca311) drop-shadow(5px 5px #2f80ed); }
   .about__sections {
     display: flex;
     justify-content: space-around; }
@@ -1026,6 +1130,9 @@ p, span {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       box-shadow: 2px 2px 10px rgba(0, 140, 255, 0.2); }
+      @media only screen and (max-width: 28em) {
+        .about__section-tertiary {
+          border-radius: 2px; } }
     .about__section-paragraph {
       font-size: 2rem;
       color: white; }

@@ -6,6 +6,11 @@
   box-shadow: $shadow-small;
   border-radius: $radius-large;
   transform: skew(-4deg);
+
+
+  @include respond(mobile) {
+    border-radius: 2px;
+  }
 }
 
 @mixin tertiary-white-skew {
@@ -22,6 +27,10 @@
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include respond(4k) {
+    background-position: right;
+  }
 }
 
 @mixin watermark-text{
@@ -93,7 +102,7 @@
 
 @mixin respond($breakpoint) {
     @if $breakpoint == mobile {
-        @media only screen and (max-width: 26.5em) { @content };    //425px
+        @media only screen and (max-width: 28em) { @content };    //450px
     }
     @if $breakpoint == tablet {
         @media only screen and (max-width: 56.25em) { @content };     //900px

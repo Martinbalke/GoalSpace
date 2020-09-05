@@ -1,15 +1,16 @@
 .modal{
-
+  position: fixed;
+  z-index: 500;
   &__background{
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2100;
+    z-index: 505;
   }
 
   &__reference{
-    z-index: 2500;
+    z-index: 510;
   }
 }

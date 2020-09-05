@@ -106,6 +106,10 @@
       color: $color-white;
       opacity: .7;
 
+      @include respond(tablet) {
+        border: 1px solid $color-white;
+      }
+
       &:hover,
       &:focus {
         outline: none;

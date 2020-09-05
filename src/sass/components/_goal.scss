@@ -10,7 +10,7 @@
 
   &::before{
     z-index: -1;
-    height: 35rem;
+    height: 30rem;
     background: url("../images/border-dark.svg");
     @include shape-pseudo-element;
     width: 100vw;
@@ -31,20 +31,36 @@
   flex: 0 0 51%;
   margin: 1rem 5rem 1rem 30rem;
   padding: 2rem 1rem 0rem 7rem;
-  filter:  drop-shadow(.5rem .5rem  .5px rgba($color-orange,.9));
+  filter:  drop-shadow(5px 5px  .5px rgba($color-orange,.9));
   transform: scale(-1,1);
+
+  @include respond(4k){
+    transform: scale(-1.2, 1.2);
+     margin: 1rem 5rem 1rem 50rem;
+  }
 
   & h3, & p, & textarea, & button {
     transform: scale(-1,1);
+
+    @include respond(4k){
+      transform: scale(-1.2, 1.2);
+    }
   }
 
 
   &:nth-child(even){
     margin-left: calc(100% - 60rem);
     transform: scale(1);
+    @include respond(4k){
+       margin-left: calc(100% - 80rem);
+      transform: scale(1.2);
+    }
 
     & h3, & p, & textarea, & button{
       transform: scale(1);
+      @include respond(4k){
+        transform: scale(1.2);
+      }
     }
   }
 

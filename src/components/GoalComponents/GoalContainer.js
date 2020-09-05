@@ -33,7 +33,7 @@ function GoalContainer({ goals, dispatch }) {
   function generateGoalsWithDynamicAnimations() {
     if (!goals) return;
 
-    let heights = [800, 1100, 1400];
+    let heights = [0.4, 0.45, 0.5];
     return goals.map((goal, index) =>
       <Goal index={index} key={index} goal={goal} animationHeight={heights[index]}>
         <Milestone goal={goal} index={index} />
@@ -42,15 +42,17 @@ function GoalContainer({ goals, dispatch }) {
   }
   
   return (
+    <>
+    
+    <AnimatePresence>
+      {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
+        <GoalForm index={editing} user={currentUser} close={() => setEditing(-1)} />
+      </Modal>)}
+    </AnimatePresence>
     <main className="contentContainer">
       <SetGoal setEditing={setEditing}>
         <EditGoal setEditing={setEditing} />
       </SetGoal>
-      <AnimatePresence>
-        {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
-          <GoalForm index={editing} user={currentUser} close={() => setEditing(-1)} />
-        </Modal>)}
-      </AnimatePresence>
       <div className="goalContainer" id="Goals">
         <AnimatePresence>
           {generateGoalsWithDynamicAnimations()}
@@ -60,6 +62,8 @@ function GoalContainer({ goals, dispatch }) {
         <Chart />
       </ChartContainer>
     </main>
+    </>
+    
   );
 }
 

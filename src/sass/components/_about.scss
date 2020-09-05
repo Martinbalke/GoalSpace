@@ -14,7 +14,7 @@
     background: url('../images/alt-border-white.svg');
     @include shape-pseudo-element;
     z-index: -1;
-    top: 65%;
+    bottom: -5%;
     left: 0;
     height: 30rem;
     width: 100%;

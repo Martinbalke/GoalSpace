@@ -13,7 +13,6 @@ const Chart = ({ chartData }) => {
 
 //CREAT A AND DISPLAY CHART
   useLayoutEffect(() => {
-    console.log('refresh');
     //CREATE A CHART AND SET IT'S DATA
     const chartClass = new ChartClass(chartData[dataType]);
     chartClass.chartSetup();

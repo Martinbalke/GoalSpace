@@ -18,8 +18,8 @@ $color-orange: #fca311;
 
 $gradient: linear-gradient(to right, $color-primary, #5104CB);
 
-$drop-shadow: drop-shadow(0.2rem 0.2rem $color-orange) drop-shadow(-0.2rem 0.2rem $color-primary);
-$drop-shadow-large: drop-shadow(0.5rem 0.5rem $color-orange) drop-shadow(-0.5rem 0.5rem $color-primary);
+$drop-shadow: drop-shadow(2px 2px $color-orange) drop-shadow(-2px 2px $color-primary);
+$drop-shadow-large: drop-shadow(5px 5px $color-orange) drop-shadow(5px 5px $color-primary);
 
 $radius-small: 2px;
 $radius-large: 4px;

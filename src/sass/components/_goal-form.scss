@@ -2,10 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 280;
 
   /////////////////STYLES FOR THE FORM BACKGROUND
   &__background {
-    background: linear-gradient( to right, rgba(0,0,0,.6) , rgba(0,0,0,.5)), $gradient;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), $gradient;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,6 +22,9 @@
     padding: 2rem;
     background-color: $color-grey;
     position: relative;
+    @include respond(mobile) {
+      display: none;
+    }
 
     &-svg {
       width: 60rem;
@@ -64,7 +69,12 @@
   //////////////////////////STYLES FOR THE LEFT SIDE CONTENT AND FORM
   &__content {
     height: 60rem;
-    max-width: 50rem;
+    width: 50rem;
+    @include respond(mobile) {
+      height: 80rem;
+      width: 65rem;
+      margin-top: -20%;
+    }
   }
 
   &__form-element {
@@ -76,6 +86,9 @@
     background-color: $color-white;
     padding: 1rem;
     box-shadow: $shadow-large;
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
   &__tertiary {
     color: $color-white;
@@ -105,15 +118,21 @@
     }
   }
 
-  &__inputs-container{
+  &__inputs-container {
     margin-top: -10%;
+    @include respond(mobile) {
+      align-self: center;
+    }
   }
-  
+
   &__input {
     display: flex;
     flex-direction: column-reverse;
     margin-left: 4rem;
     height: 11rem;
+    @include respond(mobile) {
+      transform: scale(1.2);
+    }
 
     & label {
       align-self: flex-start;
@@ -135,6 +154,9 @@
       text-align: center;
       border-bottom: 2px solid $color-primary-dark;
       width: 30rem;
+      @include respond(mobile) {
+        border-bottom: 1px solid $color-primary-dark;
+      }
 
       &:focus,
       &:valid {
@@ -156,5 +178,10 @@
     margin-right: 4rem;
     align-self: flex-end;
     z-index: 300;
+    @include respond(mobile) {
+      align-self: flex-end;
+      margin-bottom: 15rem;
+      transform: scale(1.3);
+    }
   }
 }

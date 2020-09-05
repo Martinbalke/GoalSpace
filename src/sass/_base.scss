@@ -1,12 +1,12 @@
-*{
-  padding: 0 ;
-  margin: 0 ;
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  &::-moz-selection{
+  &::-moz-selection {
     background: $color-orange;
     color: $color-primary-dark;
   }
-  &::selection{
+  &::selection {
     background: $color-orange;
     color: $color-primary-dark;
   }
@@ -14,41 +14,39 @@
 
 *,
 *::before,
-*::after{
+*::after {
   box-sizing: inherit;
 }
 
-
-
-body { 
-  height: 100%; 
+body {
+  height: 100%;
   overflow-x: hidden;
- 
 }
-html{
+html {
   //One REM is 10px
   font-size: 62.5%;
   box-sizing: border-box;
+  @include respond(4k) {
+    font-size: 90%;
+  }
+  @include respond(tablet) {
+    font-size: 56.25%;
+  }
+
   @include respond(mobile) {
-      font-size: 45%; //1 rem = 9px, 9/16 = 50%
-  }
-  @include respond(tablet) { 
-      font-size: 56.25%;
-  }
-  @include respond(4k) { 
-      font-size: 75%;
+    font-size: 30%;
   }
 }
 
-
-h1,h3{
+h1,
+h3 {
   font-weight: bold;
   font-family: $font-primary;
 }
 
-p,span{
+p,
+span {
   font-family: $font-secondary;
   font-weight: 300;
   line-height: 1.6;
-
 }

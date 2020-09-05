@@ -3,8 +3,8 @@
 
 .footer {
   display: flex;
-  z-index: 300;
   position: relative;
+  z-index: 205;
   height: 35rem;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,6 @@
 
   &__logo{
     position: relative;
-    z-index: 900;
     font-family: $font-header;
     font-size: 5rem;
     letter-spacing: 2px;
