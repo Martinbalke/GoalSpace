@@ -2,15 +2,15 @@
   position: relative;
   z-index: 1;
   background: $color-white;
-  height: 100vh;
+  height: 60rem;
   font-size: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 
   &::before {
     background: url("../images/alt-border-white.svg");
     @include shape-pseudo-element;
     z-index: -1;
-    top: -35%;
+    top: -30rem;
     width: 100%;
     height: 30rem;
   }

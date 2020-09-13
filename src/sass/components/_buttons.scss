@@ -20,8 +20,7 @@
    filter: $drop-shadow;
 
     &:hover {
-      transform: scale(1.02) translateY(1px);
-      box-shadow: $shadow-small;
+      transform: scale(1.03) translateY(1px);
       cursor: pointer;
     }
   }
@@ -87,7 +86,7 @@
     transition: all .3s;
     &:hover,
     &:focus {
-      transform: translateY(-2px) scale(1.03);
+      transform: translateY(-2px);
       cursor: pointer;
     }
 
@@ -96,7 +95,6 @@
       color: white;
 
       &:hover, &:focus {
-        box-shadow: $shadow-colored;
         filter: hue-rotate(30deg);
       }
 
@@ -106,6 +104,10 @@
       background: none;
       color: $color-white;
       opacity: .7;
+
+      @include respond(tablet) {
+        border: 1px solid $color-white;
+      }
 
       &:hover,
       &:focus {

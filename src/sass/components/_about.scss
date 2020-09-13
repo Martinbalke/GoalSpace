@@ -1,0 +1,108 @@
+
+
+.about{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  background-color: $color-primary-dark-2;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tablet){
+
+    height: 130vh;
+  }
+
+  &::before{
+    background: url('../images/alt-border-white.svg');
+    @include shape-pseudo-element;
+    z-index: -1;
+    bottom: -5%;
+    left: 0;
+    height: 30rem;
+    width: 100%;
+  }
+
+  &::after{
+    @include watermark-text;
+    content: 'About Goalspace';
+    line-height: 25rem;
+    top: 10%;
+    left: 10%;
+
+  }
+  &__close{
+    position: fixed;
+    z-index: 100000;
+    top: 5vh;
+    right: 5vw;
+    color: $color-primary;
+    font-family: $font-primary;
+    height: 4rem;
+    width: 4rem;
+    transition: all .3s;
+    &:hover{
+      cursor: pointer;
+      transform: translateY(-2px);
+    }
+    
+    &:after {
+      content: "\00D7";
+      display: block;
+      font-size: 2.5rem;
+    }
+  }
+
+  &__header{
+    position: relative;
+    z-index: 1;
+    font-family: $font-header;
+    margin: 5vh 0;
+    color: $color-white;
+    font-size: 6rem;
+    transform: skew(-4deg);
+    filter: $drop-shadow-large;
+  }
+  &__sections{
+    display: flex;
+    justify-content: space-around;
+    
+    @include respond(tablet){
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      
+    }
+  }
+
+  &__section{
+    margin: 2rem 2rem;
+    width: 100%;
+    &-tertiary{
+      @include tertiary-blue-skew;
+      font-size: 2.5rem;
+      margin: 0 auto 5vh auto;
+      box-shadow: $shadow-colored;
+      max-width: 35rem;
+      align-self: center;
+      
+    }
+    &-paragraph{
+      font-size: 2rem;
+      color: rgba($color-white, .8);
+      margin: 0 auto;
+      width: 80%;
+
+      & em{
+        color: $color-white;
+        font-weight: 500;
+        padding: 0 .5rem;
+      }
+    }
+  }
+
+}

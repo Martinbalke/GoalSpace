@@ -1,10 +1,11 @@
 .hero {
-  background-image: url("../images/color.jpg");
+  background-image: url("../images/color-medium.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60rem;
   display: flex;
   position: relative;
+  overflow: hidden;
   z-index: 2;
   flex-direction: column;
   justify-content: center;
@@ -12,11 +13,19 @@
   border-radius: $radius-small;
   margin-bottom: 1rem;
 
+  @include respond(4k){
+    background-image: url("../images/color-large.jpg");
+  }
+@include respond(mobile){
+  background-image: url("../images/color-small.jpg");
+  background-position: center;
+}
   &::after {
     height: 31rem;
     z-index: -1;
     width: 100%;
     background: url("../images/border.svg");
+    background-position: bottom;
     @include shape-pseudo-element;
     transform: scale(-1, 1);
     bottom: -3%;
@@ -125,6 +134,7 @@
       position: absolute;
       color: $color-white;
       filter: $drop-shadow;
+
     }
   }
 

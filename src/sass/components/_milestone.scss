@@ -42,7 +42,7 @@
     height: 30rem;
     width: 30rem;
     z-index: -1;
-    filter: drop-shadow($shadow-small) drop-shadow(1rem 1rem rgba($color-grey, 1));
+    filter: drop-shadow($shadow-small) drop-shadow(10px 10px rgba($color-grey, 1));
   }
 
 
