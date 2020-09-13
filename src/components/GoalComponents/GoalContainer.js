@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Goal, About, Modal, GoalForm, EditGoal, SetGoal, Chart, Milestone, ChartContainer } from '../Components';
+import { Goal, Modal, GoalForm, EditGoal, SetGoal, Chart, Milestone, ChartContainer } from '../Components';
 import { loadGoals } from '../../store/actions';
 import { connect } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function GoalContainer({ goals, dispatch }) {
   //State variable to keep track of which goal is currently being edited
-  const [editing, setEditing] = useState(-1);
+  const [editing, setEditing] = useState(1);
 
   //AUTHENTICATION
   const { user } = useAuth0();
@@ -42,7 +42,7 @@ function GoalContainer({ goals, dispatch }) {
   }
 
   return (
-    <>
+    <div>
       <AnimatePresence>
         {editing >= 0 && (<Modal className='goalForm__background' close={() => setEditing(-1)}>
           <GoalForm index={editing} user={currentUser} close={() => setEditing(-1)} />
@@ -61,7 +61,7 @@ function GoalContainer({ goals, dispatch }) {
           <Chart />
         </ChartContainer>
       </main>
-    </>
+    </div>
   );
 }
 

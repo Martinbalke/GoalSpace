@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ConfettiScoreButton } from '../Components';
 import { completeGoal, updateChartPoints, updateProgressPoints } from '../../store/actions';
 import { connect } from 'react-redux';
@@ -12,7 +12,7 @@ function Goal({ goal, children, index: goalIndex, dispatch, animationHeight }) {
   ///ANIMATE ON SCROLL
   const { scrollY, scrollYProgress } = useViewportScroll();
   const [visibleWhenScrollDown, setVisibleWhenScrollDown] = useState(false);
-  scrollY.onChange(y => { if (scrollYProgress.current > animationHeight) setVisibleWhenScrollDown(true); console.log('yep')})
+  scrollY.onChange(y => { if (scrollYProgress.current > animationHeight) setVisibleWhenScrollDown(true);})
 
 
   function mapHabitsAndDisplay() {

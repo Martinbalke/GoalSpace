@@ -32,6 +32,7 @@
     margin: 0 2.5rem;
     @include respond(tablet) {
       margin-top: 2rem;
+      width: 100%;
     }
   }
 

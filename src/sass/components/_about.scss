@@ -1,15 +1,10 @@
-.auto {
 
-  overflow: auto;
-}
 
 .about{
   height: 100vh;
   width: 100vw;
-  position: sticky;
-  top:0;
-  left: 0;
-  z-index: 10000;
+  position: relative;
+  z-index: 1;
   overflow: auto;
   background-color: $color-primary-dark-2;
   text-align: center;
@@ -19,7 +14,7 @@
 
   @include respond(tablet){
 
-    height: 150vh;
+    height: 130vh;
   }
 
   &::before{
@@ -80,22 +75,33 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
+      
     }
   }
 
   &__section{
     margin: 2rem 2rem;
-    max-width: 35rem;
+    width: 100%;
     &-tertiary{
       @include tertiary-blue-skew;
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin: 0 auto 5vh auto;
       box-shadow: $shadow-colored;
+      max-width: 35rem;
+      align-self: center;
       
     }
     &-paragraph{
       font-size: 2rem;
-      color: $color-white;
+      color: rgba($color-white, .8);
+      margin: 0 auto;
+      width: 80%;
+
+      & em{
+        color: $color-white;
+        font-weight: 500;
+        padding: 0 .5rem;
+      }
     }
   }
 

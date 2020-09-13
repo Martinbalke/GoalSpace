@@ -5,13 +5,13 @@
   height: 60rem;
   display: flex;
   position: relative;
+  overflow: hidden;
   z-index: 2;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   border-radius: $radius-small;
   margin-bottom: 1rem;
-  overflow-y: scroll;
 
   @include respond(4k){
     background-image: url("../images/color-large.jpg");

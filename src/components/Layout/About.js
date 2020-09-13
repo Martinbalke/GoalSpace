@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 
 
-export default ({ callback }) => {
+export default () => {
 
   return (
     <motion.div className="about" variants={popupContainerAnimation} initial='hidden' animate='visible' exit='exit' >
@@ -16,15 +16,15 @@ export default ({ callback }) => {
       <div className="about__sections">
         <div className="about__section">
           <h3 className="about__section-tertiary">Goals</h3>
-          <p className="about__section-paragraph">The goal you set should be a large achievement for yourself. Try to think on a grander scale.<br /> Timelines of a year or half year basis are great for this.</p>
+          <p className="about__section-paragraph">The goal you set should be a large achievement for yourself. Try to think on a grander scale. Timelines of a <em>year to half year </em> basis are great for this.</p>
         </div>
         <div className="about__section">
           <h3 className="about__section-tertiary">Milestones</h3>
-          <p className="about__section-paragraph">It takes a long time to finish half a year, and that can discourage you from completing your goal.<br/> That's where milestones come in. Think of them as mini goals set on a bi weekly or monthly basis that when added up contribute to you finish your overall goal.</p>
+          <p className="about__section-paragraph">Half a year can feel like forever, and that can discourage you from completing your goal. That's where milestones come in. Think of them as <em>mini goals set on a bi weekly or monthly basis</em> that when added up contribute to you finishing your overall goal.</p>
         </div>
         <div className="about__section">
           <h3 className="about__section-tertiary">Habits</h3>
-          <p className="about__section-paragraph">Take a step back and ask yourself "What three things can I accomplish every single day that will ultimately mean I succeed at my goal?". <br />These should be on a daily or bi-daily basis.</p>
+          <p className="about__section-paragraph">Take a step back and ask yourself <em>"What three things can I accomplish every single day that will ultimately mean I succeed at my goal?".</em> These should be on a daily or bi-daily basis.</p>
         </div>
       </div>
     </motion.div>
