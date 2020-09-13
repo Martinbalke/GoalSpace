@@ -764,7 +764,8 @@ span {
   justify-content: center;
   align-items: flex-start;
   border-radius: 2px;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  overflow-y: scroll; }
   @media only screen and (min-width: 112.5em) {
     .hero {
       background-image: url("../images/color-large.jpg"); } }
@@ -1054,17 +1055,25 @@ span {
   .confetti__text--normal {
     animation: bubbles 15s linear infinite; }
 
+.auto {
+  overflow: auto; }
+
 .about {
   height: 100vh;
-  overflow: hidden;
   width: 100vw;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 10000;
+  overflow: auto;
   background-color: #0B1A2E;
   text-align: center;
-  padding: 2rem; }
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (max-width: 56.25em) {
+    .about {
+      height: 150vh; } }
   .about::before {
     background: url("../images/alt-border-white.svg");
     content: "";
@@ -1125,6 +1134,11 @@ span {
   .about__sections {
     display: flex;
     justify-content: space-around; }
+    @media only screen and (max-width: 56.25em) {
+      .about__sections {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly; } }
   .about__section {
     margin: 2rem 2rem;
     max-width: 35rem; }

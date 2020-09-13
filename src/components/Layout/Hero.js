@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import { About } from '../Components';
-import { AnimatePresence } from 'framer-motion'
+import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import {Link} from "react-router-dom";
 
 
 function Hero() {
-
-  const [showAbout, setShowAbout] = useState(false);
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
-    <>
+    <div className="auto">
       <section className='hero' id='Hero'>
         <h1 className='hero__header'>
           <div className="hero__bubbles">
@@ -20,14 +17,14 @@ function Hero() {
           <span className='hero__header-text-1'>From daily <em>habits</em> to finished <em>goals</em></span>
         </h1>
         <div className="hero__buttons">
-          <button className='btn btn-hero btn-hero--outline' onClick={() => setShowAbout(true)}>Learn more</button>
+          <Link to='/about'>
+            <button className='btn btn-hero btn-hero--outline'>Learn more</button>
+          </Link>
           <button className='btn btn-hero btn-hero--solid' onClick={() => isAuthenticated ? 'TODO: MAKE THIS SCROLL TO GOALS WHEN LOGGED IN' : loginWithRedirect()}>{isAuthenticated ? 'Goals' : 'Login'}</button>
         </div>
       </section>
-      <AnimatePresence>
-        {showAbout && (<About callback={setShowAbout} />)}
-      </AnimatePresence>
-    </>
+
+    </div>
   );
 }
 

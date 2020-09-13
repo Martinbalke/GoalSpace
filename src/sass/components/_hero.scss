@@ -11,6 +11,7 @@
   align-items: flex-start;
   border-radius: $radius-small;
   margin-bottom: 1rem;
+  overflow-y: scroll;
 
   @include respond(4k){
     background-image: url("../images/color-large.jpg");

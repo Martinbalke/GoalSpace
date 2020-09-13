@@ -1,6 +1,13 @@
 import React from 'react';
-import {Nav, Hero, AuthWrapper, GoalContainer, Footer } from './Components';
-import { Auth0Provider} from "@auth0/auth0-react";
+import { Nav, Hero, About, AuthWrapper, GoalContainer, Footer } from './Components';
+import { Auth0Provider } from "@auth0/auth0-react";
+import {AnimatePresence} from 'framer-motion'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 
 
 
@@ -13,14 +20,25 @@ function App() {
       clientId={process.env.REACT_APP_CLIENT_ID}
       redirectUri={window.location.origin}
     >
-      <div className="App">
-        <Hero />
-        <Nav />
-        <AuthWrapper>
-          <GoalContainer/>
-          <Footer />
-        </AuthWrapper>
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/about">
+              <AnimatePresence>
+                <About />
+              </AnimatePresence>
+            </Route>
+            <Route path='/'>
+              <Hero />
+              <Nav />
+              <AuthWrapper>
+                <GoalContainer />
+                <Footer />
+              </AuthWrapper>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </Auth0Provider>
   );
 }

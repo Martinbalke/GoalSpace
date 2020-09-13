@@ -1,14 +1,26 @@
+.auto {
+
+  overflow: auto;
+}
+
 .about{
   height: 100vh;
-  overflow: hidden;
   width: 100vw;
-  position: fixed;
+  position: sticky;
   top:0;
   left: 0;
   z-index: 10000;
+  overflow: auto;
   background-color: $color-primary-dark-2;
   text-align: center;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tablet){
+
+    height: 150vh;
+  }
 
   &::before{
     background: url('../images/alt-border-white.svg');
@@ -63,7 +75,12 @@
   &__sections{
     display: flex;
     justify-content: space-around;
- 
+    
+    @include respond(tablet){
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
   }
 
   &__section{
