@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function GoalContainer({ goals, dispatch }) {
   //State variable to keep track of which goal is currently being edited
-  const [editing, setEditing] = useState(1);
+  const [editing, setEditing] = useState(-1);
 
   //AUTHENTICATION
   const { user } = useAuth0();
