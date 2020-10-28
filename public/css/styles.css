@@ -761,7 +761,7 @@ span {
       filter: hue-rotate(20deg); }
 
 .hero {
-  background-image: url("../images/color-medium.jpg");
+  background: url("../images/color-medium.jpg");
   background-size: cover;
   background-attachment: fixed;
   height: 60rem;
@@ -1068,7 +1068,7 @@ span {
   width: 100vw;
   position: relative;
   z-index: 1;
-  overflow: auto;
+  overflow: hidden;
   background-color: #0B1A2E;
   text-align: center;
   padding: 2rem;
