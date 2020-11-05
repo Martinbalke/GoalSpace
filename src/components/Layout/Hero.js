@@ -13,7 +13,7 @@ function Hero() {
           <div className="hero__bubbles">
             <div /><div /><div /><div /><div /><div />
           </div>
-          <span className='hero__header-logo'>Goalspace</span>
+          <span className='hero__header-logo'>Goalspa ce</span>
           <span className='hero__header-text-1'>From daily <em>habits</em> to finished <em>goals</em></span>
         </h1>
         <div className="hero__buttons">
