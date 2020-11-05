@@ -1,122 +1,119 @@
-
 .btn {
-  border: none;
-  display: inline-block;
-  text-align: center;
-  outline: none;
+	border: none;
+	display: inline-block;
+	text-align: center;
+	outline: none;
 
-  &-main{
-   margin:.5rem 1rem;
-   border-radius: $radius-XL;
-   font-size: 1.5rem;
-   font-weight: bold;
-   font-family: $font-primary;
-   width: 12rem;
-   height: 4rem;
-   padding: 1rem 3rem;
-   color: $color-primary;
-   background: $color-white;
-   transition: all .1s;
-   filter: $drop-shadow;
+	&-main {
+		margin: 0.5rem 1rem;
+		border-radius: $radius-XL;
+		font-size: 1.5rem;
+		font-weight: bold;
+		font-family: $font-primary;
+		width: 12rem;
+		height: 4rem;
+		padding: 1rem 3rem;
+		color: $color-primary;
+		background: $color-white;
+		transition: all 0.1s;
+		filter: $drop-shadow;
 
-    &:hover {
-      transform: scale(1.03) translateY(1px);
-      cursor: pointer;
-    }
-  }
+		&:hover {
+			transform: scale(1.03) translateY(1px);
+			cursor: pointer;
+		}
+	}
 
+	&-blob {
+		position: relative;
+		display: inline-block;
+		padding-left: 1.25rem;
+		z-index: 200;
+		color: $color-white;
+		letter-spacing: 0.5px;
+		font-size: 2rem;
+		font-weight: bold;
+		transform: skew(-4deg) translateZ(0);
+		transition: all 0.2s;
 
-  &-blob{
-    position: relative;
-    display: inline-block;
-    padding-left: 1.25rem;
-    z-index: 200;
-    color: $color-white;
-    letter-spacing: .5px;
-    font-size: 2rem;
-    font-weight: bold;
-    transform: skew(-4deg) translateZ(0);
-    transition: all .2s;
+		&::after {
+			background: $gradient;
+			z-index: -1;
+			@include shape-pseudo-element;
+			border-radius: 50%;
+			top: -6.5rem;
+			left: -2.5rem;
+			width: 15rem;
+			height: 15rem;
 
-    &::after{
-      background:  $gradient;
-      z-index: -1;
-      @include shape-pseudo-element;
-      border-radius: 50%;
-      top: -6.5rem;
-      left: -2.5rem;
-      width: 15rem;
-      height: 15rem;
+			filter: drop-shadow($shadow-small);
+		}
+		&:hover,
+		&:focus {
+			cursor: pointer;
+			filter: hue-rotate(20deg);
+		}
+	}
 
-      filter: drop-shadow($shadow-small);
+	&-round {
+		font-family: $font-primary;
+		background: $color-white;
+		color: $color-primary;
+		font-size: 2rem;
+		border-radius: 50%;
+		height: 4rem;
+		width: 4rem;
+		filter: $drop-shadow;
+		transition: all 0.3s;
 
-    }
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      filter: hue-rotate(20deg);
-    }
-  }
+		&:hover,
+		&:focus {
+			cursor: pointer;
+		}
+	}
 
-  &-round{
-    font-family: $font-primary;
-    background: $color-white;
-    color: $color-primary;
-    font-size: 2rem;
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    filter: $drop-shadow;
-    transition: all .3s;
+	&-hero {
+		font-family: $font-primary;
+		border-radius: $radius-XL;
+		font-size: 2rem;
+		font-weight: bold;
+		height: 4.5rem;
+		width: 15rem;
 
-    &:hover,
-    &:focus {
-      cursor: pointer;
-    }
-  }
+		transition: all 0.3s;
+		&:hover,
+		&:focus {
+			transform: translateY(-2px);
+			cursor: pointer;
+		}
 
-  &-hero{
-    font-family: $font-primary;
-    border-radius: $radius-XL;
-    font-size: 2rem;
-    font-weight: bold;
-    height: 4.5rem;
-    width: 15rem;
+		&--solid {
+			background: $gradient;
+			color: white;
 
-    transition: all .3s;
-    &:hover,
-    &:focus {
-      transform: translateY(-2px);
-      cursor: pointer;
-    }
+			&:hover,
+			&:focus {
+				filter: hue-rotate(30deg);
+			}
+		}
+		&--outline {
+			border: 2px solid $color-white;
+			background: none;
+			color: $color-white;
+			opacity: 0.7;
 
-    &--solid{
-      background: $gradient;
-      color: white;
+			@include respond(tablet) {
+				border: 1px solid $color-white;
+			}
 
-      &:hover, &:focus {
-        filter: hue-rotate(30deg);
-      }
-
-    }
-    &--outline{
-      border: 2px solid $color-white;
-      background: none;
-      color: $color-white;
-      opacity: .7;
-
-      @include respond(tablet) {
-        border: 1px solid $color-white;
-      }
-
-      &:hover,
-      &:focus {
-        outline: none;
-        opacity: 1;
-        background: $color-white;
-        color: $color-primary;
-        box-shadow: $shadow-colored;
-      }
-    }
-  }
+			&:hover,
+			&:focus {
+				outline: none;
+				opacity: 1;
+				background: $color-white;
+				color: $color-primary;
+				box-shadow: $shadow-colored;
+			}
+		}
+	}
 }

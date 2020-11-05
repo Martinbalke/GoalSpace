@@ -1,52 +1,52 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  &::-moz-selection {
-    background: $color-orange;
-    color: $color-primary-dark;
-  }
-  &::selection {
-    background: $color-orange;
-    color: $color-primary-dark;
-  }
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	&::-moz-selection {
+		background: $color-orange;
+		color: $color-primary-dark;
+	}
+	&::selection {
+		background: $color-orange;
+		color: $color-primary-dark;
+	}
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  height: 100%;
-  overflow-x: hidden;
+	height: 100%;
+	overflow-x: hidden;
 }
 html {
-  //One REM is 10px
-  font-size: 62.5%;
-  box-sizing: border-box;
-  @include respond(4k) {
-    font-size: 75%;
-  }
-  @include respond(tablet) {
-    font-size: 56.25%;
-  }
+	//One REM is 10px
+	font-size: 62.5%;
+	box-sizing: border-box;
+	@include respond(4k) {
+		font-size: 75%;
+	}
+	@include respond(tablet) {
+		font-size: 56.25%;
+	}
 
-  @include respond(mobile) {
-    font-size: 30%;
-  }
+	@include respond(mobile) {
+		font-size: 30%;
+	}
 }
 
 h1,
 h3 {
-  font-weight: bold;
-  font-family: $font-primary;
+	font-weight: bold;
+	font-family: $font-primary;
 }
 
 p,
 span {
-  font-family: $font-secondary;
-  font-weight: 300;
-  line-height: 1.6;
+	font-family: $font-primary;
+	font-weight: 300;
+	line-height: 1.6;
 }

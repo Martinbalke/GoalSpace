@@ -17,9 +17,10 @@ function SetGoals({ goals, setEditing, children }) {
   }
 
   useEffect(() => {
-    clearTimeout(timer);
-    setTimer(setTimeout(typingEffect, 300))
-  }, [typeWriterText])
+		clearTimeout(timer);
+		setTimer(setTimeout(typingEffect, 300));
+		// eslint-disable-next-line
+	}, [typeWriterText])
 
 
   return (
